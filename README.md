@@ -35,6 +35,22 @@ flowchart LR
 4. **The red team** attacks the draft thesis using only claims that passed. Its own objections go through the same gate, so an invented bear case gets dropped exactly the way an invented bull case would.
 5. **The memo** renders the key-metrics table straight from the facts (the model never touches it) and ends with a **grounding report** that lists every claim dropped along the way and why.
 
+## Results
+
+Example memos from real 10-Ks: [NVIDIA](memos/NVDA.md) · [Costco](memos/COST.md) · [Arista Networks](memos/ANET.md)
+
+| | NVDA | COST | ANET | Total |
+|---|---|---|---|---|
+| Claims proposed by agents | 43 | 42 | 43 | 128 |
+| Passed the grounding gate | 42 | 41 | 41 | **124 (97%)** |
+
+**What the first real run taught me.** v0.1 passed only 91 of 124 claims (73%). I replayed the verifier on every dropped claim and sorted each drop into one of two buckets:
+
+- **20 were the verifier being wrong.** It read "FY22" as a claim about the number 22, read "444.5M-444.8M" as a negative number, and applied a flat tolerance that rejected correctly rounded figures. Rounding tolerance is now based on how many digits the writer used, so $4.4B is checked to ±$0.05B.
+- **10 were real catches.** A number was cited to the wrong source, or the model had added two disclosed figures together ("26% + 16% = 42%") without anything in the filing to back the sum. The prompt now forbids self-computed totals. The gate still rejects them anyway.
+
+The same run surfaced two data bugs as well. Costco's em-dash headings ("Item 1A—Risk Factors") had left it with a single excerpt. NVIDIA's and Arista's capex came from an XBRL tag they stopped reporting years ago, and the red team spotted that one when it flagged Arista's "capital-light" claim as resting on 2016–2019 data. Each fix has its own regression test.
+
 ## Tests
 
 `pytest` runs fully offline against synthetic SEC-shaped fixtures and a scripted model. The end-to-end test plants four kinds of fabrication and asserts that each one is caught before it can reach a downstream agent:
