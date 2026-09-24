@@ -84,7 +84,8 @@ def render(memo: Memo, pack: EvidencePack, report: GroundingReport, model: str) 
                 f"The PM raised {len(memo.research)} questions. The research agent answered {len(answered)} from "
                 f"cited public sources, and {len(open_qs)} remain for a human.", ""]
         for r in answered:
-            out += [f"**Q: {r.question}**", ""] + [f"- {_cite(c)}" for c in r.claims] + [""]
+            # Citation fragments often start mid-sentence; capitalise for readability.
+            out += [f"**Q: {r.question}**", ""] + [f"- {_cite(c)[:1].upper()}{_cite(c)[1:]}" for c in r.claims] + [""]
         if open_qs:
             out += ["**Still open (needs a human):**", ""]
             out += [f"- {r.question} *({r.unanswered})*" for r in open_qs]
