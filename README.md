@@ -1,12 +1,12 @@
 # due-diligence-agent
 
-**An AI research team that reads a company's 10-K, researches open questions on the web, and writes an investment memo, and is structurally prevented from making things up.**
+**An AI research team that reads a company's 10-K, researches open questions on the web, and writes an investment memo.**
 
 ```bash
 ddagent NVDA COST ANET NKE BYND   # → memos/<TICKER>.md
 ```
 
-Three specialist agents analyze the filing. A red-team agent attacks their thesis, and a PM agent writes the memo. A research agent then answers the PM's open questions with live web search. **Every claim cites its evidence, and code rather than a prompt checks every citation and every number before the claim can move on.** The verdict comes from a scorecard computed in code, not from the model's mood.
+Three specialist agents analyze the filing. A red-team agent attacks their thesis, and a PM agent writes the memo. A research agent then answers the PM's open questions with live web search. Every claim cites its evidence, and code rather than a prompt checks every citation and every number before the claim can move on. The verdict comes from a scorecard computed in code, not from the model's mood.
 
 > Research triage, not investment advice.
 
