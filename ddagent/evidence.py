@@ -128,7 +128,7 @@ METRICS: list[tuple[str, str, tuple[str, ...], str, str]] = [
     ("cfo", "Operating cash flow", ("NetCashProvidedByUsedInOperatingActivities",), "USD", "flow"),
     ("capex", "Capital expenditures", ("PaymentsToAcquirePropertyPlantAndEquipment", "PaymentsToAcquireProductiveAssets"), "USD", "flow"),
     ("cash", "Cash & equivalents", ("CashAndCashEquivalentsAtCarryingValue",), "USD", "instant"),
-    ("debt", "Long-term debt", ("LongTermDebt", "LongTermDebtNoncurrent"), "USD", "instant"),
+    ("debt", "Long-term debt", ("LongTermDebt", "LongTermDebtNoncurrent", "LongTermNotesPayable", "ConvertibleNotesPayable", "SeniorNotes"), "USD", "instant"),
     ("equity", "Stockholders' equity", ("StockholdersEquity",), "USD", "instant"),
     ("diluted_shares", "Diluted shares", ("WeightedAverageNumberOfDilutedSharesOutstanding",), "shares", "flow"),
 ]

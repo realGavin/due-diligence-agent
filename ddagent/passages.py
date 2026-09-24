@@ -53,7 +53,12 @@ def _page_text(url: str) -> str | None:
 
 
 def expand(url: str, cited: str, before: int = 150, after: int = 700) -> str:
-    """Full passage around a citation, or the cleaned cited text if it can't be located."""
+    """The cited text plus the page passage around it (or just the cited text if the page
+    can't be fetched or the passage can't be found).
+
+    Both are kept on purpose: the cited text is what the search index held when the model
+    read it, and a live page can have moved on since (a market-cap page updates every
+    day). A claim passes if its numbers are in either; nothing outside the page is added."""
     short = clean_cited(cited)
     page = _page_text(url)
     if not page or len(short) < 25:
@@ -62,4 +67,4 @@ def expand(url: str, cited: str, before: int = 150, after: int = 700) -> str:
     i = page.lower().find(probe)
     if i < 0:
         return short
-    return page[max(0, i - before): i + len(short) + after]
+    return f"{short} […] {page[max(0, i - before): i + len(short) + after]}"

@@ -180,10 +180,14 @@ class GroundingReport:
     proposed: int = 0
     kept: int = 0
     dropped: list[dict] = field(default_factory=list)
+    by_stage: dict = field(default_factory=dict)  # stage -> [kept, proposed]
 
     def add(self, stage: str, text: str, v: Verdict) -> None:
         self.proposed += 1
+        k = self.by_stage.setdefault(stage, [0, 0])
+        k[1] += 1
         if v.ok:
+            k[0] += 1
             self.kept += 1
         else:
             self.dropped.append({"stage": stage, "claim": text, "reason": v.reason})

@@ -106,9 +106,12 @@ def score(pack: EvidencePack, objections: list[Claim]) -> Scorecard:
                       f"diluted shares {dil.display()} YoY (2: <=0.5%, 1: <=3%)" if dil else "no share data",
                       [dil.id] if dil else []))
 
-    fy, = get("FCF yield")
+    fy, mc = get("FCF yield", "Market cap")
     if fy:
         lines.append(Line("Valuation", _tier(fy.value, 5, 2.5), f"FCF yield {fy.display()} (2: >=5%, 1: >=2.5%)", [fy.id]))
+    elif mc and fcf and fcf.value <= 0:
+        lines.append(Line("Valuation", 0, f"market cap {mc.display()} with negative FCF: no cash yield",
+                          [mc.id, fcf.id]))
     else:
         lines.append(Line("Valuation", None, "no market cap found, or FCF not positive", []))
 

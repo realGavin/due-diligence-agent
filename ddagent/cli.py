@@ -56,7 +56,7 @@ def main(argv: list[str] | None = None) -> int:
         memo = team.run(research=not args.no_research)
         (out / f"{pack.ticker}.md").write_text(render(memo, pack, team.report, llm.model))
         trace = {"evidence": pack.to_dict(), "memo": asdict(memo), "grounding": asdict(team.report),
-                 "llm_trace": team.trace}
+                 "llm_trace": team.trace, "model": llm.model}
         (out / f"{pack.ticker}.trace.json").write_text(json.dumps(trace, indent=2))
         verdict = memo.scorecard.verdict if memo.scorecard else memo.verdict
         answered = sum(1 for r in memo.research if r.claims)
