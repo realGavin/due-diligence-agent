@@ -45,3 +45,26 @@ def test_uncited_and_unknown_ids_fail(pack):
 
 def test_qualitative_claims_pass_with_valid_citation(pack):
     assert check_claim("The company relies on one contract manufacturer.", [sid(pack, "contract manufacturer")], pack).ok
+
+
+# --- Regressions from the first real run (NVDA, COST, ANET) ------------------------
+
+def test_fiscal_period_labels_are_not_claims():
+    assert [n.raw for n in numbers_in("Operating income rose from FY22 to FY25 and Q3 was strong")] == []
+
+
+def test_range_dash_is_not_a_minus_sign():
+    vals = [n.value for n in numbers_in("shares were flat at 444.5M-444.8M")]
+    assert vals == [444.5e6, 444.8e6]
+
+
+def test_rounding_uses_the_writers_precision(pack):
+    # Net debt is $100M; "$0.1B" is a correct one-decimal rounding of it.
+    assert check_claim("Net debt is only $0.1B.", [fid(pack, "Net debt (LT debt - cash)")], pack).ok
+    # ...but "$0.2B" is not.
+    assert not check_claim("Net debt is $0.2B.", [fid(pack, "Net debt (LT debt - cash)")], pack).ok
+
+
+def test_derived_totals_are_rejected(pack):
+    s = sid(pack, "three largest customers")
+    assert not check_claim("Customers were 20% and 21% (41% combined).", [s], pack).ok

@@ -87,7 +87,7 @@ METRICS: list[tuple[str, str, tuple[str, ...], str, str]] = [
     ("net_income", "Net income", ("NetIncomeLoss",), "USD", "flow"),
     ("rnd", "R&D expense", ("ResearchAndDevelopmentExpense",), "USD", "flow"),
     ("cfo", "Operating cash flow", ("NetCashProvidedByUsedInOperatingActivities",), "USD", "flow"),
-    ("capex", "Capital expenditures", ("PaymentsToAcquirePropertyPlantAndEquipment",), "USD", "flow"),
+    ("capex", "Capital expenditures", ("PaymentsToAcquirePropertyPlantAndEquipment", "PaymentsToAcquireProductiveAssets"), "USD", "flow"),
     ("cash", "Cash & equivalents", ("CashAndCashEquivalentsAtCarryingValue",), "USD", "instant"),
     ("debt", "Long-term debt", ("LongTermDebt", "LongTermDebtNoncurrent"), "USD", "instant"),
     ("equity", "Stockholders' equity", ("StockholdersEquity",), "USD", "instant"),
@@ -135,8 +135,13 @@ def build_facts(companyfacts: dict, years: int = 4) -> list[Fact]:
         facts.append(f)
         return f
 
+    series = {key: _annual_series(companyfacts, tags, unit, kind, years) for key, _, tags, unit, kind in METRICS}
+    newest = max((rows[-1]["end"] for _, rows in series.values() if rows), default="")
     for key, label, tags, unit, kind in METRICS:
-        tag, rows = _annual_series(companyfacts, tags, unit, kind, years)
+        tag, rows = series[key]
+        # A tag the company stopped reporting years ago is stale, not "latest"; skip it.
+        if rows and newest and (date.fromisoformat(newest) - date.fromisoformat(rows[-1]["end"])).days > 400:
+            continue
         for r in rows:
             f = add(label, r["val"], unit, r["end"], f"us-gaap:{tag} @ {r.get('accn', '?')}")
             history.setdefault(key, []).append(f)

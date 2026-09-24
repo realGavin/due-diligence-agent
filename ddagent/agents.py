@@ -18,7 +18,7 @@ from .verify import GroundingReport, check_claim
 RULES = """Rules you must follow:
 - Use ONLY the evidence pack below. No outside knowledge about this company, its stock price, valuation, or news.
 - Every claim must cite one or more evidence ids, e.g. ["F3", "S12"]. Cite the id that actually contains the number or statement.
-- Do not compute new numbers. Quote numbers exactly as they appear in the cited evidence (rounding like $391.0B -> $391B is fine).
+- Do not compute new numbers: no sums, differences or ranges you worked out yourself. Quote numbers exactly as they appear in the cited evidence (rounding like $391.0B -> $391B is fine). If two figures matter together, state both (\"26% and 16%\"), not their total.\n- Cite the specific fact id for every number you use, including prior-year values.
 - Prefer specific, decision-relevant claims over generic ones. 4-7 claims.
 Reply with JSON only."""
 

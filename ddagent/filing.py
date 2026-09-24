@@ -10,10 +10,11 @@ from .evidence import Excerpt
 # (section name, start pattern, end pattern). Each heading shows up at least twice,
 # once in the table of contents and once in the body, so for every start match we
 # cut to the next end match and keep the LONGEST span, which is the real body.
+SEP = r"[\s.:\-\u2013\u2014]*"  # "Item 1. Business", "Item 1—Business", "Item 1A - Risk Factors"
 SECTIONS = [
-    ("Business", r"item\s*1\.?\s*business", r"item\s*1a\.?\s*risk\s*factors"),
-    ("Risk Factors", r"item\s*1a\.?\s*risk\s*factors", r"item\s*1b\.?|item\s*1c\.?|item\s*2\.?\s*properties"),
-    ("MD&A", r"item\s*7\.?\s*management[’'`s]*\s*discussion", r"item\s*7a\.?|item\s*8\.?\s*financial"),
+    ("Business", rf"item\s*1{SEP}business", rf"item\s*1a{SEP}risk\s*factors"),
+    ("Risk Factors", rf"item\s*1a{SEP}risk\s*factors", rf"item\s*1b{SEP}|item\s*1c{SEP}|item\s*2{SEP}properties"),
+    ("MD&A", rf"item\s*7{SEP}management[\u2019'`s]*\s*discussion", rf"item\s*7a{SEP}|item\s*8{SEP}financial"),
 ]
 
 

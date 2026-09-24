@@ -55,3 +55,22 @@ def test_pack_ids_unique(pack):
     ids = [f.id for f in pack.facts] + [e.id for e in pack.excerpts]
     assert len(ids) == len(set(ids))
     assert fid(pack, "Revenue").startswith("F")
+
+
+def test_em_dash_item_headings():
+    # Costco's 10-K writes "Item 1A—Risk Factors"; the first version missed it.
+    html = TENK_HTML.replace("Item 1A. Risk Factors</h2>", "Item 1A—Risk Factors</h2>").replace(
+        "Item 7. Management", "Item 7—Management")
+    sections = extract_sections(html_to_text(html))
+    assert "contract manufacturer" in sections["Risk Factors"]
+    assert "increased 20%" in sections["MD&A"]
+
+
+def test_stale_tag_is_skipped():
+    cf = {"facts": {"us-gaap": {
+        "Revenues": {"units": {"USD": [{"start": "2024-01-01", "end": "2024-12-31", "val": 100, "form": "10-K",
+                                        "filed": "2025-02-01", "accn": "a"}]}},
+        "PaymentsToAcquirePropertyPlantAndEquipment": {"units": {"USD": [
+            {"start": "2019-01-01", "end": "2019-12-31", "val": 5, "form": "10-K", "filed": "2020-02-01", "accn": "b"}]}},
+    }}}
+    assert not [f for f in build_facts(cf) if f.label == "Capital expenditures"]
