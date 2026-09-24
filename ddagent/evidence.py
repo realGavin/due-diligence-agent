@@ -2,7 +2,8 @@
 
 Facts (F-ids) come from XBRL company facts, and derived ratios are computed here in
 plain Python rather than by the model. Excerpts (S-ids) are verbatim passages from
-the filing. Anything an agent says has to trace back to one of these ids.
+the filing; web excerpts (W-ids) are the exact text a web page was cited for.
+Anything an agent says has to trace back to one of these ids.
 """
 from __future__ import annotations
 
@@ -26,8 +27,10 @@ class Fact:
 @dataclass
 class Excerpt:
     id: str
-    section: str  # "Business", "Risk Factors", "MD&A"
+    section: str  # "Business", "Risk Factors", "MD&A", or "Web"
     text: str
+    url: str = ""
+    title: str = ""
 
 
 @dataclass
@@ -37,6 +40,38 @@ class EvidencePack:
     filing_url: str
     facts: list[Fact] = field(default_factory=list)
     excerpts: list[Excerpt] = field(default_factory=list)
+
+    def next_id(self, prefix: str) -> str:
+        items = self.facts if prefix == "F" else [e for e in self.excerpts if e.id.startswith(prefix)]
+        return f"{prefix}{len(items) + 1}"
+
+    def add_valuation(self, market_cap: float, as_of: str, source: str) -> list[Fact]:
+        """Market cap (from cited web research) + multiples computed in code."""
+        latest = {}
+        for f in self.facts:
+            if f.label not in latest or f.period >= latest[f.label].period:
+                latest[f.label] = f
+        new: list[Fact] = []
+
+        def add(label, value, unit, src):
+            f = Fact(self.next_id("F"), label, float(value), unit, as_of, src)
+            self.facts.append(f)
+            new.append(f)
+            return f
+
+        mc = add("Market cap", market_cap, "USD", source)
+        ni, fcf, rev, nd = (latest.get(k) for k in ("Net income", "Free cash flow", "Revenue",
+                                                     "Net debt (LT debt - cash)"))
+        if ni and ni.value > 0:
+            add("P/E (market cap / net income)", mc.value / ni.value, "x", f"derived: {mc.id} / {ni.id}")
+        if fcf and fcf.value > 0:
+            add("P/FCF", mc.value / fcf.value, "x", f"derived: {mc.id} / {fcf.id}")
+            add("FCF yield", fcf.value / mc.value * 100, "pct", f"derived: {fcf.id} / {mc.id}")
+        if rev and rev.value > 0:
+            ev = mc.value + (nd.value if nd else 0.0)
+            add("EV / revenue", ev / rev.value, "x",
+                f"derived: ({mc.id} + {nd.id}) / {rev.id}" if nd else f"derived: {mc.id} / {rev.id} (no debt data)")
+        return new
 
     def ids(self) -> set[str]:
         return {f.id for f in self.facts} | {e.id for e in self.excerpts}
@@ -53,8 +88,12 @@ class EvidencePack:
             lines.append(f"[{f.id}] {f.label} | FY ending {f.period} | {f.display()}")
         lines += ["", "FILING EXCERPTS (verbatim from the 10-K):"]
         for e in self.excerpts:
-            if sections is None or e.section in sections:
+            if e.section != "Web" and (sections is None or e.section in sections):
                 lines.append(f"[{e.id}] ({e.section}) {e.text}")
+        web = [e for e in self.excerpts if e.section == "Web"]
+        if web and sections is None:
+            lines += ["", "WEB EVIDENCE (text cited from public web pages by the research agent):"]
+            lines += [f"[{e.id}] ({e.title or e.url}) {e.text}" for e in web]
         return "\n".join(lines)
 
     def to_dict(self) -> dict:

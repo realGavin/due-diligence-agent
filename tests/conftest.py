@@ -93,11 +93,25 @@ def sid(pack: EvidencePack, needle: str) -> str:
 
 
 class ScriptedLLM:
-    """Replies by stage, recognized from the system prompt. Records every call."""
+    """Replies by stage, recognized from the system prompt. Records every call.
 
-    def __init__(self, replies: dict[str, dict]):
+    `research` maps a substring of the question to a list of Segments; unmatched
+    questions come back UNANSWERED, like a question with no public answer."""
+
+    def __init__(self, replies: dict[str, dict], research: dict | None = None):
         self.replies = replies
+        self.research_replies = research or {}
         self.calls: list[tuple[str, str]] = []
+        self.research_calls: list[str] = []
+
+    def research(self, system: str, question: str):
+        from ddagent.llm import Segment
+
+        self.research_calls.append(question)
+        for key, segs in self.research_replies.items():
+            if key in question:
+                return segs
+        return [Segment("UNANSWERED: requires management access")]
 
     def complete(self, system: str, user: str) -> str:
         self.calls.append((system, user))

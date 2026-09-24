@@ -71,7 +71,7 @@ def test_rendered_memo(pack):
     memo = team.run()
     md = render(memo, pack, team.report, "scripted")
     assert md.startswith("# Example Corp (EXMP)")
-    assert "| Revenue | $1.2B | 2024-12-31 |" in md
+    assert "| Revenue | $1.2B | FY ending 2024-12-31 |" in md
     assert "Grounding report" in md and "passed verification" in md
     assert "Not investment advice" in md
     assert "Evidence cited" in md

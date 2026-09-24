@@ -1,0 +1,1200 @@
+{
+  "evidence": {
+    "company": "NVIDIA CORP",
+    "ticker": "NVDA",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+    "facts": [
+      {
+        "id": "F1",
+        "label": "Revenue",
+        "value": 26974000000.0,
+        "unit": "USD",
+        "period": "2023-01-29",
+        "source": "us-gaap:Revenues @ 0001045810-25-000023"
+      },
+      {
+        "id": "F2",
+        "label": "Revenue",
+        "value": 60922000000.0,
+        "unit": "USD",
+        "period": "2024-01-28",
+        "source": "us-gaap:Revenues @ 0001045810-26-000021"
+      },
+      {
+        "id": "F3",
+        "label": "Revenue",
+        "value": 130497000000.0,
+        "unit": "USD",
+        "period": "2025-01-26",
+        "source": "us-gaap:Revenues @ 0001045810-26-000021"
+      },
+      {
+        "id": "F4",
+        "label": "Revenue",
+        "value": 215938000000.0,
+        "unit": "USD",
+        "period": "2026-01-25",
+        "source": "us-gaap:Revenues @ 0001045810-26-000021"
+      },
+      {
+        "id": "F5",
+        "label": "Gross profit",
+        "value": 15356000000.0,
+        "unit": "USD",
+        "period": "2023-01-29",
+        "source": "us-gaap:GrossProfit @ 0001045810-25-000023"
+      },
+      {
+        "id": "F6",
+        "label": "Gross profit",
+        "value": 44301000000.0,
+        "unit": "USD",
+        "period": "2024-01-28",
+        "source": "us-gaap:GrossProfit @ 0001045810-26-000021"
+      },
+      {
+        "id": "F7",
+        "label": "Gross profit",
+        "value": 97858000000.0,
+        "unit": "USD",
+        "period": "2025-01-26",
+        "source": "us-gaap:GrossProfit @ 0001045810-26-000021"
+      },
+      {
+        "id": "F8",
+        "label": "Gross profit",
+        "value": 153463000000.0,
+        "unit": "USD",
+        "period": "2026-01-25",
+        "source": "us-gaap:GrossProfit @ 0001045810-26-000021"
+      },
+      {
+        "id": "F9",
+        "label": "Operating income",
+        "value": 4224000000.0,
+        "unit": "USD",
+        "period": "2023-01-29",
+        "source": "us-gaap:OperatingIncomeLoss @ 0001045810-25-000023"
+      },
+      {
+        "id": "F10",
+        "label": "Operating income",
+        "value": 32972000000.0,
+        "unit": "USD",
+        "period": "2024-01-28",
+        "source": "us-gaap:OperatingIncomeLoss @ 0001045810-26-000021"
+      },
+      {
+        "id": "F11",
+        "label": "Operating income",
+        "value": 81453000000.0,
+        "unit": "USD",
+        "period": "2025-01-26",
+        "source": "us-gaap:OperatingIncomeLoss @ 0001045810-26-000021"
+      },
+      {
+        "id": "F12",
+        "label": "Operating income",
+        "value": 130387000000.0,
+        "unit": "USD",
+        "period": "2026-01-25",
+        "source": "us-gaap:OperatingIncomeLoss @ 0001045810-26-000021"
+      },
+      {
+        "id": "F13",
+        "label": "Net income",
+        "value": 4368000000.0,
+        "unit": "USD",
+        "period": "2023-01-29",
+        "source": "us-gaap:NetIncomeLoss @ 0001045810-25-000023"
+      },
+      {
+        "id": "F14",
+        "label": "Net income",
+        "value": 29760000000.0,
+        "unit": "USD",
+        "period": "2024-01-28",
+        "source": "us-gaap:NetIncomeLoss @ 0001045810-26-000021"
+      },
+      {
+        "id": "F15",
+        "label": "Net income",
+        "value": 72880000000.0,
+        "unit": "USD",
+        "period": "2025-01-26",
+        "source": "us-gaap:NetIncomeLoss @ 0001045810-26-000021"
+      },
+      {
+        "id": "F16",
+        "label": "Net income",
+        "value": 120067000000.0,
+        "unit": "USD",
+        "period": "2026-01-25",
+        "source": "us-gaap:NetIncomeLoss @ 0001045810-26-000021"
+      },
+      {
+        "id": "F17",
+        "label": "R&D expense",
+        "value": 7339000000.0,
+        "unit": "USD",
+        "period": "2023-01-29",
+        "source": "us-gaap:ResearchAndDevelopmentExpense @ 0001045810-25-000023"
+      },
+      {
+        "id": "F18",
+        "label": "R&D expense",
+        "value": 8675000000.0,
+        "unit": "USD",
+        "period": "2024-01-28",
+        "source": "us-gaap:ResearchAndDevelopmentExpense @ 0001045810-26-000021"
+      },
+      {
+        "id": "F19",
+        "label": "R&D expense",
+        "value": 12914000000.0,
+        "unit": "USD",
+        "period": "2025-01-26",
+        "source": "us-gaap:ResearchAndDevelopmentExpense @ 0001045810-26-000021"
+      },
+      {
+        "id": "F20",
+        "label": "R&D expense",
+        "value": 18497000000.0,
+        "unit": "USD",
+        "period": "2026-01-25",
+        "source": "us-gaap:ResearchAndDevelopmentExpense @ 0001045810-26-000021"
+      },
+      {
+        "id": "F21",
+        "label": "Operating cash flow",
+        "value": 5641000000.0,
+        "unit": "USD",
+        "period": "2023-01-29",
+        "source": "us-gaap:NetCashProvidedByUsedInOperatingActivities @ 0001045810-25-000023"
+      },
+      {
+        "id": "F22",
+        "label": "Operating cash flow",
+        "value": 28090000000.0,
+        "unit": "USD",
+        "period": "2024-01-28",
+        "source": "us-gaap:NetCashProvidedByUsedInOperatingActivities @ 0001045810-26-000021"
+      },
+      {
+        "id": "F23",
+        "label": "Operating cash flow",
+        "value": 64089000000.0,
+        "unit": "USD",
+        "period": "2025-01-26",
+        "source": "us-gaap:NetCashProvidedByUsedInOperatingActivities @ 0001045810-26-000021"
+      },
+      {
+        "id": "F24",
+        "label": "Operating cash flow",
+        "value": 102718000000.0,
+        "unit": "USD",
+        "period": "2026-01-25",
+        "source": "us-gaap:NetCashProvidedByUsedInOperatingActivities @ 0001045810-26-000021"
+      },
+      {
+        "id": "F25",
+        "label": "Capital expenditures",
+        "value": 1833000000.0,
+        "unit": "USD",
+        "period": "2023-01-29",
+        "source": "us-gaap:PaymentsToAcquireProductiveAssets @ 0001045810-25-000023"
+      },
+      {
+        "id": "F26",
+        "label": "Capital expenditures",
+        "value": 1069000000.0,
+        "unit": "USD",
+        "period": "2024-01-28",
+        "source": "us-gaap:PaymentsToAcquireProductiveAssets @ 0001045810-26-000021"
+      },
+      {
+        "id": "F27",
+        "label": "Capital expenditures",
+        "value": 3236000000.0,
+        "unit": "USD",
+        "period": "2025-01-26",
+        "source": "us-gaap:PaymentsToAcquireProductiveAssets @ 0001045810-26-000021"
+      },
+      {
+        "id": "F28",
+        "label": "Capital expenditures",
+        "value": 6042000000.0,
+        "unit": "USD",
+        "period": "2026-01-25",
+        "source": "us-gaap:PaymentsToAcquireProductiveAssets @ 0001045810-26-000021"
+      },
+      {
+        "id": "F29",
+        "label": "Cash & equivalents",
+        "value": 3389000000.0,
+        "unit": "USD",
+        "period": "2023-01-29",
+        "source": "us-gaap:CashAndCashEquivalentsAtCarryingValue @ 0001045810-24-000029"
+      },
+      {
+        "id": "F30",
+        "label": "Cash & equivalents",
+        "value": 7280000000.0,
+        "unit": "USD",
+        "period": "2024-01-28",
+        "source": "us-gaap:CashAndCashEquivalentsAtCarryingValue @ 0001045810-25-000023"
+      },
+      {
+        "id": "F31",
+        "label": "Cash & equivalents",
+        "value": 8589000000.0,
+        "unit": "USD",
+        "period": "2025-01-26",
+        "source": "us-gaap:CashAndCashEquivalentsAtCarryingValue @ 0001045810-26-000021"
+      },
+      {
+        "id": "F32",
+        "label": "Cash & equivalents",
+        "value": 10605000000.0,
+        "unit": "USD",
+        "period": "2026-01-25",
+        "source": "us-gaap:CashAndCashEquivalentsAtCarryingValue @ 0001045810-26-000021"
+      },
+      {
+        "id": "F33",
+        "label": "Long-term debt",
+        "value": 10953000000.0,
+        "unit": "USD",
+        "period": "2023-01-29",
+        "source": "us-gaap:LongTermDebt @ 0001045810-24-000029"
+      },
+      {
+        "id": "F34",
+        "label": "Long-term debt",
+        "value": 9709000000.0,
+        "unit": "USD",
+        "period": "2024-01-28",
+        "source": "us-gaap:LongTermDebt @ 0001045810-25-000023"
+      },
+      {
+        "id": "F35",
+        "label": "Long-term debt",
+        "value": 8463000000.0,
+        "unit": "USD",
+        "period": "2025-01-26",
+        "source": "us-gaap:LongTermDebt @ 0001045810-26-000021"
+      },
+      {
+        "id": "F36",
+        "label": "Long-term debt",
+        "value": 8468000000.0,
+        "unit": "USD",
+        "period": "2026-01-25",
+        "source": "us-gaap:LongTermDebt @ 0001045810-26-000021"
+      },
+      {
+        "id": "F37",
+        "label": "Stockholders' equity",
+        "value": 22101000000.0,
+        "unit": "USD",
+        "period": "2023-01-29",
+        "source": "us-gaap:StockholdersEquity @ 0001045810-26-000021"
+      },
+      {
+        "id": "F38",
+        "label": "Stockholders' equity",
+        "value": 42978000000.0,
+        "unit": "USD",
+        "period": "2024-01-28",
+        "source": "us-gaap:StockholdersEquity @ 0001045810-26-000021"
+      },
+      {
+        "id": "F39",
+        "label": "Stockholders' equity",
+        "value": 79327000000.0,
+        "unit": "USD",
+        "period": "2025-01-26",
+        "source": "us-gaap:StockholdersEquity @ 0001045810-26-000021"
+      },
+      {
+        "id": "F40",
+        "label": "Stockholders' equity",
+        "value": 157293000000.0,
+        "unit": "USD",
+        "period": "2026-01-25",
+        "source": "us-gaap:StockholdersEquity @ 0001045810-26-000021"
+      },
+      {
+        "id": "F41",
+        "label": "Diluted shares",
+        "value": 25070000000.0,
+        "unit": "shares",
+        "period": "2023-01-29",
+        "source": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding @ 0001045810-25-000023"
+      },
+      {
+        "id": "F42",
+        "label": "Diluted shares",
+        "value": 24940000000.0,
+        "unit": "shares",
+        "period": "2024-01-28",
+        "source": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding @ 0001045810-26-000021"
+      },
+      {
+        "id": "F43",
+        "label": "Diluted shares",
+        "value": 24804000000.0,
+        "unit": "shares",
+        "period": "2025-01-26",
+        "source": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding @ 0001045810-26-000021"
+      },
+      {
+        "id": "F44",
+        "label": "Diluted shares",
+        "value": 24514000000.0,
+        "unit": "shares",
+        "period": "2026-01-25",
+        "source": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding @ 0001045810-26-000021"
+      },
+      {
+        "id": "F45",
+        "label": "Gross margin",
+        "value": 71.06808435754708,
+        "unit": "pct",
+        "period": "2026-01-25",
+        "source": "derived: F8 / F4"
+      },
+      {
+        "id": "F46",
+        "label": "Operating margin",
+        "value": 60.38168363141272,
+        "unit": "pct",
+        "period": "2026-01-25",
+        "source": "derived: F12 / F4"
+      },
+      {
+        "id": "F47",
+        "label": "Net margin",
+        "value": 55.60253406070261,
+        "unit": "pct",
+        "period": "2026-01-25",
+        "source": "derived: F16 / F4"
+      },
+      {
+        "id": "F48",
+        "label": "R&D as % of revenue",
+        "value": 8.565884652076058,
+        "unit": "pct",
+        "period": "2026-01-25",
+        "source": "derived: F20 / F4"
+      },
+      {
+        "id": "F49",
+        "label": "Return on equity",
+        "value": 76.33333969089534,
+        "unit": "pct",
+        "period": "2026-01-25",
+        "source": "derived: F16 / F40"
+      },
+      {
+        "id": "F50",
+        "label": "Revenue growth (YoY)",
+        "value": 65.47353579009479,
+        "unit": "pct",
+        "period": "2026-01-25",
+        "source": "derived: F4 / F3 - 1"
+      },
+      {
+        "id": "F51",
+        "label": "Revenue CAGR (3-yr)",
+        "value": 100.04509499443964,
+        "unit": "pct",
+        "period": "2026-01-25",
+        "source": "derived: (F4 / F1)^(1/3) - 1"
+      },
+      {
+        "id": "F52",
+        "label": "Free cash flow",
+        "value": 96676000000.0,
+        "unit": "USD",
+        "period": "2026-01-25",
+        "source": "derived: F24 - F28"
+      },
+      {
+        "id": "F53",
+        "label": "FCF margin",
+        "value": 44.770258129648326,
+        "unit": "pct",
+        "period": "2026-01-25",
+        "source": "derived: F52 / F4"
+      },
+      {
+        "id": "F54",
+        "label": "Net debt (LT debt - cash)",
+        "value": -2137000000.0,
+        "unit": "USD",
+        "period": "2026-01-25",
+        "source": "derived: F36 - F32"
+      },
+      {
+        "id": "F55",
+        "label": "Diluted share count change (YoY)",
+        "value": -1.169166263505883,
+        "unit": "pct",
+        "period": "2026-01-25",
+        "source": "derived: F44 / F43 - 1"
+      }
+    ],
+    "excerpts": [
+      {
+        "id": "S1",
+        "section": "Business",
+        "text": "NVIDIA pioneered accelerated computing to help solve the most challenging computational problems. NVIDIA is now a data center scale AI infrastructure company reshaping all industries. Our technology stack includes the foundational NVIDIA CUDA development platform that runs on all NVIDIA GPUs, as well as hundreds of domain-specific software libraries, frameworks, algorithms, software development kits, or SDKs, and application programming interfaces, or APIs. This deep and broad software stack accelerates the performance and facilitates the deployment of NVIDIA accelerated computing for computationally intensive workloads such as artificial intelligence, or AI, model training and inference, data analytics, scientific computing, robotics, and 3D graphics, with vertical-specific optimizations to address industries ranging from healthcare and telecom to automotive and manufacturing."
+      },
+      {
+        "id": "S2",
+        "section": "Business",
+        "text": "Introduced with the Blackwell architecture, our data-center-scale offerings feature extreme co-design where the infrastructure\u2019s chips, networking, systems, software, and algorithms are holistically architected and optimized to maximize performance and scale. Hundreds of thousands of GPUs can be interconnected to function as a single giant computer. This type of data center architecture and scale is needed for the development and deployment of modern AI and accelerated computing applications."
+      },
+      {
+        "id": "S3",
+        "section": "Business",
+        "text": "The GPU was initially used to simulate human imagination, enabling the virtual worlds of video games and films. Today, it also simulates human intelligence, enabling a deeper understanding of language, science, and the physical world. Its parallel processing capabilities, supported by tens of thousands of computing cores, are essential for deep learning algorithms. This form of AI, in which software writes itself by learning from large amounts of data, can serve as the brain of computers, robots, and self-driving cars that can perceive, understand and reason about the world. GPU-powered AI solutions are being developed by thousands of enterprises to deliver services and products that would have been immensely difficult or even impossible with traditional coding. Examples include generative AI, which can create new content such as text, code, images, audio, video, molecule structures, and recommendation systems; and agentic AI where systems of AI models work in concert to automatically complete a task."
+      },
+      {
+        "id": "S4",
+        "section": "Business",
+        "text": "NVIDIA has a platform strategy, bringing together hardware, systems, software, algorithms, libraries, AI models and training data sets, and services to create unique value for the markets we serve. While the computing requirements of these end markets are diverse, we address them with a unified underlying programmable architecture allowing us to support several multi-billion-dollar end markets with the same underlying technology by using a variety of software stacks developed either internally or by third-party developers and partners. The large and growing number of developers and installed base across our platforms strengthens our ecosystem and increases the value of our platform for our customers."
+      },
+      {
+        "id": "S5",
+        "section": "Business",
+        "text": "Innovation is at our core. We have invested over $76.7 billion in research and development since our inception, yielding inventions that are essential to modern computing. Our invention of the GPU in 1999 sparked the growth of the PC gaming market and redefined computer graphics. With our introduction of CUDA in 2006, we opened the parallel processing capabilities of our GPU to a broad range of compute-intensive applications, paving the way for the emergence of modern AI. In 2012, the AlexNet neural network, trained on NVIDIA GPUs, won the ImageNet computer image recognition competition, marking the \u201cBig Bang\u201d moment of AI. We introduced our first Tensor Core GPU in 2017, built from the ground-up for the new era of AI, and our first autonomous driving system-on-chips, or SoC, in 2018. Our acquisition of Mellanox in 2020 expanded our offerings to include networking, enabled our platforms to be data center scale, and led to the introduction of a new processor class \u2013 the data processing unit, or DPU. Over the past 5 years, we have built full software stacks that run on top of our GPUs and CUDA to bring AI to the world\u2019s largest industries, including NVIDIA DRIVE stack for autonomous driving, Clara for healthcare, Omniverse for physical AI applications, and NVIDIA AI Enterprise software \u2013 essentially an operating system for enterprise AI applications. In 2023, we introduced our first data center CPU, Grace, built for giant-scale AI and high-performance computing, or HPC. In 2024, we launched the NVIDIA Blackwell architecture \u2013 connecting 36 Grace CPUs and 72 Blackwell GPUs in a data center scale, liquid-cooled design \u2013 for real-time trillion-parameter inference and training. In fiscal year 2026, we launched and scaled the NVIDIA Blackwell Ultra platform, optimized for agentic, reasoning, and physical AI. Building on the architectural breakthroughs of Blackwell and leveraging Dynamo inference software, it delivers a significant increase in token throughput and reduction in cost per token compared to the Hopper generation. More recently, in support of market development, we have accelerated the release cadence of our open AI model platforms including NVIDIA Nemotron for agentic AI and Cosmos for physical AI. With a strong engineering culture, we drive fast, yet harmonized, product and technology innovations in all dimensions of computing including silicon, systems, networking, software and algorithms. More than half of our engineers work on software."
+      },
+      {
+        "id": "S6",
+        "section": "Business",
+        "text": "All major cloud service providers, or CSPs, AI model makers, and enterprises use our data center-scale infrastructure and computing platforms to accelerate the services and offerings they deliver to billions of end users and customers, including AI solutions and assistants, AI foundation models, advertising, search, recommendation systems, social networking, data processing, online shopping, live video, and translation. AI model makers use our infrastructure and software hosted at CSPs to develop, build and run AI models, product offerings, and services."
+      },
+      {
+        "id": "S7",
+        "section": "Business",
+        "text": "Enterprises and startups across a broad range of industries use our accelerated computing platforms to build new generative and agentic AI-enabled products and services, and/or to dramatically accelerate and reduce the costs of their workloads and workflows. The enterprise software industry uses them for new AI assistants, chatbots, and agents; the transportation industry for autonomous driving; the healthcare industry for accelerated and computer-aided drug discovery; and the financial services industry for customer support and fraud detection."
+      },
+      {
+        "id": "S8",
+        "section": "Business",
+        "text": "Researchers and developers use our computing solutions to accelerate a wide range of important applications, from simulating molecular dynamics to climate forecasting. With support for 6,000 applications, NVIDIA computing enables some of the most promising areas of discovery, from climate prediction to materials science and from wind tunnel simulation to genomics. Including GPUs and networking, NVIDIA powers over 78% of the supercomputers on the global TOP500 list, including 9 of the top 10 systems on the Green500 list."
+      },
+      {
+        "id": "S9",
+        "section": "Business",
+        "text": "Gamers choose NVIDIA GPUs to enjoy immersive, increasingly cinematic virtual worlds. In addition to serving the growing number of gamers, the market for PC GPUs is expanding because of the growing population of live streamers, broadcasters, artists, and creators. With the advent of generative and agentic AI, we expect a broader set of PC users to choose NVIDIA GPUs for running these applications locally on their PC, which is critical for privacy, latency, and cost-sensitive AI applications."
+      },
+      {
+        "id": "S10",
+        "section": "Business",
+        "text": "Professional artists, architects and designers use NVIDIA partner products accelerated with our GPUs and software platform for a range of creative, engineering, and design use cases, such as creating visual effects in movies or designing buildings and products. In addition, generative and agentic AI is expanding the market for our workstation-class GPUs, as more enterprise customers develop and deploy AI applications with their data on-premises. Headquartered in Santa Clara, California, NVIDIA was incorporated in California in April 1993 and reincorporated in Delaware in April 1998. We report our business results in two segments. The Compute & Networking segment includes our Data Center accelerated computing and networking platforms and AI solutions and software, and Automotive platforms and autonomous and electric vehicle solutions including software."
+      },
+      {
+        "id": "S11",
+        "section": "Business",
+        "text": "The Graphics segment includes GeForce GPUs for gaming and PCs, and Quadro/NVIDIA RTX GPUs for enterprise workstation graphics. We specialize in markets where our computing and AI infrastructure platforms can provide tremendous acceleration for applications. These platforms incorporate processors, interconnects, software, algorithms, systems, and services to deliver unique value. Our platforms address four large markets where our expertise is critical: Data Center, Gaming, Professional Visualization, and Automotive."
+      },
+      {
+        "id": "S12",
+        "section": "Business",
+        "text": "The NVIDIA Data Center platform is focused on accelerating compute-intensive workloads, such as AI, data processing, graphics, robotics, and scientific computing, delivering superior total cost of ownership relative to conventional CPU-only approaches. It is deployed in cloud, hyperscale, on-premises and edge data centers. The platform consists of data center compute and networking infrastructure offerings typically delivered to customers as rack-scale systems, subsystems, or modules, along with software and services. Our Data Center infrastructure systems include supercomputing platforms and servers, bringing together our higher performance, energy efficient GPUs, CPUs, interconnects, and fully optimized AI and HPC software stacks. In addition, they include a growing body of acceleration libraries, AI models and training data sets, APIs, SDKs, and domain-specific application frameworks."
+      },
+      {
+        "id": "S13",
+        "section": "Business",
+        "text": "Our networking offerings include NVLink interconnects and switches, end-to-end platforms for InfiniBand and Ethernet, consisting of network adapters, cables, DPUs, switch chips and systems, as well as software. This has enabled us to architect data center-scale computing platforms that can interconnect up to hundreds of thousands of compute nodes with high-performance networking. Fueled by an expansion in AI and HPC workloads, the data center has become the new unit of computing, with networking as an integral part. In fiscal year 2026, we introduced NVIDIA NVLink Fusion to enable hyperscalers and custom ASIC designers to integrate custom CPUs and XPUs with our platform."
+      },
+      {
+        "id": "S14",
+        "section": "Business",
+        "text": "Our customers include all major public and private cloud providers, AI model makers, enterprises and startups, and public sector entities. We work with industry leaders to help build or transform their applications and data center infrastructure. Some of our direct customers include original equipment manufacturers, or OEMs, original device manufacturers, or ODMs, system integrators and distributors which we partner with to help bring our products to market. We also have partnerships in automotive, healthcare, financial services, manufacturing, retail, and technology among others, to accelerate the adoption of AI."
+      },
+      {
+        "id": "S15",
+        "section": "Risk Factors",
+        "text": ",\u201d our Consolidated Financial Statements and related Notes thereto, as well as other cautionary statements and risks described elsewhere in this Annual Report on Form 10-K, before deciding to purchase, hold, or sell shares of our common stock. NVIDIA pioneered accelerated computing to help solve the most challenging computational problems. Since our original focus on PC graphics, we have expanded to several other large and important computationally intensive fields. Fueled by the sustained demand for exceptional 3D graphics and the scale of the gaming market, NVIDIA has leveraged its GPU architecture to create platforms for scientific computing, AI, data science, autonomous vehicles, robotics, and digital twin applications. NVIDIA is now a data center scale AI infrastructure company reshaping all industries."
+      },
+      {
+        "id": "S16",
+        "section": "Risk Factors",
+        "text": "Our two operating segments are \"Compute & Networking\" and \"Graphics.\" Refer to Note 16 of the Notes to the Consolidated Financial Statements in Part IV, Item 15 of this Annual Report on Form 10-K for additional information. Headquartered in Santa Clara, California, NVIDIA was incorporated in California in April 1993 and reincorporated in Delaware in April 1998. Recent Developments, Future Objectives and Challenges Revenue growth in fiscal year 2026 was driven by data center compute and networking platforms for accelerated computing and AI solutions. Our Blackwell architectures represented the majority of our Data Center revenue."
+      },
+      {
+        "id": "S17",
+        "section": "Risk Factors",
+        "text": "The availability of data centers, energy, and capital to support the buildout of NVIDIA AI infrastructure by our customers and partners is crucial, and any shortage of these or other necessary resources could impact our future revenue and financial performance. Expanding energy capacity to meet demand is a complex, multi-year process that involves significant regulatory, technical, and construction challenges. In addition, access to capital can be particularly constrained for less-capitalized companies, which may face difficulties securing financing for large-scale infrastructure projects. These limitations could delay customer and partner deployments or reduce the scale of accelerated computing and AI adoption."
+      },
+      {
+        "id": "S18",
+        "section": "Risk Factors",
+        "text": "We continue to execute Data Center compute product introductions, bringing new advanced architectures on a one-year product cadence, including our Rubin platform. We began shipping production units of our new Blackwell Ultra platforms including GB300 in the second quarter of fiscal year 2026. The complexity of our product transitions and sophisticated system configurations has and may in the future cause delays in production and create challenges in managing supply and demand. This could further result in revenue volatility, quality issues, increased inventory provisions, decreases in product yields and higher material costs, and/or increased warranty costs. Customers may postpone purchasing new architectures or may adopt new technologies more gradually than anticipated, affecting our revenue timing and supply chain expenses."
+      },
+      {
+        "id": "S19",
+        "section": "Risk Factors",
+        "text": "In April 2025, the USG informed us that a license is required for exports of our H20 product into the China market. As a result of these requirements, we incurred a $4.5 billion charge in the first quarter of fiscal year 2026 associated with H20 for excess inventory and purchase obligations, as the demand for H20 diminished. In August 2025, the USG granted licenses that would allow us to ship certain H20 products to certain China-based customers. We generated approximately $60 million in H20 revenue under those licenses."
+      },
+      {
+        "id": "S20",
+        "section": "Risk Factors",
+        "text": "In February 2026, the USG granted a license that would allow us to ship small amounts of H200 products to specific China-based customers. To date, we have not generated any revenue under the H200 licensing program, and do not yet know whether any imports will be allowed into China. The license requires that the H200s go through an inspection process in the United States prior to any shipment to the customer. As a result, any H200 shipped under the new licensing program will be subject to a 25% tariff upon importation into the United States. The recent rise in high-quality open-source foundation models is making advanced AI capabilities broadly accessible. Open-source AI is dependent on developer adoption and if deployed on our competitors\u2019 platforms, it could reduce demand for our products and services."
+      },
+      {
+        "id": "S21",
+        "section": "Risk Factors",
+        "text": "While currently our supply chain is mainly concentrated in Asia, we are expanding into the U.S. and Latin America. These moves are expected to strengthen our supply chain, add resiliency and redundancy, and meet the growing demand for AI infrastructure. Our ability to increase manufacturing capabilities will depend on the local region's manufacturing ecosystem's capacity to ramp production supply to the required volume and on a timely basis. We have made, and expect to continue making, investments that support our technology roadmap and the broader AI ecosystem. In fiscal year 2026, we made the following investments:"
+      },
+      {
+        "id": "S22",
+        "section": "Risk Factors",
+        "text": "We invested $17.5 billion in private companies and infrastructure funds, primarily to support early\u2011stage startups. These investments include AI model makers that purchase our products directly or through CSPs. Many of these investments are illiquid and non\u2011marketable. The related early-stage startups may not become profitable in the near term, or at all, and there can be no assurance that we will realize a return on our investments. We made investments in publicly-held equity securities where the value may fluctuate significantly due to changes in stock prices and could adversely affect our financial results."
+      },
+      {
+        "id": "S23",
+        "section": "Risk Factors",
+        "text": "To support the build-out of complex datacenter infrastructures, we enter into commercial arrangements, including guarantees with partners. We provided $3.5 billion in land, power, and shell guarantees to early\u2011stage companies, generally over multi\u2011year periods. If the escrow and the partners' operating activities are not sufficient to cover an event of default under these guarantees, we may elect to assume the underlying leases for internal use or sublease them to third parties."
+      },
+      {
+        "id": "S24",
+        "section": "Risk Factors",
+        "text": "Macroeconomic factors, including tariffs, inflation, interest rate changes, capital market volatility, global supply chain constraints, and global economic and geopolitical developments, have direct and indirect impacts on our results of operations, particularly demand for our products. While difficult to isolate and quantify, these macroeconomic factors impact our supply chain and manufacturing costs, employee wages, costs for capital equipment, the value of our investments, revenue and competitive position. Our product and solution pricing generally does not fluctuate with short-term changes in our costs. Within our supply chain, we continuously manage product availability and costs with our vendors. Refer to \u201cItem 1A. Risk Factors \u2013 Risks Related to Regulatory, Legal, Our Stock and Other Matters\u201d for a further discussion of the potential impact of these factors on our business."
+      },
+      {
+        "id": "S25",
+        "section": "Risk Factors",
+        "text": "Revenue for fiscal year 2026 was $215.9 billion, up 65% from a year ago. Data Center revenue for fiscal year 2026 was up 68% from a year ago. The strong year-on-year growth was driven by the major platform shifts \u2013 accelerated computing and AI. Gaming revenue for fiscal year 2026 was up 41% from a year ago, driven by strong Blackwell demand. We expect supply constraints to be a headwind to Gaming in the first quarter of fiscal 2027 and beyond. Professional Visualization revenue for fiscal year 2026 was up 70% from a year ago, driven by exceptional demand for Blackwell as well as the launch of our new DGX Spark. Automotive revenue for fiscal year 2026 was up 39% from a year ago, driven by continued adoption of our self-driving platforms."
+      },
+      {
+        "id": "S26",
+        "section": "Risk Factors",
+        "text": "Gross margin decreased in fiscal year 2026 as our business model transitioned from offering Hopper HGX systems to Blackwell full-scale datacenter solutions. The gross margin decrease was also impacted by a $4.5 billion charge associated with H20 excess inventory and purchase obligations. Operating expenses for fiscal year 2026 were up 41% from a year ago, driven by higher compensation and benefits expenses due to employee growth and compute and infrastructure costs."
+      },
+      {
+        "id": "S27",
+        "section": "Risk Factors",
+        "text": "Our consolidated financial statements are prepared in accordance with accounting principles generally accepted in the United States, or U.S. GAAP. The preparation of these financial statements requires us to make estimates and judgments that affect the reported amounts of assets, liabilities, revenue, cost of revenue, expenses and related disclosure of contingencies. Critical accounting estimates are those estimates that involve a significant level of estimation uncertainty and could have a material impact on our financial condition or results of operations. We have critical accounting estimates in the areas of inventories, income taxes, non-marketable equity securities, and revenue recognition. Refer to Note 1 of the Notes to the Consolidated Financial Statements in Part IV, Item 15 of this Annual Report on Form 10-K for a summary of significant accounting policies."
+      },
+      {
+        "id": "S28",
+        "section": "Risk Factors",
+        "text": "We charge cost of sales for inventory provisions to write-down our inventory to the lower of cost or net realizable value or for obsolete or excess inventory, and for excess product purchase commitments. Most of our inventory provisions relate to excess quantities of products or components, based on our inventory levels and future product purchase commitments compared to assumptions about future demand and market conditions, which requires management judgment."
+      },
+      {
+        "id": "S29",
+        "section": "Risk Factors",
+        "text": "Situations that may result in excess or obsolete inventory or excess product purchase commitments include changes in business and economic conditions, changes in market conditions, sudden and significant decreases in demand for our products, including potential cancellation or deferral of customer purchase orders, inventory obsolescence because of changing technology and customer requirements, new product introductions resulting in less demand for existing products or inconsistent spikes in demand, failure to estimate customer demand properly, ordering in advance of historical lead-times, government regulations and the impact of changes in future demand, or increase in demand for competitive products, including competitive actions."
+      },
+      {
+        "id": "S30",
+        "section": "Risk Factors",
+        "text": "The net effect on our gross margin from inventory provisions and sales of items previously written down was an unfavorable impact of 2.6% in fiscal year 2026 and 2.3% in fiscal year 2025. Our inventory and capacity purchase commitments are based on forecasts of future customer demand and consider our third-party manufacturers' lead times and constraints. Our manufacturing lead times can be and have been long, and in some cases, extended beyond twelve months for some products. We may place non-cancellable inventory orders for certain product components in advance of our historical lead times, pay premiums and provide deposits to secure future supply and capacity. We also adjust to other market factors, such as product offerings and pricing actions by our competitors, new product transitions, and macroeconomic conditions - all of which may impact demand for our products."
+      },
+      {
+        "id": "S31",
+        "section": "Risk Factors",
+        "text": "Refer to the Gross Profit and Gross Margin discussion below in this Management's Discussion and Analysis for further discussion."
+      },
+      {
+        "id": "S32",
+        "section": "Risk Factors",
+        "text": "We are subject to income taxes in the U.S. and foreign jurisdictions. Our calculation of deferred tax assets and liabilities is based on certain estimates and judgments and involves dealing with uncertainties in the application of complex tax laws. Our estimates of deferred tax assets and liabilities may change based, in part, on added certainty or finality to an anticipated outcome, changes in accounting standards or tax laws in the U.S. or foreign jurisdictions where we operate, or changes in other facts or circumstances. In addition, we recognize liabilities for potential U.S. and foreign income tax contingencies based on our estimate of whether, and the extent to which, additional taxes may be due. If we determine that payment of these amounts is unnecessary or if the recorded tax liability is less than our current assessment, we may be required to recognize an income tax benefit or additional income tax expense in our financial statements accordingly."
+      },
+      {
+        "id": "S33",
+        "section": "MD&A",
+        "text": "and Analysis of Financial Condition and Results of Operations The following discussion and analysis of our financial condition and results of operations should be read in conjunction with \u201cItem 1A. Risk Factors,\u201d our Consolidated Financial Statements and related Notes thereto, as well as other cautionary statements and risks described elsewhere in this Annual Report on Form 10-K, before deciding to purchase, hold, or sell shares of our common stock."
+      },
+      {
+        "id": "S34",
+        "section": "MD&A",
+        "text": "NVIDIA pioneered accelerated computing to help solve the most challenging computational problems. Since our original focus on PC graphics, we have expanded to several other large and important computationally intensive fields. Fueled by the sustained demand for exceptional 3D graphics and the scale of the gaming market, NVIDIA has leveraged its GPU architecture to create platforms for scientific computing, AI, data science, autonomous vehicles, robotics, and digital twin applications. NVIDIA is now a data center scale AI infrastructure company reshaping all industries. Our two operating segments are \"Compute & Networking\" and \"Graphics.\" Refer to Note 16 of the Notes to the Consolidated Financial Statements in Part IV, Item 15 of this Annual Report on Form 10-K for additional information."
+      },
+      {
+        "id": "S35",
+        "section": "MD&A",
+        "text": "Headquartered in Santa Clara, California, NVIDIA was incorporated in California in April 1993 and reincorporated in Delaware in April 1998. Recent Developments, Future Objectives and Challenges Revenue growth in fiscal year 2026 was driven by data center compute and networking platforms for accelerated computing and AI solutions. Our Blackwell architectures represented the majority of our Data Center revenue."
+      },
+      {
+        "id": "S36",
+        "section": "MD&A",
+        "text": "The availability of data centers, energy, and capital to support the buildout of NVIDIA AI infrastructure by our customers and partners is crucial, and any shortage of these or other necessary resources could impact our future revenue and financial performance. Expanding energy capacity to meet demand is a complex, multi-year process that involves significant regulatory, technical, and construction challenges. In addition, access to capital can be particularly constrained for less-capitalized companies, which may face difficulties securing financing for large-scale infrastructure projects. These limitations could delay customer and partner deployments or reduce the scale of accelerated computing and AI adoption."
+      },
+      {
+        "id": "S37",
+        "section": "MD&A",
+        "text": "We continue to execute Data Center compute product introductions, bringing new advanced architectures on a one-year product cadence, including our Rubin platform. We began shipping production units of our new Blackwell Ultra platforms including GB300 in the second quarter of fiscal year 2026. The complexity of our product transitions and sophisticated system configurations has and may in the future cause delays in production and create challenges in managing supply and demand. This could further result in revenue volatility, quality issues, increased inventory provisions, decreases in product yields and higher material costs, and/or increased warranty costs. Customers may postpone purchasing new architectures or may adopt new technologies more gradually than anticipated, affecting our revenue timing and supply chain expenses."
+      },
+      {
+        "id": "S38",
+        "section": "MD&A",
+        "text": "In April 2025, the USG informed us that a license is required for exports of our H20 product into the China market. As a result of these requirements, we incurred a $4.5 billion charge in the first quarter of fiscal year 2026 associated with H20 for excess inventory and purchase obligations, as the demand for H20 diminished. In August 2025, the USG granted licenses that would allow us to ship certain H20 products to certain China-based customers. We generated approximately $60 million in H20 revenue under those licenses."
+      },
+      {
+        "id": "S39",
+        "section": "MD&A",
+        "text": "In February 2026, the USG granted a license that would allow us to ship small amounts of H200 products to specific China-based customers. To date, we have not generated any revenue under the H200 licensing program, and do not yet know whether any imports will be allowed into China. The license requires that the H200s go through an inspection process in the United States prior to any shipment to the customer. As a result, any H200 shipped under the new licensing program will be subject to a 25% tariff upon importation into the United States. The recent rise in high-quality open-source foundation models is making advanced AI capabilities broadly accessible. Open-source AI is dependent on developer adoption and if deployed on our competitors\u2019 platforms, it could reduce demand for our products and services."
+      },
+      {
+        "id": "S40",
+        "section": "MD&A",
+        "text": "While currently our supply chain is mainly concentrated in Asia, we are expanding into the U.S. and Latin America. These moves are expected to strengthen our supply chain, add resiliency and redundancy, and meet the growing demand for AI infrastructure. Our ability to increase manufacturing capabilities will depend on the local region's manufacturing ecosystem's capacity to ramp production supply to the required volume and on a timely basis. We have made, and expect to continue making, investments that support our technology roadmap and the broader AI ecosystem. In fiscal year 2026, we made the following investments:"
+      },
+      {
+        "id": "S41",
+        "section": "MD&A",
+        "text": "We invested $17.5 billion in private companies and infrastructure funds, primarily to support early\u2011stage startups. These investments include AI model makers that purchase our products directly or through CSPs. Many of these investments are illiquid and non\u2011marketable. The related early-stage startups may not become profitable in the near term, or at all, and there can be no assurance that we will realize a return on our investments. We made investments in publicly-held equity securities where the value may fluctuate significantly due to changes in stock prices and could adversely affect our financial results."
+      },
+      {
+        "id": "S42",
+        "section": "MD&A",
+        "text": "To support the build-out of complex datacenter infrastructures, we enter into commercial arrangements, including guarantees with partners. We provided $3.5 billion in land, power, and shell guarantees to early\u2011stage companies, generally over multi\u2011year periods. If the escrow and the partners' operating activities are not sufficient to cover an event of default under these guarantees, we may elect to assume the underlying leases for internal use or sublease them to third parties."
+      },
+      {
+        "id": "S43",
+        "section": "MD&A",
+        "text": "Macroeconomic factors, including tariffs, inflation, interest rate changes, capital market volatility, global supply chain constraints, and global economic and geopolitical developments, have direct and indirect impacts on our results of operations, particularly demand for our products. While difficult to isolate and quantify, these macroeconomic factors impact our supply chain and manufacturing costs, employee wages, costs for capital equipment, the value of our investments, revenue and competitive position. Our product and solution pricing generally does not fluctuate with short-term changes in our costs. Within our supply chain, we continuously manage product availability and costs with our vendors. Refer to \u201cItem 1A. Risk Factors \u2013 Risks Related to Regulatory, Legal, Our Stock and Other Matters\u201d for a further discussion of the potential impact of these factors on our business."
+      },
+      {
+        "id": "S44",
+        "section": "MD&A",
+        "text": "Revenue for fiscal year 2026 was $215.9 billion, up 65% from a year ago. Data Center revenue for fiscal year 2026 was up 68% from a year ago. The strong year-on-year growth was driven by the major platform shifts \u2013 accelerated computing and AI. Gaming revenue for fiscal year 2026 was up 41% from a year ago, driven by strong Blackwell demand. We expect supply constraints to be a headwind to Gaming in the first quarter of fiscal 2027 and beyond. Professional Visualization revenue for fiscal year 2026 was up 70% from a year ago, driven by exceptional demand for Blackwell as well as the launch of our new DGX Spark. Automotive revenue for fiscal year 2026 was up 39% from a year ago, driven by continued adoption of our self-driving platforms."
+      },
+      {
+        "id": "S45",
+        "section": "MD&A",
+        "text": "Gross margin decreased in fiscal year 2026 as our business model transitioned from offering Hopper HGX systems to Blackwell full-scale datacenter solutions. The gross margin decrease was also impacted by a $4.5 billion charge associated with H20 excess inventory and purchase obligations. Operating expenses for fiscal year 2026 were up 41% from a year ago, driven by higher compensation and benefits expenses due to employee growth and compute and infrastructure costs."
+      },
+      {
+        "id": "S46",
+        "section": "MD&A",
+        "text": "Our consolidated financial statements are prepared in accordance with accounting principles generally accepted in the United States, or U.S. GAAP. The preparation of these financial statements requires us to make estimates and judgments that affect the reported amounts of assets, liabilities, revenue, cost of revenue, expenses and related disclosure of contingencies. Critical accounting estimates are those estimates that involve a significant level of estimation uncertainty and could have a material impact on our financial condition or results of operations. We have critical accounting estimates in the areas of inventories, income taxes, non-marketable equity securities, and revenue recognition. Refer to Note 1 of the Notes to the Consolidated Financial Statements in Part IV, Item 15 of this Annual Report on Form 10-K for a summary of significant accounting policies."
+      },
+      {
+        "id": "S47",
+        "section": "MD&A",
+        "text": "We charge cost of sales for inventory provisions to write-down our inventory to the lower of cost or net realizable value or for obsolete or excess inventory, and for excess product purchase commitments. Most of our inventory provisions relate to excess quantities of products or components, based on our inventory levels and future product purchase commitments compared to assumptions about future demand and market conditions, which requires management judgment."
+      },
+      {
+        "id": "S48",
+        "section": "MD&A",
+        "text": "Situations that may result in excess or obsolete inventory or excess product purchase commitments include changes in business and economic conditions, changes in market conditions, sudden and significant decreases in demand for our products, including potential cancellation or deferral of customer purchase orders, inventory obsolescence because of changing technology and customer requirements, new product introductions resulting in less demand for existing products or inconsistent spikes in demand, failure to estimate customer demand properly, ordering in advance of historical lead-times, government regulations and the impact of changes in future demand, or increase in demand for competitive products, including competitive actions."
+      }
+    ]
+  },
+  "memo": {
+    "company": "NVIDIA CORP",
+    "ticker": "NVDA",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+    "thesis": {
+      "text": "NVIDIA has scaled from a GPU/gaming company into a data center scale AI infrastructure company, with revenue growing from $27.0B in FY2023 to $215.9B in FY2026 (65.5% YoY, 100.0% 3-year CAGR) and industry-leading margins and cash generation. However, the FY2026 results also show early signs of margin quality erosion (Hopper-to-Blackwell transition costs, a $4.5B H20 charge, and a worsening inventory-provision drag), a largely closed China market under export controls, and a growing web of circular customer financing and contingent infrastructure guarantees that complicate a clean 'platform moat' narrative. The core franchise (CUDA ecosystem, full-stack co-design, networking lock-in) remains intact, but the thesis must now weigh demand-side bottlenecks and disclosure-flagged risks alongside the growth and profitability data.",
+      "citations": [
+        "S1",
+        "F1",
+        "F4",
+        "F50",
+        "F51",
+        "S26",
+        "S45",
+        "S30",
+        "S19",
+        "S38",
+        "S22",
+        "S41"
+      ],
+      "author": "PM",
+      "severity": null
+    },
+    "bull": [
+      {
+        "text": "Revenue grew from $27.0B (FY2023) to $215.9B (FY2026), a 65.5% YoY increase and 100.0% 3-year CAGR, with gross margin at 71.1%, operating margin 60.4%, and net margin 55.6% in FY2026.",
+        "citations": [
+          "F1",
+          "F4",
+          "F50",
+          "F51",
+          "F45",
+          "F46",
+          "F47"
+        ],
+        "author": "PM",
+        "severity": null
+      },
+      {
+        "text": "Cash generation is exceptional and closely tracks earnings: operating cash flow reached $102.7B versus net income of $120.1B, with free cash flow of $96.7B (44.8% FCF margin) in FY2026, up from operating cash flow of just $5.6B in FY2023.",
+        "citations": [
+          "F24",
+          "F16",
+          "F52",
+          "F53",
+          "F21"
+        ],
+        "author": "PM",
+        "severity": null
+      },
+      {
+        "text": "The balance sheet is conservatively levered with net debt of -$2.1B (long-term debt $8.5B vs. cash $10.6B), and stockholders' equity grew from $22.1B (FY2023) to $157.3B (FY2026), supporting a 76.3% return on equity.",
+        "citations": [
+          "F54",
+          "F36",
+          "F32",
+          "F37",
+          "F40",
+          "F49"
+        ],
+        "author": "PM",
+        "severity": null
+      },
+      {
+        "text": "The durable moat rests on the CUDA software platform and full-stack co-design (hardware, networking, systems, software, algorithms), exemplified by Blackwell's ability to interconnect hundreds of thousands of GPUs as a single computer, reinforced by cumulative R&D investment of over $76.7 billion since inception and NVLink Fusion extending the ecosystem into hyperscaler custom silicon.",
+        "citations": [
+          "S1",
+          "S2",
+          "S4",
+          "S5",
+          "S13"
+        ],
+        "author": "PM",
+        "severity": null
+      },
+      {
+        "text": "Shareholder dilution is not a concern: diluted share count declined from 25.07B (FY2023) to 24.51B (FY2026), a -1.2% YoY change in the most recent year.",
+        "citations": [
+          "F41",
+          "F44",
+          "F55"
+        ],
+        "author": "PM",
+        "severity": null
+      }
+    ],
+    "bear": [
+      {
+        "text": "FY2026 gross margin compression was not simple scaling but was driven by the Hopper-to-Blackwell product transition and a $4.5 billion H20 charge, with the unfavorable inventory-provision impact on gross margin worsening from 2.3% in FY2025 to 2.6% in FY2026 \u2014 a deteriorating trend in inventory risk exposure that undercuts a pure 'operating leverage' narrative.",
+        "citations": [
+          "S26",
+          "S45",
+          "S30"
+        ],
+        "author": "PM",
+        "severity": null
+      },
+      {
+        "text": "The China AI chip market has been largely closed off: the H20 license requirement drove a $4.5 billion charge, licensed H20 revenue was only about $60 million, and the new H200 pathway has generated zero revenue to date, carries a 25% U.S. import tariff, and has no certainty of Chinese import approval \u2014 a significant, unresolved demand overhang.",
+        "citations": [
+          "S19",
+          "S38",
+          "S20",
+          "S39"
+        ],
+        "author": "PM",
+        "severity": null
+      },
+      {
+        "text": "Revenue growth quality is compromised by circular financing risk: NVIDIA invested $17.5 billion in private companies and infrastructure funds, primarily early-stage AI startups that are themselves NVIDIA customers, many of which may never become profitable, raising the possibility that some reported demand is indirectly self-funded rather than organic.",
+        "citations": [
+          "S22",
+          "S41"
+        ],
+        "author": "PM",
+        "severity": null
+      },
+      {
+        "text": "NVIDIA has taken on $3.5 billion in land, power, and shell guarantees to early-stage datacenter partners; if partner operations and escrow prove insufficient, NVIDIA may have to assume the underlying leases itself, converting counterparty risk into direct real-estate/infrastructure liability not reflected in headline margin and cash flow metrics.",
+        "citations": [
+          "S23",
+          "S42"
+        ],
+        "author": "PM",
+        "severity": null
+      },
+      {
+        "text": "Continued growth depends on customers' and partners' ability to build out data centers, but the filing explicitly flags data center, energy, and capital availability as binding constraints, with multi-year energy capacity expansion facing significant regulatory, technical, and construction challenges that could delay deployments and cap AI adoption \u2014 a demand-side risk outside NVIDIA's control.",
+        "citations": [
+          "S17",
+          "S36"
+        ],
+        "author": "PM",
+        "severity": null
+      },
+      {
+        "text": "The headline 100.0% 3-year revenue CAGR overstates current momentum since the most recent year's growth of 65.5% YoY is well below that average, and management guides to a near-term Gaming headwind from supply constraints in Q1 FY2027 despite 41% YoY Gaming growth in FY2026, suggesting the hyper-growth trajectory may not extrapolate cleanly.",
+        "citations": [
+          "F50",
+          "F51",
+          "S25",
+          "S44"
+        ],
+        "author": "PM",
+        "severity": null
+      },
+      {
+        "text": "Despite being framed as an asset-light platform business, capital expenditures have accelerated sharply from $1.1B (FY2024) to $3.2B (FY2025) to $6.0B (FY2026), indicating rising capital intensity.",
+        "citations": [
+          "F26",
+          "F27",
+          "F28"
+        ],
+        "author": "PM",
+        "severity": null
+      }
+    ],
+    "questions": [
+      "What is the trajectory of H20/H200 China revenue over the next 2-3 quarters, and does management have a credible plan if Chinese import approval is denied entirely?",
+      "How much of NVIDIA's reported Data Center revenue growth is attributable to customers that also received NVIDIA equity or debt investment, and how correlated is investment timing with subsequent purchase orders?",
+      "What are the specific terms, expiration, and expected loss-given-default assumptions on the $3.5 billion land/power/shell guarantees, and how large could this contingent exposure grow?",
+      "What is the expected useful life and obsolescence risk of Blackwell-generation inventory given the one-year product cadence and history of write-downs (H20 charge, rising inventory-provision drag)?",
+      "How dependent is FY2027 guidance on continued hyperscaler capex growth, and what specific data center/energy capacity constraints have customers flagged as limiting near-term deployment?",
+      "What percentage of Data Center revenue is concentrated among the top 5-10 customers, and how much of that is early-stage/non-investment-grade counterparties versus established hyperscalers?",
+      "Is the rising capex trend (from $1.1B to $3.2B to $6.0B) a precursor to NVIDIA building more of its own infrastructure/manufacturing capacity, and what would that mean for the 'asset-light' characterization going forward?",
+      "How does management define and quantify 'excess inventory and purchase obligations' risk for the next generation (Rubin) product transition, given the H20/Blackwell precedent?"
+    ],
+    "verdict": "Dig deeper",
+    "verdict_rationale": {
+      "text": "The fundamental growth, margin, and cash-generation profile is exceptional and the platform moat (CUDA, full-stack co-design, networking) appears durable, but the red team surfaced multiple high-severity, filing-documented risks \u2014 a $4.5B H20 charge and worsening inventory-provision drag, a largely closed China market with an untested and tariff-burdened H200 pathway, $17.5B in circular customer financing, and $3.5B in contingent infrastructure guarantees \u2014 that are not fully resolved by current disclosures and warrant deeper diligence before forming a durable view on growth quality and forward earnings power.",
+      "citations": [
+        "S26",
+        "S45",
+        "S30",
+        "S19",
+        "S38",
+        "S20",
+        "S39",
+        "S22",
+        "S41",
+        "S23",
+        "S42"
+      ],
+      "author": "PM",
+      "severity": null
+    },
+    "analyst_claims": [
+      {
+        "text": "NVIDIA has transformed from a GPU/gaming company into a 'data center scale AI infrastructure company,' with revenue growing from $27.0B in FY2023 to $215.9B in FY2026, a 65.5% YoY increase in the most recent year and a 100.0% 3-year CAGR.",
+        "citations": [
+          "S1",
+          "F1",
+          "F4",
+          "F50",
+          "F51"
+        ],
+        "author": "Business analyst",
+        "severity": null
+      },
+      {
+        "text": "The company reports two segments: Compute & Networking (Data Center accelerated computing/networking and Automotive) and Graphics (GeForce gaming GPUs and Quadro/RTX professional visualization), addressing four markets \u2014 Data Center, Gaming, Professional Visualization, and Automotive.",
+        "citations": [
+          "S10",
+          "S11"
+        ],
+        "author": "Business analyst",
+        "severity": null
+      },
+      {
+        "text": "Profitability has scaled dramatically alongside revenue: gross margin reached 71.1% and operating margin 60.4% in FY2026, up from operating income of just $4.2B on $27.0B revenue in FY2023, reflecting strong operating leverage as the AI infrastructure buildout accelerated.",
+        "citations": [
+          "F45",
+          "F46",
+          "F9",
+          "F1"
+        ],
+        "author": "Business analyst",
+        "severity": null
+      },
+      {
+        "text": "NVIDIA's durable advantage rests on its CUDA software platform and full-stack co-design strategy \u2014 hardware, networking, systems, software and algorithms \u2014 exemplified by the Blackwell architecture that interconnects hundreds of thousands of GPUs as a single computer, creating high switching costs via ecosystem lock-in.",
+        "citations": [
+          "S1",
+          "S2",
+          "S4"
+        ],
+        "author": "Business analyst",
+        "severity": null
+      },
+      {
+        "text": "The company has invested over $76.7 billion in cumulative R&D since inception, with R&D expense rising from $7.3B (FY2023) to $18.5B (FY2026), representing 8.6% of revenue in the latest fiscal year, underscoring continuous innovation investment (Tensor Core, Grace CPU, Blackwell, Nemotron/Cosmos AI models).",
+        "citations": [
+          "S5",
+          "F17",
+          "F20",
+          "F48"
+        ],
+        "author": "Business analyst",
+        "severity": null
+      },
+      {
+        "text": "NVIDIA's networking business (NVLink, InfiniBand, Ethernet, DPUs) extends its platform beyond compute chips into data-center-scale interconnects, including the FY2026 introduction of NVLink Fusion enabling hyperscalers to integrate custom CPUs/XPUs with NVIDIA's platform, deepening the ecosystem moat while acknowledging custom-silicon competitive pressure.",
+        "citations": [
+          "S13"
+        ],
+        "author": "Business analyst",
+        "severity": null
+      },
+      {
+        "text": "Cash generation has scaled with the business: operating cash flow grew from $5.6B (FY2023) to $102.7B (FY2026) and free cash flow reached $96.7B (44.8% FCF margin) in FY2026, while capex remained modest at $6.0B, indicating an asset-light, high-margin model despite heavy R&D and platform investment.",
+        "citations": [
+          "F21",
+          "F24",
+          "F52",
+          "F53",
+          "F28"
+        ],
+        "author": "Business analyst",
+        "severity": null
+      },
+      {
+        "text": "Revenue grew from $27.0B in FY2023 to $215.9B in FY2026, with the most recent year showing 65.5% YoY growth and a 100.0% 3-year revenue CAGR, indicating sustained hyper-growth.",
+        "citations": [
+          "F1",
+          "F4",
+          "F50",
+          "F51"
+        ],
+        "author": "Financial analyst",
+        "severity": null
+      },
+      {
+        "text": "Profitability has scaled with growth: gross margin reached 71.1%, operating margin 60.4%, and net margin 55.6% in FY2026, with operating income rising from $4.2B in FY2023 to $130.4B in FY2026.",
+        "citations": [
+          "F45",
+          "F46",
+          "F47",
+          "F9",
+          "F12"
+        ],
+        "author": "Financial analyst",
+        "severity": null
+      },
+      {
+        "text": "Cash generation is strong and closely tracks earnings: operating cash flow was $102.7B versus net income of $120.1B in FY2026, and free cash flow was $96.7B, a 44.8% FCF margin.",
+        "citations": [
+          "F24",
+          "F16",
+          "F52",
+          "F53"
+        ],
+        "author": "Financial analyst",
+        "severity": null
+      },
+      {
+        "text": "Capital intensity remains low relative to cash flow, with capex of $6.0B in FY2026 versus operating cash flow of $102.7B, though capex has grown from $1.1B in FY2024 and $3.2B in FY2025.",
+        "citations": [
+          "F28",
+          "F24",
+          "F26",
+          "F27"
+        ],
+        "author": "Financial analyst",
+        "severity": null
+      },
+      {
+        "text": "The balance sheet is conservatively levered, with long-term debt of $8.5B and cash of $10.6B in FY2026 producing net debt of -$2.1B, alongside stockholders' equity growing from $22.1B in FY2023 to $157.3B in FY2026.",
+        "citations": [
+          "F36",
+          "F32",
+          "F54",
+          "F37",
+          "F40"
+        ],
+        "author": "Financial analyst",
+        "severity": null
+      },
+      {
+        "text": "Return on equity is very high at 76.3% in FY2026, reflecting the combination of strong net margins and rapid earnings growth relative to equity base.",
+        "citations": [
+          "F49"
+        ],
+        "author": "Financial analyst",
+        "severity": null
+      },
+      {
+        "text": "Shareholder dilution is not a concern: diluted share count declined from 25.07B in FY2023 to 24.51B in FY2026, a -1.2% YoY change in the most recent year.",
+        "citations": [
+          "F41",
+          "F44",
+          "F55"
+        ],
+        "author": "Financial analyst",
+        "severity": null
+      },
+      {
+        "text": "U.S. export controls on China are a direct, quantified earnings risk: the H20 license requirement drove a $4.5 billion charge in Q1 FY2026 for excess inventory and purchase obligations, and even after licenses were granted, H20 revenue under them was only about $60 million, showing the China AI chip market has been largely closed off despite its prior scale.",
+        "citations": [
+          "S19",
+          "S38"
+        ],
+        "author": "Risk analyst",
+        "severity": null
+      },
+      {
+        "text": "The new H200 licensing pathway into China carries added friction: any H200 shipped under the program is subject to a 25% tariff upon importation into the U.S. before re-export, and as of the filing NVIDIA had generated zero revenue under this program and does not know if imports will even be allowed into China.",
+        "citations": [
+          "S20",
+          "S39"
+        ],
+        "author": "Risk analyst",
+        "severity": null
+      },
+      {
+        "text": "Gross margin compressed in FY2026 due to company-specific product-mix and charge factors rather than macro conditions: the Hopper-to-Blackwell transition plus the $4.5B H20 charge pressured margins, and inventory provisions/write-down reversals had an unfavorable 2.6% impact on gross margin in FY2026 versus 2.3% in FY2025, indicating a worsening trend in inventory risk exposure.",
+        "citations": [
+          "S26",
+          "S45",
+          "S30"
+        ],
+        "author": "Risk analyst",
+        "severity": null
+      },
+      {
+        "text": "NVIDIA has significantly increased exposure to illiquid, high-risk investments: $17.5 billion was invested in private companies and infrastructure funds in FY2026, primarily early-stage AI startups that are customers of NVIDIA, many of which may never become profitable, creating both circular-revenue risk (vendor financing customers) and mark-to-market/impairment risk on non-marketable securities.",
+        "citations": [
+          "S22",
+          "S41"
+        ],
+        "author": "Risk analyst",
+        "severity": null
+      },
+      {
+        "text": "NVIDIA has taken on contingent balance-sheet risk by providing $3.5 billion in land, power, and shell guarantees to early-stage datacenter partner companies over multi-year periods; if partner operations and escrow are insufficient to cover a default, NVIDIA may have to assume underlying leases itself, converting counterparty risk into direct real-estate/infrastructure liability.",
+        "citations": [
+          "S23",
+          "S42"
+        ],
+        "author": "Risk analyst",
+        "severity": null
+      },
+      {
+        "text": "Revenue growth is highly dependent on continued data center buildout by customers, but the filing flags that availability of data centers, energy, and capital for customers/partners is a binding constraint, and multi-year energy capacity expansion involves significant regulatory, technical, and construction challenges that could delay deployments and reduce accelerated computing/AI adoption\u2014a demand-side risk largely outside NVIDIA's control.",
+        "citations": [
+          "S17",
+          "S36"
+        ],
+        "author": "Risk analyst",
+        "severity": null
+      },
+      {
+        "text": "Company guidance flags a near-term product-specific headwind: management explicitly states it expects supply constraints to be a headwind to Gaming revenue in Q1 FY2027 and beyond, even as FY2026 Gaming revenue grew 41% YoY, suggesting execution/supply-chain risk could interrupt segment momentum.",
+        "citations": [
+          "S25",
+          "S44"
+        ],
+        "author": "Risk analyst",
+        "severity": null
+      }
+    ],
+    "objections": [
+      {
+        "text": "The thesis frames FY2026 as pure 'operating leverage,' but NVIDIA's own filing attributes the FY2026 gross margin decline directly to the Hopper-to-Blackwell product transition and a $4.5B H20 charge, and shows the unfavorable inventory-provision impact on gross margin worsening from 2.3% in FY2025 to 2.6% in FY2026 \u2014 a deteriorating trend in inventory risk exposure, not a purely positive scaling story.",
+        "citations": [
+          "S26",
+          "S45",
+          "S30"
+        ],
+        "author": "Red team",
+        "severity": "high"
+      },
+      {
+        "text": "The 'data center scale AI infrastructure company' narrative glosses over the fact that the China market has been largely shut down: the H20 license requirement triggered a $4.5 billion charge, and even after licenses were granted NVIDIA generated only about $60 million in H20 revenue, while the new H200 pathway has generated zero revenue to date and carries a 25% import tariff with no certainty that China will even permit the imports.",
+        "citations": [
+          "S19",
+          "S38",
+          "S20",
+          "S39"
+        ],
+        "author": "Red team",
+        "severity": "high"
+      },
+      {
+        "text": "Revenue growth quality is compromised by circular financing: NVIDIA invested $17.5 billion in private companies and infrastructure funds in FY2026, primarily early-stage AI startups that are themselves customers purchasing NVIDIA products, many of which may never become profitable \u2014 meaning a portion of the demand underpinning the growth thesis may be indirectly funded by NVIDIA itself rather than organic end-market pull.",
+        "citations": [
+          "S22",
+          "S41"
+        ],
+        "author": "Red team",
+        "severity": "high"
+      },
+      {
+        "text": "NVIDIA has taken on $3.5 billion in land, power, and shell guarantees to early-stage datacenter partners, and if partner operations and escrow prove insufficient, NVIDIA may have to assume the underlying leases itself \u2014 converting what looks like a clean, high-margin platform business into one with growing contingent real-estate/infrastructure liabilities not reflected in the reported margin and cash flow figures the thesis emphasizes.",
+        "citations": [
+          "S23",
+          "S42"
+        ],
+        "author": "Red team",
+        "severity": "medium"
+      },
+      {
+        "text": "The bull case assumes continued hyperscaler buildout, but the filing explicitly flags that availability of data centers, energy, and capital for customers/partners is a binding constraint, and that multi-year energy capacity expansion involves significant regulatory, technical, and construction challenges that could delay deployments \u2014 a demand-side bottleneck entirely outside NVIDIA's control that could cap future revenue growth.",
+        "citations": [
+          "S17",
+          "S36"
+        ],
+        "author": "Red team",
+        "severity": "medium"
+      },
+      {
+        "text": "Despite calling the model 'asset-light,' capital expenditures have grown sharply from $1.1B in FY2024 to $3.2B in FY2025 to $6.0B in FY2026, a multi-year acceleration in capital intensity that undercuts the framing of NVIDIA as a purely capital-light software/platform business.",
+        "citations": [
+          "F26",
+          "F27",
+          "F28"
+        ],
+        "author": "Red team",
+        "severity": "low"
+      },
+      {
+        "text": "The headline 100.0% 3-year revenue CAGR overstates the current growth trajectory, since the most recent year's growth of 65.5% YoY is well below that multi-year average, and management itself guides to a near-term headwind in Gaming from supply constraints in Q1 FY2027 despite 41% YoY Gaming growth in FY2026 \u2014 suggesting the hyper-growth narrative may not extrapolate cleanly forward.",
+        "citations": [
+          "F50",
+          "F51",
+          "S25",
+          "S44"
+        ],
+        "author": "Red team",
+        "severity": "medium"
+      }
+    ]
+  },
+  "grounding": {
+    "proposed": 43,
+    "kept": 42,
+    "dropped": [
+      {
+        "stage": "PM draft",
+        "claim": "NVIDIA's CUDA-centric full-stack platform has driven revenue from $27.0B (FY2023) to $215.9B (FY2026), 65.5% YoY growth, with 71.1% gross margin, 60.4% operating margin, 76.3% ROE, and $96.7B free cash flow (44.8% FCF margin) on a net-cash balance sheet (-$2.1B net debt), justifying a premium valuation for its AI infrastructure dominance. However, this thesis is tempered by concentrated China export-control risk (a $4.5B H20 charge and only ~$60M of licensed H20 revenue, with zero revenue yet under the tariffed H200 program) and by $17.5B of illiquid investments in early-stage AI customers plus $3.5B in datacenter partner guarantees, which introduce circular-revenue and contingent-liability exposure alongside worsening inventory-related margin pressure (2.6% unfavorable impact in FY2026 vs 2.3% in FY2025).",
+        "reason": "number '$27.0B' not supported by cited evidence ['F4', 'F50', 'F45', 'F46', 'F49', 'F52', 'F53', 'F54', 'S19', 'S38', 'S20', 'S39', 'S22', 'S23', 'S30']"
+      }
+    ]
+  },
+  "llm_trace": [
+    {
+      "stage": "Financial analyst",
+      "reply": "```json\n{\"claims\": [\n{\"text\": \"Revenue grew from $27.0B in FY2023 to $215.9B in FY2026, with the most recent year showing 65.5% YoY growth and a 100.0% 3-year revenue CAGR, indicating sustained hyper-growth.\", \"citations\": [\"F1\",\"F4\",\"F50\",\"F51\"]},\n{\"text\": \"Profitability has scaled with growth: gross margin reached 71.1%, operating margin 60.4%, and net margin 55.6% in FY2026, with operating income rising from $4.2B in FY2023 to $130.4B in FY2026.\", \"citations\": [\"F45\",\"F46\",\"F47\",\"F9\",\"F12\"]},\n{\"text\": \"Cash generation is strong and closely tracks earnings: operating cash flow was $102.7B versus net income of $120.1B in FY2026, and free cash flow was $96.7B, a 44.8% FCF margin.\", \"citations\": [\"F24\",\"F16\",\"F52\",\"F53\"]},\n{\"text\": \"Capital intensity remains low relative to cash flow, with capex of $6.0B in FY2026 versus operating cash flow of $102.7B, though capex has grown from $1.1B in FY2024 and $3.2B in FY2025.\", \"citations\": [\"F28\",\"F24\",\"F26\",\"F27\"]},\n{\"text\": \"The balance sheet is conservatively levered, with long-term debt of $8.5B and cash of $10.6B in FY2026 producing net debt of -$2.1B, alongside stockholders' equity growing from $22.1B in FY2023 to $157.3B in FY2026.\", \"citations\": [\"F36\",\"F32\",\"F54\",\"F37\",\"F40\"]},\n{\"text\": \"Return on equity is very high at 76.3% in FY2026, reflecting the combination of strong net margins and rapid earnings growth relative to equity base.\", \"citations\": [\"F49\"]},\n{\"text\": \"Shareholder dilution is not a concern: diluted share count declined from 25.07B in FY2023 to 24.51B in FY2026, a -1.2% YoY change in the most recent year.\", \"citations\": [\"F41\",\"F44\",\"F55\"]}\n]}\n```"
+    },
+    {
+      "stage": "Business analyst",
+      "reply": "{\"claims\": [{\"text\": \"NVIDIA has transformed from a GPU/gaming company into a 'data center scale AI infrastructure company,' with revenue growing from $27.0B in FY2023 to $215.9B in FY2026, a 65.5% YoY increase in the most recent year and a 100.0% 3-year CAGR.\", \"citations\": [\"S1\", \"F1\", \"F4\", \"F50\", \"F51\"]},\n{\"text\": \"The company reports two segments: Compute & Networking (Data Center accelerated computing/networking and Automotive) and Graphics (GeForce gaming GPUs and Quadro/RTX professional visualization), addressing four markets \u2014 Data Center, Gaming, Professional Visualization, and Automotive.\", \"citations\": [\"S10\", \"S11\"]},\n{\"text\": \"Profitability has scaled dramatically alongside revenue: gross margin reached 71.1% and operating margin 60.4% in FY2026, up from operating income of just $4.2B on $27.0B revenue in FY2023, reflecting strong operating leverage as the AI infrastructure buildout accelerated.\", \"citations\": [\"F45\", \"F46\", \"F9\", \"F1\"]},\n{\"text\": \"NVIDIA's durable advantage rests on its CUDA software platform and full-stack co-design strategy \u2014 hardware, networking, systems, software and algorithms \u2014 exemplified by the Blackwell architecture that interconnects hundreds of thousands of GPUs as a single computer, creating high switching costs via ecosystem lock-in.\", \"citations\": [\"S1\", \"S2\", \"S4\"]},\n{\"text\": \"The company has invested over $76.7 billion in cumulative R&D since inception, with R&D expense rising from $7.3B (FY2023) to $18.5B (FY2026), representing 8.6% of revenue in the latest fiscal year, underscoring continuous innovation investment (Tensor Core, Grace CPU, Blackwell, Nemotron/Cosmos AI models).\", \"citations\": [\"S5\", \"F17\", \"F20\", \"F48\"]},\n{\"text\": \"NVIDIA's networking business (NVLink, InfiniBand, Ethernet, DPUs) extends its platform beyond compute chips into data-center-scale interconnects, including the FY2026 introduction of NVLink Fusion enabling hyperscalers to integrate custom CPUs/XPUs with NVIDIA's platform, deepening the ecosystem moat while acknowledging custom-silicon competitive pressure.\", \"citations\": [\"S13\"]},\n{\"text\": \"Cash generation has scaled with the business: operating cash flow grew from $5.6B (FY2023) to $102.7B (FY2026) and free cash flow reached $96.7B (44.8% FCF margin) in FY2026, while capex remained modest at $6.0B, indicating an asset-light, high-margin model despite heavy R&D and platform investment.\", \"citations\": [\"F21\", \"F24\", \"F52\", \"F53\", \"F28\"]}]}"
+    },
+    {
+      "stage": "Risk analyst",
+      "reply": "{\"claims\": [{\"text\": \"U.S. export controls on China are a direct, quantified earnings risk: the H20 license requirement drove a $4.5 billion charge in Q1 FY2026 for excess inventory and purchase obligations, and even after licenses were granted, H20 revenue under them was only about $60 million, showing the China AI chip market has been largely closed off despite its prior scale.\", \"citations\": [\"S19\", \"S38\"]}, {\"text\": \"The new H200 licensing pathway into China carries added friction: any H200 shipped under the program is subject to a 25% tariff upon importation into the U.S. before re-export, and as of the filing NVIDIA had generated zero revenue under this program and does not know if imports will even be allowed into China.\", \"citations\": [\"S20\", \"S39\"]}, {\"text\": \"Gross margin compressed in FY2026 due to company-specific product-mix and charge factors rather than macro conditions: the Hopper-to-Blackwell transition plus the $4.5B H20 charge pressured margins, and inventory provisions/write-down reversals had an unfavorable 2.6% impact on gross margin in FY2026 versus 2.3% in FY2025, indicating a worsening trend in inventory risk exposure.\", \"citations\": [\"S26\", \"S45\", \"S30\"]}, {\"text\": \"NVIDIA has significantly increased exposure to illiquid, high-risk investments: $17.5 billion was invested in private companies and infrastructure funds in FY2026, primarily early-stage AI startups that are customers of NVIDIA, many of which may never become profitable, creating both circular-revenue risk (vendor financing customers) and mark-to-market/impairment risk on non-marketable securities.\", \"citations\": [\"S22\", \"S41\"]}, {\"text\": \"NVIDIA has taken on contingent balance-sheet risk by providing $3.5 billion in land, power, and shell guarantees to early-stage datacenter partner companies over multi-year periods; if partner operations and escrow are insufficient to cover a default, NVIDIA may have to assume underlying leases itself, converting counterparty risk into direct real-estate/infrastructure liability.\", \"citations\": [\"S23\", \"S42\"]}, {\"text\": \"Revenue growth is highly dependent on continued data center buildout by customers, but the filing flags that availability of data centers, energy, and capital for customers/partners is a binding constraint, and multi-year energy capacity expansion involves significant regulatory, technical, and construction challenges that could delay deployments and reduce accelerated computing/AI adoption\\u2014a demand-side risk largely outside NVIDIA's control.\", \"citations\": [\"S17\", \"S36\"]}, {\"text\": \"Company guidance flags a near-term product-specific headwind: management explicitly states it expects supply constraints to be a headwind to Gaming revenue in Q1 FY2027 and beyond, even as FY2026 Gaming revenue grew 41% YoY, suggesting execution/supply-chain risk could interrupt segment momentum.\", \"citations\": [\"S25\", \"S44\"]}]}"
+    },
+    {
+      "stage": "PM draft",
+      "reply": "{\"thesis\": {\"text\": \"NVIDIA's CUDA-centric full-stack platform has driven revenue from $27.0B (FY2023) to $215.9B (FY2026), 65.5% YoY growth, with 71.1% gross margin, 60.4% operating margin, 76.3% ROE, and $96.7B free cash flow (44.8% FCF margin) on a net-cash balance sheet (-$2.1B net debt), justifying a premium valuation for its AI infrastructure dominance. However, this thesis is tempered by concentrated China export-control risk (a $4.5B H20 charge and only ~$60M of licensed H20 revenue, with zero revenue yet under the tariffed H200 program) and by $17.5B of illiquid investments in early-stage AI customers plus $3.5B in datacenter partner guarantees, which introduce circular-revenue and contingent-liability exposure alongside worsening inventory-related margin pressure (2.6% unfavorable impact in FY2026 vs 2.3% in FY2025).\", \"citations\": [\"F4\", \"F50\", \"F45\", \"F46\", \"F49\", \"F52\", \"F53\", \"F54\", \"S19\", \"S38\", \"S20\", \"S39\", \"S22\", \"S23\", \"S30\"]}}"
+    },
+    {
+      "stage": "Red team",
+      "reply": "{\"objections\": [\n  {\"text\": \"The thesis frames FY2026 as pure 'operating leverage,' but NVIDIA's own filing attributes the FY2026 gross margin decline directly to the Hopper-to-Blackwell product transition and a $4.5B H20 charge, and shows the unfavorable inventory-provision impact on gross margin worsening from 2.3% in FY2025 to 2.6% in FY2026 \u2014 a deteriorating trend in inventory risk exposure, not a purely positive scaling story.\", \"citations\": [\"S26\", \"S45\", \"S30\"], \"severity\": \"high\"},\n  {\"text\": \"The 'data center scale AI infrastructure company' narrative glosses over the fact that the China market has been largely shut down: the H20 license requirement triggered a $4.5 billion charge, and even after licenses were granted NVIDIA generated only about $60 million in H20 revenue, while the new H200 pathway has generated zero revenue to date and carries a 25% import tariff with no certainty that China will even permit the imports.\", \"citations\": [\"S19\", \"S38\", \"S20\", \"S39\"], \"severity\": \"high\"},\n  {\"text\": \"Revenue growth quality is compromised by circular financing: NVIDIA invested $17.5 billion in private companies and infrastructure funds in FY2026, primarily early-stage AI startups that are themselves customers purchasing NVIDIA products, many of which may never become profitable \u2014 meaning a portion of the demand underpinning the growth thesis may be indirectly funded by NVIDIA itself rather than organic end-market pull.\", \"citations\": [\"S22\", \"S41\"], \"severity\": \"high\"},\n  {\"text\": \"NVIDIA has taken on $3.5 billion in land, power, and shell guarantees to early-stage datacenter partners, and if partner operations and escrow prove insufficient, NVIDIA may have to assume the underlying leases itself \u2014 converting what looks like a clean, high-margin platform business into one with growing contingent real-estate/infrastructure liabilities not reflected in the reported margin and cash flow figures the thesis emphasizes.\", \"citations\": [\"S23\", \"S42\"], \"severity\": \"medium\"},\n  {\"text\": \"The bull case assumes continued hyperscaler buildout, but the filing explicitly flags that availability of data centers, energy, and capital for customers/partners is a binding constraint, and that multi-year energy capacity expansion involves significant regulatory, technical, and construction challenges that could delay deployments \u2014 a demand-side bottleneck entirely outside NVIDIA's control that could cap future revenue growth.\", \"citations\": [\"S17\", \"S36\"], \"severity\": \"medium\"},\n  {\"text\": \"Despite calling the model 'asset-light,' capital expenditures have grown sharply from $1.1B in FY2024 to $3.2B in FY2025 to $6.0B in FY2026, a multi-year acceleration in capital intensity that undercuts the framing of NVIDIA as a purely capital-light software/platform business.\", \"citations\": [\"F26\", \"F27\", \"F28\"], \"severity\": \"low\"},\n  {\"text\": \"The headline 100.0% 3-year revenue CAGR overstates the current growth trajectory, since the most recent year's growth of 65.5% YoY is well below that multi-year average, and management itself guides to a near-term headwind in Gaming from supply constraints in Q1 FY2027 despite 41% YoY Gaming growth in FY2026 \u2014 suggesting the hyper-growth narrative may not extrapolate cleanly forward.\", \"citations\": [\"F50\", \"F51\", \"S25\", \"S44\"], \"severity\": \"medium\"}\n]}"
+    },
+    {
+      "stage": "PM final",
+      "reply": "{\n  \"thesis\": {\n    \"text\": \"NVIDIA has scaled from a GPU/gaming company into a data center scale AI infrastructure company, with revenue growing from $27.0B in FY2023 to $215.9B in FY2026 (65.5% YoY, 100.0% 3-year CAGR) and industry-leading margins and cash generation. However, the FY2026 results also show early signs of margin quality erosion (Hopper-to-Blackwell transition costs, a $4.5B H20 charge, and a worsening inventory-provision drag), a largely closed China market under export controls, and a growing web of circular customer financing and contingent infrastructure guarantees that complicate a clean 'platform moat' narrative. The core franchise (CUDA ecosystem, full-stack co-design, networking lock-in) remains intact, but the thesis must now weigh demand-side bottlenecks and disclosure-flagged risks alongside the growth and profitability data.\",\n    \"citations\": [\"S1\", \"F1\", \"F4\", \"F50\", \"F51\", \"S26\", \"S45\", \"S30\", \"S19\", \"S38\", \"S22\", \"S41\"]\n  },\n  \"bull\": [\n    {\n      \"text\": \"Revenue grew from $27.0B (FY2023) to $215.9B (FY2026), a 65.5% YoY increase and 100.0% 3-year CAGR, with gross margin at 71.1%, operating margin 60.4%, and net margin 55.6% in FY2026.\",\n      \"citations\": [\"F1\", \"F4\", \"F50\", \"F51\", \"F45\", \"F46\", \"F47\"]\n    },\n    {\n      \"text\": \"Cash generation is exceptional and closely tracks earnings: operating cash flow reached $102.7B versus net income of $120.1B, with free cash flow of $96.7B (44.8% FCF margin) in FY2026, up from operating cash flow of just $5.6B in FY2023.\",\n      \"citations\": [\"F24\", \"F16\", \"F52\", \"F53\", \"F21\"]\n    },\n    {\n      \"text\": \"The balance sheet is conservatively levered with net debt of -$2.1B (long-term debt $8.5B vs. cash $10.6B), and stockholders' equity grew from $22.1B (FY2023) to $157.3B (FY2026), supporting a 76.3% return on equity.\",\n      \"citations\": [\"F54\", \"F36\", \"F32\", \"F37\", \"F40\", \"F49\"]\n    },\n    {\n      \"text\": \"The durable moat rests on the CUDA software platform and full-stack co-design (hardware, networking, systems, software, algorithms), exemplified by Blackwell's ability to interconnect hundreds of thousands of GPUs as a single computer, reinforced by cumulative R&D investment of over $76.7 billion since inception and NVLink Fusion extending the ecosystem into hyperscaler custom silicon.\",\n      \"citations\": [\"S1\", \"S2\", \"S4\", \"S5\", \"S13\"]\n    },\n    {\n      \"text\": \"Shareholder dilution is not a concern: diluted share count declined from 25.07B (FY2023) to 24.51B (FY2026), a -1.2% YoY change in the most recent year.\",\n      \"citations\": [\"F41\", \"F44\", \"F55\"]\n    }\n  ],\n  \"bear\": [\n    {\n      \"text\": \"FY2026 gross margin compression was not simple scaling but was driven by the Hopper-to-Blackwell product transition and a $4.5 billion H20 charge, with the unfavorable inventory-provision impact on gross margin worsening from 2.3% in FY2025 to 2.6% in FY2026 \u2014 a deteriorating trend in inventory risk exposure that undercuts a pure 'operating leverage' narrative.\",\n      \"citations\": [\"S26\", \"S45\", \"S30\"]\n    },\n    {\n      \"text\": \"The China AI chip market has been largely closed off: the H20 license requirement drove a $4.5 billion charge, licensed H20 revenue was only about $60 million, and the new H200 pathway has generated zero revenue to date, carries a 25% U.S. import tariff, and has no certainty of Chinese import approval \u2014 a significant, unresolved demand overhang.\",\n      \"citations\": [\"S19\", \"S38\", \"S20\", \"S39\"]\n    },\n    {\n      \"text\": \"Revenue growth quality is compromised by circular financing risk: NVIDIA invested $17.5 billion in private companies and infrastructure funds, primarily early-stage AI startups that are themselves NVIDIA customers, many of which may never become profitable, raising the possibility that some reported demand is indirectly self-funded rather than organic.\",\n      \"citations\": [\"S22\", \"S41\"]\n    },\n    {\n      \"text\": \"NVIDIA has taken on $3.5 billion in land, power, and shell guarantees to early-stage datacenter partners; if partner operations and escrow prove insufficient, NVIDIA may have to assume the underlying leases itself, converting counterparty risk into direct real-estate/infrastructure liability not reflected in headline margin and cash flow metrics.\",\n      \"citations\": [\"S23\", \"S42\"]\n    },\n    {\n      \"text\": \"Continued growth depends on customers' and partners' ability to build out data centers, but the filing explicitly flags data center, energy, and capital availability as binding constraints, with multi-year energy capacity expansion facing significant regulatory, technical, and construction challenges that could delay deployments and cap AI adoption \u2014 a demand-side risk outside NVIDIA's control.\",\n      \"citations\": [\"S17\", \"S36\"]\n    },\n    {\n      \"text\": \"The headline 100.0% 3-year revenue CAGR overstates current momentum since the most recent year's growth of 65.5% YoY is well below that average, and management guides to a near-term Gaming headwind from supply constraints in Q1 FY2027 despite 41% YoY Gaming growth in FY2026, suggesting the hyper-growth trajectory may not extrapolate cleanly.\",\n      \"citations\": [\"F50\", \"F51\", \"S25\", \"S44\"]\n    },\n    {\n      \"text\": \"Despite being framed as an asset-light platform business, capital expenditures have accelerated sharply from $1.1B (FY2024) to $3.2B (FY2025) to $6.0B (FY2026), indicating rising capital intensity.\",\n      \"citations\": [\"F26\", \"F27\", \"F28\"]\n    }\n  ],\n  \"questions\": [\n    \"What is the trajectory of H20/H200 China revenue over the next 2-3 quarters, and does management have a credible plan if Chinese import approval is denied entirely?\",\n    \"How much of NVIDIA's reported Data Center revenue growth is attributable to customers that also received NVIDIA equity or debt investment, and how correlated is investment timing with subsequent purchase orders?\",\n    \"What are the specific terms, expiration, and expected loss-given-default assumptions on the $3.5 billion land/power/shell guarantees, and how large could this contingent exposure grow?\",\n    \"What is the expected useful life and obsolescence risk of Blackwell-generation inventory given the one-year product cadence and history of write-downs (H20 charge, rising inventory-provision drag)?\",\n    \"How dependent is FY2027 guidance on continued hyperscaler capex growth, and what specific data center/energy capacity constraints have customers flagged as limiting near-term deployment?\",\n    \"What percentage of Data Center revenue is concentrated among the top 5-10 customers, and how much of that is early-stage/non-investment-grade counterparties versus established hyperscalers?\",\n    \"Is the rising capex trend (from $1.1B to $3.2B to $6.0B) a precursor to NVIDIA building more of its own infrastructure/manufacturing capacity, and what would that mean for the 'asset-light' characterization going forward?\",\n    \"How does management define and quantify 'excess inventory and purchase obligations' risk for the next generation (Rubin) product transition, given the H20/Blackwell precedent?\"\n  ],\n  \"verdict\": \"Dig deeper\",\n  \"verdict_rationale\": {\n    \"text\": \"The fundamental growth, margin, and cash-generation profile is exceptional and the platform moat (CUDA, full-stack co-design, networking) appears durable, but the red team surfaced multiple high-severity, filing-documented risks \u2014 a $4.5B H20 charge and worsening inventory-provision drag, a largely closed China market with an untested and tariff-burdened H200 pathway, $17.5B in circular customer financing, and $3.5B in contingent infrastructure guarantees \u2014 that are not fully resolved by current disclosures and warrant deeper diligence before forming a durable view on growth quality and forward earnings power.\",\n    \"citations\": [\"S26\", \"S45\", \"S30\", \"S19\", \"S38\", \"S20\", \"S39\", \"S22\", \"S41\", \"S23\", \"S42\"]\n  }\n}"
+    }
+  ]
+}

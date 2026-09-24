@@ -68,3 +68,22 @@ def test_rounding_uses_the_writers_precision(pack):
 def test_derived_totals_are_rejected(pack):
     s = sid(pack, "three largest customers")
     assert not check_claim("Customers were 20% and 21% (41% combined).", [s], pack).ok
+
+
+# --- Regressions found by the planted-error eval ------------------------------------
+
+def test_excerpt_numbers_must_be_whole_tokens(pack):
+    # "14" must not pass because "2014" or "914" appears somewhere in the passage.
+    s = sid(pack, "14 countries")
+    assert check_claim("Sells in 14 countries.", [s], pack).ok
+    assert not check_claim("Sells in 12 countries.", [s], pack).ok
+    assert not check_claim("Sells in 4 regions and 1,400 cities.", [s], pack).ok
+
+
+def test_ratio_must_match_the_ratio_it_is_described_as(pack):
+    g, gm, om = fid(pack, "Revenue growth (YoY)"), fid(pack, "Gross margin"), fid(pack, "Operating margin")
+    # 15% is the operating margin; calling it growth is wrong even though a 15% fact is cited.
+    assert not check_claim("Revenue grew 15% YoY.", [g, om], pack).ok
+    assert check_claim("Revenue grew 20% YoY with a 55% gross margin and 15% operating margin.", [g, gm, om], pack).ok
+    assert check_claim("Gross margin of 55%, operating margin 15%.", [gm, om], pack).ok
+    assert not check_claim("Gross margin of 15%, operating margin 55%.", [gm, om], pack).ok

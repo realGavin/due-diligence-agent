@@ -46,10 +46,13 @@ class Memo:
     bull: list[Claim]
     bear: list[Claim]
     questions: list[str]
-    verdict: str
+    verdict: str  # the PM's own view; the published verdict comes from the scorecard
     verdict_rationale: Claim
     analyst_claims: list[Claim] = field(default_factory=list)
     objections: list[Claim] = field(default_factory=list)
+    research: list = field(default_factory=list)  # ResearchAnswer
+    valuation: list = field(default_factory=list)  # Fact ids added by research
+    scorecard: object = None  # scorecard.Scorecard
 
 
 ANALYSTS = {
@@ -126,8 +129,9 @@ class Team:
         system = (
             "You are the portfolio manager writing the final investment memo after the red team review. "
             "Revise the thesis if the objections warrant it. The bull case keeps what survived; the bear case "
-            "must honestly carry the strongest objections. List the diligence questions a human should answer "
-            "next (these are questions, so no citations needed). Pick a verdict: 'Dig deeper', 'Watch', or 'Pass'. "
+            "must honestly carry the strongest objections. List 4-6 diligence questions whose answers would most "
+            "change the thesis (no citations needed; a research agent will try to answer them from public sources "
+            "next, and anything it can't answer goes to a human). Give your own view: 'Dig deeper', 'Watch', or 'Pass'. "
             "This is research triage, not a buy/sell recommendation.\n\n"
             f"{RULES}\n"
             'Schema: {"thesis": {"text": "", "citations": []}, "bull": [{"text": "", "citations": []}], '
@@ -150,7 +154,7 @@ class Team:
             thesis=final_thesis,
             bull=self._keep("PM final", "PM", out.get("bull", [])),
             bear=self._keep("PM final", "PM", out.get("bear", [])),
-            questions=[str(q) for q in out.get("questions", [])][:8],
+            questions=[str(q) for q in out.get("questions", [])][:6],
             verdict=verdict,
             verdict_rationale=rationale,
             analyst_claims=claims,
@@ -162,7 +166,13 @@ class Team:
         return f"VERIFIED TEAM FINDINGS:\n{body}\n\n{self.pack.to_prompt()}"
 
     # -- the whole run ---------------------------------------------------------
-    def run(self) -> Memo:
+    def run(self, research: bool = True) -> Memo:
+        from .research import Researcher  # local import: research builds on Claim
+        from .scorecard import score
+
+        researcher = Researcher(self.llm, self.pack, self.report, self.trace) if research else None
+        valuation = researcher.market_cap() if researcher else []  # multiples join the evidence pack
+
         with ThreadPoolExecutor(max_workers=len(ANALYSTS)) as ex:
             results = list(ex.map(self.analyst, ANALYSTS))
         claims = [c for r in results for c in r]
@@ -170,4 +180,11 @@ class Team:
             raise RuntimeError("No analyst claim survived verification; see the grounding report.")
         thesis = self.draft_thesis(claims) or claims[0]
         objections = self.red_team(thesis, claims)
-        return self.final_memo(thesis, claims, objections)
+        memo = self.final_memo(thesis, claims, objections)
+
+        if researcher:
+            with ThreadPoolExecutor(max_workers=4) as ex:
+                memo.research = list(ex.map(researcher.answer, memo.questions))
+        memo.valuation = [f.id for f in valuation]
+        memo.scorecard = score(self.pack, objections)
+        return memo

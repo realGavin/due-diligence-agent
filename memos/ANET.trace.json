@@ -1,0 +1,1139 @@
+{
+  "evidence": {
+    "company": "Arista Networks, Inc.",
+    "ticker": "ANET",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1596532/000159653226000013/anet-20251231.htm",
+    "facts": [
+      {
+        "id": "F1",
+        "label": "Revenue",
+        "value": 4381310000.0,
+        "unit": "USD",
+        "period": "2022-12-31",
+        "source": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax @ 0001596532-25-000028"
+      },
+      {
+        "id": "F2",
+        "label": "Revenue",
+        "value": 5860200000.0,
+        "unit": "USD",
+        "period": "2023-12-31",
+        "source": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax @ 0001596532-26-000013"
+      },
+      {
+        "id": "F3",
+        "label": "Revenue",
+        "value": 7003100000.0,
+        "unit": "USD",
+        "period": "2024-12-31",
+        "source": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax @ 0001596532-26-000013"
+      },
+      {
+        "id": "F4",
+        "label": "Revenue",
+        "value": 9005700000.0,
+        "unit": "USD",
+        "period": "2025-12-31",
+        "source": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax @ 0001596532-26-000013"
+      },
+      {
+        "id": "F5",
+        "label": "Gross profit",
+        "value": 2675696000.0,
+        "unit": "USD",
+        "period": "2022-12-31",
+        "source": "us-gaap:GrossProfit @ 0001596532-25-000028"
+      },
+      {
+        "id": "F6",
+        "label": "Gross profit",
+        "value": 3630300000.0,
+        "unit": "USD",
+        "period": "2023-12-31",
+        "source": "us-gaap:GrossProfit @ 0001596532-26-000013"
+      },
+      {
+        "id": "F7",
+        "label": "Gross profit",
+        "value": 4491300000.0,
+        "unit": "USD",
+        "period": "2024-12-31",
+        "source": "us-gaap:GrossProfit @ 0001596532-26-000013"
+      },
+      {
+        "id": "F8",
+        "label": "Gross profit",
+        "value": 5768700000.0,
+        "unit": "USD",
+        "period": "2025-12-31",
+        "source": "us-gaap:GrossProfit @ 0001596532-26-000013"
+      },
+      {
+        "id": "F9",
+        "label": "Operating income",
+        "value": 1527106000.0,
+        "unit": "USD",
+        "period": "2022-12-31",
+        "source": "us-gaap:OperatingIncomeLoss @ 0001596532-25-000028"
+      },
+      {
+        "id": "F10",
+        "label": "Operating income",
+        "value": 2257300000.0,
+        "unit": "USD",
+        "period": "2023-12-31",
+        "source": "us-gaap:OperatingIncomeLoss @ 0001596532-26-000013"
+      },
+      {
+        "id": "F11",
+        "label": "Operating income",
+        "value": 2944600000.0,
+        "unit": "USD",
+        "period": "2024-12-31",
+        "source": "us-gaap:OperatingIncomeLoss @ 0001596532-26-000013"
+      },
+      {
+        "id": "F12",
+        "label": "Operating income",
+        "value": 3856100000.0,
+        "unit": "USD",
+        "period": "2025-12-31",
+        "source": "us-gaap:OperatingIncomeLoss @ 0001596532-26-000013"
+      },
+      {
+        "id": "F13",
+        "label": "Net income",
+        "value": 1352446000.0,
+        "unit": "USD",
+        "period": "2022-12-31",
+        "source": "us-gaap:NetIncomeLoss @ 0001596532-25-000028"
+      },
+      {
+        "id": "F14",
+        "label": "Net income",
+        "value": 2087300000.0,
+        "unit": "USD",
+        "period": "2023-12-31",
+        "source": "us-gaap:NetIncomeLoss @ 0001596532-26-000013"
+      },
+      {
+        "id": "F15",
+        "label": "Net income",
+        "value": 2852100000.0,
+        "unit": "USD",
+        "period": "2024-12-31",
+        "source": "us-gaap:NetIncomeLoss @ 0001596532-26-000013"
+      },
+      {
+        "id": "F16",
+        "label": "Net income",
+        "value": 3511400000.0,
+        "unit": "USD",
+        "period": "2025-12-31",
+        "source": "us-gaap:NetIncomeLoss @ 0001596532-26-000013"
+      },
+      {
+        "id": "F17",
+        "label": "R&D expense",
+        "value": 728394000.0,
+        "unit": "USD",
+        "period": "2022-12-31",
+        "source": "us-gaap:ResearchAndDevelopmentExpense @ 0001596532-25-000028"
+      },
+      {
+        "id": "F18",
+        "label": "R&D expense",
+        "value": 854900000.0,
+        "unit": "USD",
+        "period": "2023-12-31",
+        "source": "us-gaap:ResearchAndDevelopmentExpense @ 0001596532-26-000013"
+      },
+      {
+        "id": "F19",
+        "label": "R&D expense",
+        "value": 996700000.0,
+        "unit": "USD",
+        "period": "2024-12-31",
+        "source": "us-gaap:ResearchAndDevelopmentExpense @ 0001596532-26-000013"
+      },
+      {
+        "id": "F20",
+        "label": "R&D expense",
+        "value": 1237300000.0,
+        "unit": "USD",
+        "period": "2025-12-31",
+        "source": "us-gaap:ResearchAndDevelopmentExpense @ 0001596532-26-000013"
+      },
+      {
+        "id": "F21",
+        "label": "Operating cash flow",
+        "value": 492813000.0,
+        "unit": "USD",
+        "period": "2022-12-31",
+        "source": "us-gaap:NetCashProvidedByUsedInOperatingActivities @ 0001596532-25-000028"
+      },
+      {
+        "id": "F22",
+        "label": "Operating cash flow",
+        "value": 2034000000.0,
+        "unit": "USD",
+        "period": "2023-12-31",
+        "source": "us-gaap:NetCashProvidedByUsedInOperatingActivities @ 0001596532-26-000013"
+      },
+      {
+        "id": "F23",
+        "label": "Operating cash flow",
+        "value": 3708200000.0,
+        "unit": "USD",
+        "period": "2024-12-31",
+        "source": "us-gaap:NetCashProvidedByUsedInOperatingActivities @ 0001596532-26-000013"
+      },
+      {
+        "id": "F24",
+        "label": "Operating cash flow",
+        "value": 4371900000.0,
+        "unit": "USD",
+        "period": "2025-12-31",
+        "source": "us-gaap:NetCashProvidedByUsedInOperatingActivities @ 0001596532-26-000013"
+      },
+      {
+        "id": "F25",
+        "label": "Capital expenditures",
+        "value": 44644000.0,
+        "unit": "USD",
+        "period": "2022-12-31",
+        "source": "us-gaap:PaymentsToAcquireProductiveAssets @ 0001596532-25-000028"
+      },
+      {
+        "id": "F26",
+        "label": "Capital expenditures",
+        "value": 34400000.0,
+        "unit": "USD",
+        "period": "2023-12-31",
+        "source": "us-gaap:PaymentsToAcquireProductiveAssets @ 0001596532-26-000013"
+      },
+      {
+        "id": "F27",
+        "label": "Capital expenditures",
+        "value": 32000000.0,
+        "unit": "USD",
+        "period": "2024-12-31",
+        "source": "us-gaap:PaymentsToAcquireProductiveAssets @ 0001596532-26-000013"
+      },
+      {
+        "id": "F28",
+        "label": "Capital expenditures",
+        "value": 119500000.0,
+        "unit": "USD",
+        "period": "2025-12-31",
+        "source": "us-gaap:PaymentsToAcquireProductiveAssets @ 0001596532-26-000013"
+      },
+      {
+        "id": "F29",
+        "label": "Cash & equivalents",
+        "value": 671707000.0,
+        "unit": "USD",
+        "period": "2022-12-31",
+        "source": "us-gaap:CashAndCashEquivalentsAtCarryingValue @ 0001596532-24-000043"
+      },
+      {
+        "id": "F30",
+        "label": "Cash & equivalents",
+        "value": 1938606000.0,
+        "unit": "USD",
+        "period": "2023-12-31",
+        "source": "us-gaap:CashAndCashEquivalentsAtCarryingValue @ 0001596532-25-000028"
+      },
+      {
+        "id": "F31",
+        "label": "Cash & equivalents",
+        "value": 2762400000.0,
+        "unit": "USD",
+        "period": "2024-12-31",
+        "source": "us-gaap:CashAndCashEquivalentsAtCarryingValue @ 0001596532-26-000013"
+      },
+      {
+        "id": "F32",
+        "label": "Cash & equivalents",
+        "value": 1963900000.0,
+        "unit": "USD",
+        "period": "2025-12-31",
+        "source": "us-gaap:CashAndCashEquivalentsAtCarryingValue @ 0001596532-26-000013"
+      },
+      {
+        "id": "F33",
+        "label": "Stockholders' equity",
+        "value": 4885800000.0,
+        "unit": "USD",
+        "period": "2022-12-31",
+        "source": "us-gaap:StockholdersEquity @ 0001596532-26-000013"
+      },
+      {
+        "id": "F34",
+        "label": "Stockholders' equity",
+        "value": 7219000000.0,
+        "unit": "USD",
+        "period": "2023-12-31",
+        "source": "us-gaap:StockholdersEquity @ 0001596532-26-000013"
+      },
+      {
+        "id": "F35",
+        "label": "Stockholders' equity",
+        "value": 9994800000.0,
+        "unit": "USD",
+        "period": "2024-12-31",
+        "source": "us-gaap:StockholdersEquity @ 0001596532-26-000013"
+      },
+      {
+        "id": "F36",
+        "label": "Stockholders' equity",
+        "value": 12370500000.0,
+        "unit": "USD",
+        "period": "2025-12-31",
+        "source": "us-gaap:StockholdersEquity @ 0001596532-26-000013"
+      },
+      {
+        "id": "F37",
+        "label": "Diluted shares",
+        "value": 1265835000.0,
+        "unit": "shares",
+        "period": "2022-12-31",
+        "source": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding @ 0001596532-25-000028"
+      },
+      {
+        "id": "F38",
+        "label": "Diluted shares",
+        "value": 1268500000.0,
+        "unit": "shares",
+        "period": "2023-12-31",
+        "source": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding @ 0001596532-26-000013"
+      },
+      {
+        "id": "F39",
+        "label": "Diluted shares",
+        "value": 1281100000.0,
+        "unit": "shares",
+        "period": "2024-12-31",
+        "source": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding @ 0001596532-26-000013"
+      },
+      {
+        "id": "F40",
+        "label": "Diluted shares",
+        "value": 1275700000.0,
+        "unit": "shares",
+        "period": "2025-12-31",
+        "source": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding @ 0001596532-26-000013"
+      },
+      {
+        "id": "F41",
+        "label": "Gross margin",
+        "value": 64.05609780472368,
+        "unit": "pct",
+        "period": "2025-12-31",
+        "source": "derived: F8 / F4"
+      },
+      {
+        "id": "F42",
+        "label": "Operating margin",
+        "value": 42.81843721198796,
+        "unit": "pct",
+        "period": "2025-12-31",
+        "source": "derived: F12 / F4"
+      },
+      {
+        "id": "F43",
+        "label": "Net margin",
+        "value": 38.99086134337142,
+        "unit": "pct",
+        "period": "2025-12-31",
+        "source": "derived: F16 / F4"
+      },
+      {
+        "id": "F44",
+        "label": "R&D as % of revenue",
+        "value": 13.739076362748037,
+        "unit": "pct",
+        "period": "2025-12-31",
+        "source": "derived: F20 / F4"
+      },
+      {
+        "id": "F45",
+        "label": "Return on equity",
+        "value": 28.385271411826523,
+        "unit": "pct",
+        "period": "2025-12-31",
+        "source": "derived: F16 / F36"
+      },
+      {
+        "id": "F46",
+        "label": "Revenue growth (YoY)",
+        "value": 28.595907526666764,
+        "unit": "pct",
+        "period": "2025-12-31",
+        "source": "derived: F4 / F3 - 1"
+      },
+      {
+        "id": "F47",
+        "label": "Revenue CAGR (3-yr)",
+        "value": 27.146525721597637,
+        "unit": "pct",
+        "period": "2025-12-31",
+        "source": "derived: (F4 / F1)^(1/3) - 1"
+      },
+      {
+        "id": "F48",
+        "label": "Free cash flow",
+        "value": 4252400000.0,
+        "unit": "USD",
+        "period": "2025-12-31",
+        "source": "derived: F24 - F28"
+      },
+      {
+        "id": "F49",
+        "label": "FCF margin",
+        "value": 47.21898353265154,
+        "unit": "pct",
+        "period": "2025-12-31",
+        "source": "derived: F48 / F4"
+      },
+      {
+        "id": "F50",
+        "label": "Diluted share count change (YoY)",
+        "value": -0.42151276246975566,
+        "unit": "pct",
+        "period": "2025-12-31",
+        "source": "derived: F40 / F39 - 1"
+      }
+    ],
+    "excerpts": [
+      {
+        "id": "S1",
+        "section": "Business",
+        "text": "In a world where data is increasingly a precious commodity and competitive differentiator, Arista was founded to enable our customers to access all their centers of data in the quickest, most reliable, and secure manner. Over the last two decades, we have emerged as an industry leader, delivering data-driven, client-to-cloud networking-as-a-service. Our \u201cCenters of Data\u201d strategy is a fundamental pivot from legacy networking approaches that create incongruent silos to a unified, data-driven approach in which the network is a service that interconnects four primary domains: AI Centers, Data Centers, Campus Centers, and WAN Centers. Anchored by Arista\u2019s state-oriented Extensible Operating System (EOS) and Network Data Lake (NetDL), our network-as-a-service platform delivers a seamless, consolidated networking experience regardless of data location."
+      },
+      {
+        "id": "S2",
+        "section": "Business",
+        "text": "Our solutions are differentiated because they: offer uncompromising reliability derived from the foundation of robust quality assurance capabilities, and a suite of automated diagnostics, are based on advanced open and standards-based technology that avoids what is often expensive vendor lock-in, and provide consistent real-time telemetry and intelligent automation to decrease the manual workload on the operator. This strategy and differentiation have also allowed us to deliver our comprehensive suite of products, services, and technologies to a global customer base segmented into three primary categories: Cloud and AI Titans, AI and Specialty Providers, and Enterprise. Market research confirms that we continue to be a leader in high-speed Ethernet switching."
+      },
+      {
+        "id": "S3",
+        "section": "Business",
+        "text": "In the modern competitive landscape, the ability to access, manipulate, and leverage data is fundamental to an organization\u2019s growth and viability. This is especially true in the era of Large Language Models (LLMs), agentic AI, and physical AI, where data has evolved from a byproduct of operations into the primary engine of intelligence and autonomy. Consequently, the network has matured beyond traditional \"IT infrastructure\" to become the spine or central nervous system. It serves as the critical conduit through which data flows from cloud and edge environments to the AI models that drive decision-making. This heightened dependency on real-time data movement underscores the necessity for a network architecture defined by unprecedented scale, availability, predictable performance, and open programmability. Operational simplicity and robust security are essential to ensure the business can compete in a world of massive, networked transactions."
+      },
+      {
+        "id": "S4",
+        "section": "Business",
+        "text": "Public cloud titans and, more recently, AI Neocloud providers have been at the forefront of this evolution, pioneering the development of large-scale data and AI centers to meet the growing demands of their users, including business customers. These networks have become the benchmark for superior performance and efficiency of IT infrastructure at the lowest unit cost. Enterprises and service providers worldwide are therefore adopting these hyperscale technologies and principles for their own network operations to achieve similar performance, operational efficiencies, and cost reductions."
+      },
+      {
+        "id": "S5",
+        "section": "Business",
+        "text": "Arista established itself as a market leader with platforms, products, and people to enable some of these hyperscalers\u2019 most consequential networks. Our network-as-a-service approach now empowers customers of all sizes to seamlessly leverage their data through offerings spanning three key categories: Core (AI, Cloud, and Data Center Networking), Cognitive Adjacencies (Campus and Routing), and Cognitive Networks (Software and Services). With world-class engineering expertise and platform innovation, our customers gain the predictable performance and operational simplicity required to turn data into a sustainable competitive advantage in a modern, AI-driven world."
+      },
+      {
+        "id": "S6",
+        "section": "Business",
+        "text": "The rapid expansion of generative, agentic, and physical AI computing and distributed applications is blurring the lines between frontend and backend AI, Cloud, and Data Centers. Modern workloads are both data- and compute-intensive and place significant demands on the underlying network. For instance, a typical AI job involves large, sparse matrix math, distributed across hundreds or thousands of AI accelerators (XPU, GPU, TPU, etc.) with intense computations for a period of time. This type of workload requires a high-bandwidth, scalable, lossless, and power-efficient network, based on open standards, to eliminate operational costs and complexities associated with proprietary approaches."
+      },
+      {
+        "id": "S7",
+        "section": "Business",
+        "text": "As a pioneer of leaf and spine networking for cloud and data centers, Arista\u2019s \"AI Center\" now delivers a unified, data-driven network architecture that integrates distinct connectivity layers to optimize time-to-first-job, AI job completion times, and XPU utilization/efficiency. This strategy addresses the massive bandwidth and traffic fidelity requirements of AI workloads through three specific domains: Currently dominated by proprietary technologies, this domain involves high-bandwidth, low-latency interconnects linking multiple XPUs within a single rack. We believe Scale Up represents a future incremental opportunity as the market shifts toward open standards like Ethernet for Scale Up Networks (ESUN)."
+      },
+      {
+        "id": "S8",
+        "section": "Business",
+        "text": "This network connects XPUs across multiple racks to support massive training or inferencing clusters. The industry trend toward replacing legacy, proprietary approaches, such as InfiniBand, with Ethernet, as defined by the Ultra Ethernet Consortium, creates an opportunity for us to gain share while enabling customers to scale from thousands to a million XPUs and beyond. Power and space constraints, along with the need for AI inference closer to the edge, are driving the need for distributed clusters spread across large geographic distances. Our Scale Across solutions deliver the capabilities necessary to enable long-distance routed access while accounting for factors such as packet loss and delays, as well as data security on the wire."
+      },
+      {
+        "id": "S9",
+        "section": "Business",
+        "text": "The Arista Etherlink portfolio comprises a family of over twenty products designed to support the diverse range of AI Scale Out and Scale Across use cases today and Scale Up in the future. Our portfolio of 800G switches, coupled with Arista's EOS innovations such as Smart System Upgrades (SSU), AI Analyzer, and optimal load-balancing, offers compelling solutions for contemporary AI applications and deployments. Arista also continues to be innovative in areas such as deep packet buffer architectures, virtual output queuing, non-disruptive upgrades, optics, reversible cooling, and overall system power efficiency. The Arista 7800R AI Spine, 7060 AI Leaf, and the 7700R4 Distributed Etherlink Switch (\"DES\") are designed to address the demanding scale and performance requirements of AI Scale Out, Scale Up and Scale Across networking."
+      },
+      {
+        "id": "S10",
+        "section": "Business",
+        "text": "The traditional concept of a \u201ccampus\u201d has been redefined in the post-pandemic world, and the boundaries between the office, home, teleworker, and user have converged. At the same time, the proliferation and sophistication of devices that connect the campus, such as smart devices, security cameras, and the Internet of Things (\"IoT\"), have grown dramatically. The challenge lies in successfully transitioning the existing siloed campus into a data-driven, distributed campus with a common operating model, while addressing the growing security and availability needs."
+      },
+      {
+        "id": "S11",
+        "section": "Business",
+        "text": "Arista\u2019s cognitive campus portfolio was driven by customers seeking the same quality and operational efficiency available in the data center across their enterprise networks. We offer a robust set of solutions, ranging from modular and fixed-form-factor campus spine switches to Power-over-Ethernet (\"PoE\") leaf switches and Wi-Fi access points, all managed through CloudVision\u00ae. Recently, we also added the VeloCloud SD-WAN portfolio, which complements our wired and wireless campus portfolio by enhancing the branch center by providing leading cloud-delivered SD-WAN solutions with integrated security. This portfolio of solutions offers expanded choice and enhanced performance for our customers, enabling global WAN services that seamlessly interconnect data centers and distributed campus offices."
+      },
+      {
+        "id": "S12",
+        "section": "Business",
+        "text": "Arista\u2019s Cloud-Grade Routing platforms, powered by EOS, combine high-performance routing, high port density, deep buffers, integrated dense wavelength division multiplexing (DWDM), and wire-speed encryption. Our 7280R4 Universal Leaf and 7500R3 and 7800R4 Universal Spine platforms serve a variety of use cases, including high-speed multi-cloud connect, Data Center Interconnect (DCI), controller-based traffic engineering, peering, business VPNs, core routing, and secure enterprise edge routing. Software and Services: AI Ops, Management, Observability, Zero Trust Networking, and A-Care Services"
+      },
+      {
+        "id": "S13",
+        "section": "Business",
+        "text": "The Arista EOS network architecture provides a foundational set of services for continuous streamed device state, telemetry, packet, flow, alert, sensor, and third-party data into an aggregated Network Data Lake (\u201cArista NetDL\u2122\u201d). NetDL makes these diverse datasets available via a single service endpoint, enhancing Arista and third-party applications and enabling customer-specific private clouds."
+      },
+      {
+        "id": "S14",
+        "section": "Business",
+        "text": "CloudVision is Arista\u2019s modern, multi-domain AI Ops and management platform that leverages cloud networking principles to deliver a simplified end-to-end network operations experience for our Enterprise market. Unlike traditional domain-specific management solutions, CloudVision enables consistent, zero-touch network operations across data centers, campus wired and wireless networks, routing interconnects, and multi-cloud networks, thus helping to break down the complexity of siloed management approaches."
+      },
+      {
+        "id": "S15",
+        "section": "Risk Factors",
+        "text": "You should consider carefully the risks and uncertainties described below, together with all of the other information in this Annual Report on Form 10-K, which could materially affect our business, financial condition, results of operations and prospects. The risks described below are not the only risks facing us. Risks and uncertainties not currently known to us or that we currently deem to be immaterial may also materially affect our business, financial condition, results of operations and prospects. Our business is subject to numerous risks and uncertainties. These risks include, but are not limited to, the following: Risks Related to Our Business and Industry some of the key components in our products come from sole or limited sour ces of supply and increases the risk of supply shortages, extended lead times or supply changes;"
+      },
+      {
+        "id": "S16",
+        "section": "Risk Factors",
+        "text": "large purchases by a limited number of customers represent a substantial portion of our revenue; escalated or escalating United States (the \"U.S.\") tariffs as well as countermeasures and retaliatory actions taken by other countries, may have a negative effect on global economic conditions, financial markets and our business; adverse economic conditions, continuing uncertain economic conditions or reduced information technology and network infrastructure spending may adversely affect our business; our revenue and revenue growth rates are volatile and may decline or not meet our or our investor's expectations; we expect our gross margins to vary over time and may be adversely affected by numerous factors; our results of operations may vary significantly from period to period and can be unpredictable; the networking market is rapidly evolving;"
+      },
+      {
+        "id": "S17",
+        "section": "Risk Factors",
+        "text": "failure to successfully carry out new product and service offerings and expand into adjacent markets could adversely impact our business; we face intense competition and industry consolidation; we are subject to risks associated with the expansion of our international sales and operations; we face risks associated with the investments in and acquisitions of complementary companies, products or technologies; industry cyclicality may cause fluctuations in our revenue; fluctuations in currency exchange rates could adversely affect our business; failure to raise additional capital on terms satisfactory to us. inability to attract new large customers or sell additional products and services to our existing customers could adversely affect our revenue growth; sales of our switching and routing platforms generate most of our product revenue;"
+      },
+      {
+        "id": "S18",
+        "section": "Risk Factors",
+        "text": "inability to increase market awareness or acceptance of our new products and services may adversely affect our revenue; sales prices of our products and services may decrease; sales cycles can be long and unpredictable; inability to offer high quality support and services offerings could adversely affect our business; declines in maintenance renewals and support contracts by customers could harm our business; indemnification provisions under our standard sales contracts could expose us to losses; we rely on distributors, systems integrators and value-added resellers to sell our products; sales to government entities are subject to a number of challenges and risks; we are exposed to the credit risk of our channel partners and some of our end customers. product quality problems, defects, errors or vulnerabilities could harm our business;"
+      },
+      {
+        "id": "S19",
+        "section": "Risk Factors",
+        "text": "failure to anticipate technological shifts could harm our business; our products must interoperate with operating systems, software applications and hardware that is developed by others. Risks Related to Supply Chain and Manufacturing insufficient component supply and inventory management; primarily reliant upon a predominant merchant silicon vendor; we depend on third-party manufacturers to build our products; future sales forecasts may materially change, which could result in incorrect levels of inventory and purchase commitments; shipment interruptions or delays could cause our revenue to fall. Risks Related to Intellectual Property and Other Proprietary Rights assertions by third parties of intellectual property rights infringement, misappropriation or other violation could harm our business;"
+      },
+      {
+        "id": "S20",
+        "section": "Risk Factors",
+        "text": "failure or inability to protect or assert our intellectual property rights could harm our competitive position; we rely on the availability of licenses to third-party software and other intellectual property; failure to comply with licenses to software and other technology could restrict our ability to sell our products; our competitors could develop products that are similar to or better than ours because we provide access to our software and selected source code to certain partners. Risks Related to Cybersecurity and Data Privacy defects, errors or vulnerabilities in our products, services and external facing or internal network systems, or the misuse of our products or services, or those of third parties on which we rely, could lead to cybersecurity incidents or a failure to detect cybersecurity incidents, or otherwise negatively impact our business;"
+      },
+      {
+        "id": "S21",
+        "section": "Risk Factors",
+        "text": "we, or third parties on which we rely, could experience cybersecurity incidents, which could disrupt our operations, cause vulnerabilities in our products or services, compromise intellectual property or other sensitive data, or otherwise negatively impact our business. Risks Related to Accounting, Compliance, Regulation and Tax foreign investment laws and regulations, and other trade or regulatory barriers, may have a negative effect on global economic conditions, financial markets and our business; enhanced import/export restrictions, such as enhanced export controls the U.S. has adopted targeting trade with China, as well as countermeasures taken by affected countries may negatively affect our business; failure to maintain effective internal control over financial reporting could adversely affect the accuracy and timing of our financial reporting;"
+      },
+      {
+        "id": "S22",
+        "section": "Risk Factors",
+        "text": "if our critical accounting policies are based on incorrect assumptions, our results of operations could fall below analyst and investor expectations and result in a decline in the market price of our common stock; changes in our income taxes, effective tax rate or tax laws could adversely affect our results; failure to comply with government laws and regulations, including privacy laws, environmental laws and export controls could harm our business; and issues in the development and use of artificial intelligence, combined with an uncertain regulatory environment, may result in reputational harm, liability, or other adverse consequences to our business operations; Risks Related to Ownership of Our Common Stock the trading price of our common stock has been and may continue to be volatile and the value of your investment could decline;"
+      },
+      {
+        "id": "S23",
+        "section": "Risk Factors",
+        "text": "any future decisions to reduce or discontinue repurchasing our common stock pursuant to our stock repurchase programs could cause the market price of our common stock to decline; insiders have substantial control over us; our charter documents and Delaware law could discourage takeover attempts and lead to management entrenchment. we may become involved in litigation that may materially adversely affect us; inability to hire, retain, train and motivate qualified personnel and senior management could cause our business to suffer; natural disasters, social unrest, violent conflicts, systemic failures, and other catastrophic events could harm our business; and we have not paid dividends in the past and do not intend to pay dividends for the foreseeable future. Risks Related to Our Business and Industry Some of the key components in our products come from sole or limited sour"
+      },
+      {
+        "id": "S24",
+        "section": "Risk Factors",
+        "text": "that we purchase, or our contract manufacturers purchase on our behalf from a limited number of suppliers, including certain sole source providers. In particular, we are primarily reliant upon our predominant merchant silicon vendor, Broadcom, for our switching chips. Our reliance on component suppliers yields the potential for the infringement, misappropriation or other violation of third-party intellectual property rights due to the incorporation of such components into our products. We may not be indemnified by such component suppliers for such infringement, misappropriation or other violation claims. Any litigation for which we do not receive indemnification could require us to incur significant legal expenses in defending against such claims or require us to pay substantial royalty payments or settlement amounts that would not be reimbursed by our component suppliers."
+      },
+      {
+        "id": "S25",
+        "section": "Risk Factors",
+        "text": "Our product development efforts are also dependent upon the success of our continued collaboration with our key merchant silicon vendors such as Broadcom. As we develop our product roadmap, we select specific merchant silicon from these vendors for each new product. It is critical that w"
+      },
+      {
+        "id": "S26",
+        "section": "Risk Factors",
+        "text": "e work in tandem with these vendors to ensure that their silicon includes improved features, that our products take advantage of such improved features, and that such vendors are able to supply us with sufficient quantities on commercially reasonable terms to meet customer demand. Reliance on these relationships allows us to focus our research and development resources on our software core competencies while leveraging their investments and expertise. The merchant silicon vendors may not be successful in continuing to innovate, develop products that outperform their competitors or meet the requirements of our customers, meet deadlines for the release of their products or produce a sufficient supply of their products. Moreover, these vendors may not collaborate with us or may become competitive with us by selling merchant silicon for \u201cwhite boxes\u201d with open-source network operating systems or other products to our customers."
+      },
+      {
+        "id": "S27",
+        "section": "Risk Factors",
+        "text": "If our key merchant silicon vendors do not continue to innovate, develop products that outperform their competitors or fail to meet the requirements of our customers, if there are delays in the release of their products or supply shortages, if they no longer collaborate in such fashion or if such merchant silicon is not offered to us on commercially reasonable terms, our products may become less competitive, our own product launches could be delayed or we may be required to redesign our products to incorporate alternative merchant silicon, which could result in lost sales, reduce gross margins, damage to our customer relationships or otherwise have a material effect on revenue and business, financial condition, results of operations and prospects. We expect large purchases by a limited number of customers to continue to represent a substantial p"
+      },
+      {
+        "id": "S28",
+        "section": "Risk Factors",
+        "text": "ortion of our revenue, and any loss, delay, decline or other change in expected purchases could result in material quarter-to-quarter fluctuations of our revenue or otherwise adversely affect our results of operations. Large purchases by a relatively limited number of customers have accounted for a significant portion of our revenue. For example, sales to one end customer represented 16%, 15%, and 21% of our total revenue, and sales to the other end customer represented 26%, 20%, and 18% of our total revenue for the years ended December 31, 2025, 2024, and 2023, respectively. We have experienced unpredictability in t"
+      },
+      {
+        "id": "S29",
+        "section": "Risk Factors",
+        "text": "he timing of orders from our large customers primarily due to the overall complexity of these large orders and changes in demand specific to these customers, including reductions in or changes in the mix of capital expenditures by these customers and the impact of cost reduction and other efficiency efforts by these customers. variability in customer concentration is linked to the timing of new product deployments, and spending cycles with these customers, as well as the time it takes these customers to evaluate, test, qualify and accept our products and services, and we expect continued variability in our customer concentration and timing of sales on a quarterly and annual basis. In addition,"
+      },
+      {
+        "id": "S30",
+        "section": "Risk Factors",
+        "text": "we typically provide more favorable terms and conditions to large customers, than we typically do to other customers, including pricing discounts, bundled upgrades, extended warranties, acceptance terms, indemnification terms, and other rights, which may reduce gross margins for the period in which such sales occur. Changes in the business requirements or focus, upgrade cycles, vendor selection, project prioritization, assignment of spending allocations among vendors based upon specific network roles or projects, financial prospects, lack of growth of our large customers, capital resources and expenditures or purchasing behavior and deceleration in spending of these customers could significantly decrease our sale s to such customers or could lead to delays, reductions or cancellations of planned purchases of our products or services."
+      },
+      {
+        "id": "S31",
+        "section": "Risk Factors",
+        "text": "an increased focus on the deployment of AI-enabled solutions by these customers has accelerated the need for advanced technology offerings, including some offerings from potential new market entrants. This prioritization of AI related infrastructure investment has at times come in conjunction with the announcement of various cost reduction measures by such customers, including optimization and increased efficiency in non-AI related capital expenditures, which could negatively impact our revenue. In addition, although the focus on deployment of AI-enabled solutions has driven increased demand for networking, the long-term trajectory remains unknown. As such, demand estimates for our new products are difficult to forecast and can create volatility in our revenue."
+      },
+      {
+        "id": "S32",
+        "section": "Risk Factors",
+        "text": "In some instances, such factors have had, and may continue to have, an impact on certain current or future projects and reduce our visibility to customer demand and may result in a reduction or uncertainty in the timing of orders from these large customers, which may negatively impact our revenue and increase the risk of excess and obsolete inventory charges on our products. Moreover, because our sales are based prim arily on purchase orders, some of our customers have previously and could continue to cancel, delay, reduce or otherwise modify their purchase commitments with little or no notice to us."
+      },
+      {
+        "id": "S33",
+        "section": "MD&A",
+        "text": "and Analysis of Financial Condition and Results of Operations You should read the following discussion and analysis of our financial condition and results of operations together with the consolidated financial statements and related notes that are included elsewhere in this Annual Report on Form 10-K. This discussion contains forward-looking statements based upon current plans, expectations and beliefs that involve risks and uncertainties. Our actual results may differ materially from those anticipated in these forward-looking statements as a result of various factors, including those set forth under \u201cRisk Factors\u201d and elsewhere in this Annual Report on Form 10-K."
+      },
+      {
+        "id": "S34",
+        "section": "MD&A",
+        "text": "In a world where data is increasingly a precious commodity and competitive differentiator, Arista was founded to enable our customers to access all their centers of data in the quickest, most reliable, and secure manner. Over the last two decades, we have emerged as an industry leader, delivering data-driven, client-to-cloud networking-as-a-service. Our \u201cCenters of Data\u201d strategy is a fundamental pivot from legacy networking approaches that create incongruent silos to a unified, data-driven approach in which the network is a service that interconnects four primary domains: AI Centers, Data Centers, Campus Centers, and WAN Centers. Anchored by Arista\u2019s state-oriented Extensible Operating System (EOS) and Network Data Lake (NetDL), our network-as-a-service platform delivers a seamless, consolidated networking experience regardless of data location"
+      },
+      {
+        "id": "S35",
+        "section": "MD&A",
+        "text": "Our solutions are differentiated because they: offer uncompromising reliability derived from the foundation of robust quality assurance capabilities, and a suite of automated diagnostics; are based on advanced open and standards-based technology that avoids what is often expensive vendor lock-in, and provide consistent real-time telemetry and intelligent automation to decrease the manual workload on the operator."
+      },
+      {
+        "id": "S36",
+        "section": "MD&A",
+        "text": "This strategy and differentiation have also allowed us to deliver our comprehensive suite of products, services, and technologies to a global customer base segmented into three primary categories: Cloud and AI Titans, AI and Specialty Providers, and Enterprise. Market research confirms that we continue to be a leader in high-speed Ethernet switching. The percentage of revenue derived from these customers during the current fiscal year was approximately 48% from Cloud and AI Titans, 32% from Enterprise and 20% from AI and Specialty Providers."
+      },
+      {
+        "id": "S37",
+        "section": "MD&A",
+        "text": "Arista established itself as a market leader with platforms, products, and people to enable some of these hyperscalers\u2019 most consequential networks. Our network-as-a-service approach now empowers customers of all sizes to seamlessly leverage their data through offerings spanning three key categories: Core (AI, Cloud, and Data Center Networking), Cognitive Adjacencies (Campus and Routing), and Cognitive Networks (Software and Services). The percentage of revenue derived from these product categories during the current fiscal year was approximately 65% from Core, 18% from Cognitive Adjacencies, and 17% from Software and Services. With world-class engineering expertise and platform innovation, our customers gain the predictable performance and operational simplicity required to turn data into a sustainable competitive advantage in a modern, AI-driven world."
+      },
+      {
+        "id": "S38",
+        "section": "MD&A",
+        "text": "The market for cloud networking is characterized by rapid technological evolution, intensifying competition, and the expansion of generative and agentic AI. To sustain our success and adapt to the market, we must increase sales in cloud, AI and enterprise data center Ethernet switching/routing markets, and campus workspace markets by leveraging our ability to rapidly develop new features and software applications. Our growth strategy relies on maintaining our agility and increasing our investment in research and development to deliver market-leading features to enhance the functionality of our existing cloud networking platform, expand our product offerings and build upon our technology leadership. In addition, we must continue to expand our global sales force and deepen our channel partnerships to reach new customers more effectively and increase sales to existing customers."
+      },
+      {
+        "id": "S39",
+        "section": "MD&A",
+        "text": "Historically, a limited number of customers have accounted for a significant portion of our revenue. Two of our customers accounted for more than 10% of our total revenue in each of the last three years. Sales to one end customer represented 16%, 15%, and 21% of our total revenue, and sales to the other end customer represented 26%, 20%, and 18% of our total revenue for the years ended December 31, 2025, 2024, and 2023, respectively. We have experienced unpredictability in the timing of orders from our high-volume customers, primarily due to the inherent complexity of large-scale orders and fluctuations in their specific demand. This includes reductions or shifts in their capital expenditure budgets, as well as the impact of their internal cost-reduction and efficiency initiatives. Furthermore, variability in customer concentration is driven by the timing of new product deployments, customer spending cycles, and the extensive periods required for evaluation, testing, and qualification. We expect this variability in concentration and sales timing to continue on both a quarterly and annual basis."
+      },
+      {
+        "id": "S40",
+        "section": "MD&A",
+        "text": "Additionally, the pricing discounts typically required for these large-scale orders often reduce gross margins in the periods when the sales occur."
+      },
+      {
+        "id": "S41",
+        "section": "MD&A",
+        "text": "We believe an increased focus on the deployment of AI-enabled solutions by our large customers has accelerated the need for advanced technology offerings, including some offerings from potential new market entrants. This prioritization and acceleration of AI related infrastructure investment has, at times, come in conjunction with a reduction or changes in the mix of previously planned purchases and various cost reduction measures by these customers, including optimization and increased efficiency in non-AI related capital expenditures. In addition, although the focus on deployment of AI-enabled solutions has driven increased demand for networking, the long-term trajectory is unknown. As such, demand estimates for our new products are difficult to forecast and can create volatility in our revenue. We remain in a period of new product introductions and expanded use cases, particularly in the AI Ethernet market. This has resulted in increased customer trials and contracts with acceptance periods, and an increase in the volatility and magnitude of our product deferred revenue balances, which in turn may create variability in our revenue results on a quarterly and annual basis. In addition, if we are not able to satisfy the requirements under customer trials or contracts with acceptance periods, we may be required to accept product returns from our customers, which would prevent us from recognizing revenue on such transactions and may result in the write-down of inventory."
+      },
+      {
+        "id": "S42",
+        "section": "MD&A",
+        "text": "Global economic and business activities continue to face widespread macroeconomic uncertainties, including the effects of, among other things, inflation, monetary policy shifts, recession risks, potential supply chain disruptions, changes in government administration policy positions, and geopolitical pressures, including escalating international trade measures and tariff uncertainty."
+      },
+      {
+        "id": "S43",
+        "section": "MD&A",
+        "text": "Management is actively working with contract manufacturers and suppliers to optimize our supply chain in response to evolving international trade policies and tariff uncertainties. While we have not yet experienced significant disruptions, the potential for future trade measures remains a risk to our supply chain continuity and product costs. We are maintaining a disciplined fulfillment cadence to ensure reliable inventory deployment. As we build capacity to meet escalating demand, we are shipping products against previously committed demand/deployment plans and accelerating some deployments as needed. Simultaneously, we are balancing customers\u2019 requirements and lead times against the availability and lead times of key components and products from our suppliers and contract manufacturers. Given the timing and prioritization of customer orders and shipment patterns, as well as the timing and outcome of customer trials and contracts with acceptance periods, near term revenue trends may not be reflective of current demand levels and may benefit from demand/deployment plans that have been previously committed."
+      },
+      {
+        "id": "S44",
+        "section": "MD&A",
+        "text": "In addition, we anticipate continued volatility in our inventory and purchase commitments as a result of new product introductions, shifts in customer demand, and fluctuations in supplier lead times. This volatility creates a heightened risk of excess or obsolete inventory and supplier liability charges. Simultaneously, supply chain inflation and material scarcity, such as the recent tightening of supply conditions in the memory market, have continued to put pressure on our gross margin. If tariff or non-tariff measures escalate, and/or if supply conditions worsen and we are unable to pass on these costs to customers, our gross margins could be further impacted. Additionally, broader macroeconomic instability could negatively affect demand, particularly within the enterprise market. Given these unpredictable factors, current financial conditions discussed herein may not be indicative of future operating results and trends."
+      },
+      {
+        "id": "S45",
+        "section": "MD&A",
+        "text": "Year Ended December 31, 2025 Compared to Year Ended December 31, 2024 Revenue, Cost of Revenue and Gross Margin (in millions, except percentages) Revenue by Geography (in millions, except percentages) Product revenue primarily consists of sales of our switching and routing products, and related network applications. Service revenue is primarily derived from sales of PCS contracts, which are typically purchased in conjunction with our products, and subsequent renewals of those contracts. We expect our revenue may vary from period to period based on, among other things, industry and customer cyclicality, the timing, size, and complexity of orders, especially with respect to our large customers, and the time it takes for customers to evaluate, test, qualify and accept our products and services."
+      },
+      {
+        "id": "S46",
+        "section": "MD&A",
+        "text": "Product revenue increased by $1.7 billion, or 28.8%, for the year ended December 31, 2025 compared to 2024. This increase reflects healthy customer demand and higher shipments of our switching and routing platforms, with strong contributions across our customer base . In addition, service revenue increased by $309.7 million, or 27.7%, for the year ended December 31, 2025 compared to 2024, as a result of continued growth in initial and renewal support contracts as our customer installed base has continued to expand. Non - Americas revenu es as a percentage of our total revenues in 2024 to 20.9% in 2025, which was primarily driven by changes in the geographic mix of sales to our large global customers."
+      },
+      {
+        "id": "S47",
+        "section": "MD&A",
+        "text": "Cost of product revenue primarily consists of amounts paid for inventory to our third-party contract manufacturers and merchant silicon vendors, overhead costs of our manufacturing operations, including freight, and other costs associated with manufacturing our products and managing our inventory and supply chain. Cost of service revenue primarily consists of personnel and other costs associated with our global customer support and services organizations. Cost of revenue increased by $725.2 million, or 28.9% for the year ended December 31, 2025 compared to 2024. These increases were driven by a corresponding increase in product and service revenues."
+      },
+      {
+        "id": "S48",
+        "section": "MD&A",
+        "text": "Gross margin, or gross profit as a percentage of revenue, has been and will continue to be affected by a variety of factors, including pricing pressure on our products and services due to competition, the mix of sales to large customers who generally receive lower pricing, the mix of products sold, manufacturing-related costs, including costs associated with our manufacturing operations personnel, inflationary pressure and scarcity of materials in our supply chain, merchant silicon costs, and excess/obsolete inventory and supplier liability charges. We expect our gross margin to fluctuate over time, depending on the factors described above. Gross margin remained constant at 64.1% for the years ended December 31, 2025 and 2024. Operating Expenses (in millions, except percentages)"
+      }
+    ]
+  },
+  "memo": {
+    "company": "Arista Networks, Inc.",
+    "ticker": "ANET",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1596532/000159653226000013/anet-20251231.htm",
+    "thesis": {
+      "text": "Arista's software-enabled networking platform delivered 28.6% YoY revenue growth to $9.0B with 64.1% gross margin, 42.8% operating margin, and 47.2% FCF margin ($4.3B FCF), while ROE reached 28.4% and equity grew to $12.4B \u2014 a highly efficient, cash-generative compounder riding AI-driven data center demand. However, the growth and margin profile is less structurally durable than headline metrics suggest: two customers represented 26% and 16% of FY2025 revenue with historically volatile mix (18-21% and 15-21% ranges over the prior two years), gross margin stability is explicitly tied to large-customer sales mix rather than structural insulation, capex more than tripled YoY ($119.5M vs $32.0M) amid tariff and memory-market cost pressure that management says could further hit margins, and management explicitly states AI demand's long-term trajectory is unknown \u2014 making the current growth rate difficult to underwrite as durable.",
+      "citations": [
+        "F46",
+        "F4",
+        "F41",
+        "F42",
+        "F49",
+        "F48",
+        "F45",
+        "F36",
+        "S28",
+        "S39",
+        "S24",
+        "S31",
+        "S48",
+        "F28",
+        "F27",
+        "S44"
+      ],
+      "author": "PM",
+      "severity": null
+    },
+    "bull": [
+      {
+        "text": "Revenue grew 28.6% YoY to $9.0B in FY2025, continuing a strong multi-year trajectory from $4.4B in FY2022 with a 3-year CAGR of 27.1%.",
+        "citations": [
+          "F46",
+          "F4",
+          "F1",
+          "F47"
+        ],
+        "author": "PM",
+        "severity": null
+      },
+      {
+        "text": "Profitability is high and expanding: 64.1% gross margin, 42.8% operating margin, and 39.0% net margin, with operating income rising from $1.5B in FY2022 to $3.9B in FY2025.",
+        "citations": [
+          "F41",
+          "F42",
+          "F43",
+          "F9",
+          "F12"
+        ],
+        "author": "PM",
+        "severity": null
+      },
+      {
+        "text": "Cash conversion is strong: operating cash flow of $4.4B and free cash flow of $4.3B (47.2% FCF margin), both exceeding net income of $3.5B, funding $1.2B (13.7% of revenue) of R&D.",
+        "citations": [
+          "F24",
+          "F48",
+          "F49",
+          "F16",
+          "F20",
+          "F44"
+        ],
+        "author": "PM",
+        "severity": null
+      },
+      {
+        "text": "The balance sheet strengthened materially, with stockholders' equity growing from $4.9B in FY2022 to $12.4B in FY2025 and ROE holding at 28.4%, while diluted shares stayed roughly flat (1.28B vs 1.27B in FY2022, -0.4% YoY).",
+        "citations": [
+          "F33",
+          "F36",
+          "F45",
+          "F40",
+          "F37",
+          "F50"
+        ],
+        "author": "PM",
+        "severity": null
+      },
+      {
+        "text": "Arista is broadening its addressable market beyond core data-center switching into Enterprise campus and WAN via CloudVision and the newly added VeloCloud SD-WAN portfolio, diversifying revenue mix (Core 65%, Cognitive Adjacencies 18%, Software/Services 17% of FY2025 revenue).",
+        "citations": [
+          "S11",
+          "S14",
+          "S37"
+        ],
+        "author": "PM",
+        "severity": null
+      }
+    ],
+    "bear": [
+      {
+        "text": "Customer concentration is extreme and volatile: one end customer represented 26%, 20%, and 18% of total revenue and another 16%, 15%, and 21% for 2025, 2024, and 2023 respectively \u2014 any shift in their capex plans could materially move the top line, and management explicitly expects this variability to continue.",
+        "citations": [
+          "S28",
+          "S39"
+        ],
+        "author": "PM",
+        "severity": null
+      },
+      {
+        "text": "Management states the long-term trajectory of AI-related demand is 'unknown' and that demand estimates for new products are 'difficult to forecast,' while large customers' AI prioritization has at times coincided with cost-reduction measures in non-AI capex \u2014 directly undermining the durability of the 28.6% YoY growth rate.",
+        "citations": [
+          "S31",
+          "S41",
+          "F46"
+        ],
+        "author": "PM",
+        "severity": null
+      },
+      {
+        "text": "The 64.1% gross margin is not structurally insulated from concentration risk: management states large-customer sales come with pricing discounts, bundled upgrades, and extended warranties that reduce margins in the periods such sales occur, and gross margin will 'continue to fluctuate' based on this mix.",
+        "citations": [
+          "S30",
+          "S40",
+          "S48",
+          "F41"
+        ],
+        "author": "PM",
+        "severity": null
+      },
+      {
+        "text": "The asset-light narrative is undercut by capex more than tripling from $32.0M in FY2024 to $119.5M in FY2025, alongside management warnings that tightening memory-market conditions and potential tariff escalation could further pressure gross margins if costs cannot be passed to customers.",
+        "citations": [
+          "F27",
+          "F28",
+          "S44"
+        ],
+        "author": "PM",
+        "severity": null
+      },
+      {
+        "text": "Arista is singularly dependent on Broadcom for merchant silicon; failure of this vendor to innovate, supply sufficient quantities, or continue collaborating could delay product launches, reduce gross margins, or make products less competitive.",
+        "citations": [
+          "S24",
+          "S27"
+        ],
+        "author": "PM",
+        "severity": null
+      },
+      {
+        "text": "Cash & equivalents actually declined from $2.8B in FY2024 to $2.0B in FY2025 despite operating cash flow rising to $4.4B, indicating cash is being deployed elsewhere rather than accumulating as a buffer.",
+        "citations": [
+          "F31",
+          "F32",
+          "F24"
+        ],
+        "author": "PM",
+        "severity": null
+      },
+      {
+        "text": "Rising customer trials and acceptance-period contracts have increased volatility in product deferred revenue balances, and failure to satisfy trial/contract requirements could force product returns, block revenue recognition, and require inventory write-downs \u2014 a revenue-quality risk not captured in headline growth metrics; this compounds with geographic concentration, as Non-Americas revenue reaching 20.9% of total in 2025 was 'primarily driven by changes in the geographic mix of sales to our large global customers.'",
+        "citations": [
+          "S41",
+          "S46"
+        ],
+        "author": "PM",
+        "severity": null
+      }
+    ],
+    "questions": [
+      "What specifically drove the tripling of capex from $32.0M to $119.5M \u2014 is it discretionary supply-chain investment or a structural shift toward owning more manufacturing/inventory infrastructure?",
+      "What is the identity and contractual structure (multi-year commitments vs. purchase orders) of the two customers representing 26% and 16% of revenue, and how much visibility does Arista have into their forward capex plans?",
+      "Does Arista have any qualified second-source or roadmap contingency for merchant silicon if Broadcom's collaboration or supply falters?",
+      "How much of the flat 64.1% gross margin in 2025 vs 2024 was masked by product/customer mix shifts, and what would margin look like excluding the two largest customers?",
+      "What is the magnitude and trend of product deferred revenue tied to customer trials/acceptance periods, and how large is exposure to potential product returns or inventory write-downs?",
+      "What is driving the decline in cash & equivalents despite rising operating cash flow \u2014 buybacks, working capital build, or other capital allocation choices?",
+      "How exposed is the 20.9% Non-Americas revenue mix to tariff/export-control risk, and is it concentrated in the same large customers driving overall concentration risk?",
+      "What would blended revenue growth look like if the two largest customers' non-AI capex normalizes or declines, per management's own cited risk of cost-reduction measures?"
+    ],
+    "verdict": "Dig deeper",
+    "verdict_rationale": {
+      "text": "Arista shows genuinely strong, high-quality financial performance (28.6% revenue growth, 64.1% gross margin, 47.2% FCF margin, 28.4% ROE) that merits continued attention, but the red team surfaced high-severity, filing-sourced evidence that growth durability, margin stability, and the asset-light characterization all hinge on customer concentration and AI-demand assumptions management itself calls unpredictable ('long-term trajectory is unknown'), compounded by a tripling of capex and a single-vendor silicon dependency. These are not disqualifying but require targeted diligence before forming a durable investment view.",
+      "citations": [
+        "F46",
+        "F41",
+        "F49",
+        "F45",
+        "S31",
+        "S28",
+        "F28",
+        "F27",
+        "S24"
+      ],
+      "author": "PM",
+      "severity": null
+    },
+    "analyst_claims": [
+      {
+        "text": "Arista's core business model is a 'network-as-a-service' platform (built on its EOS operating system and Network Data Lake) that unifies AI, Data, Campus, and WAN networking, sold to a global customer base segmented into Cloud and AI Titans, AI and Specialty Providers, and Enterprise.",
+        "citations": [
+          "S1",
+          "S2"
+        ],
+        "author": "Business analyst",
+        "severity": null
+      },
+      {
+        "text": "Revenue is generated across three product/service categories\u2014Core (AI, Cloud, and Data Center Networking), Cognitive Adjacencies (Campus and Routing), and Cognitive Networks (Software and Services)\u2014giving Arista a mix of hardware and recurring software/services revenue streams.",
+        "citations": [
+          "S5"
+        ],
+        "author": "Business analyst",
+        "severity": null
+      },
+      {
+        "text": "Arista differentiates competitively through open, standards-based technology that avoids vendor lock-in, high reliability, and real-time telemetry/automation via EOS and NetDL, positioning it against proprietary incumbents.",
+        "citations": [
+          "S2",
+          "S13"
+        ],
+        "author": "Business analyst",
+        "severity": null
+      },
+      {
+        "text": "The business model is highly profitable and cash-generative, with FY2025 gross margin of 64.1%, operating margin of 42.8%, and free cash flow margin of 47.2% ($4.3B FCF on $9.0B revenue), supporting continued R&D investment of 13.7% of revenue ($1.2B).",
+        "citations": [
+          "F41",
+          "F42",
+          "F49",
+          "F48",
+          "F4",
+          "F44",
+          "F20"
+        ],
+        "author": "Business analyst",
+        "severity": null
+      },
+      {
+        "text": "Arista is expanding beyond its core data-center switching franchise into Enterprise campus and WAN via its cognitive campus portfolio, CloudVision management platform, and the recently added VeloCloud SD-WAN offering, broadening its addressable market and cross-sell opportunity.",
+        "citations": [
+          "S11",
+          "S14"
+        ],
+        "author": "Business analyst",
+        "severity": null
+      },
+      {
+        "text": "The company's capital-light model (capex of only $119.5M in FY2025 against $9.0B revenue) combined with rising operating cash flow of $4.4B and growing stockholders' equity of $12.4B reflects an asset-light, R&D/software-driven business rather than a capital-intensive manufacturing model.",
+        "citations": [
+          "F28",
+          "F4",
+          "F24",
+          "F36"
+        ],
+        "author": "Business analyst",
+        "severity": null
+      },
+      {
+        "text": "Revenue grew 28.6% YoY to $9.0B in FY2025, continuing strong multi-year growth from $4.4B in FY2022, with a 3-year revenue CAGR of 27.1%.",
+        "citations": [
+          "F46",
+          "F4",
+          "F1",
+          "F47"
+        ],
+        "author": "Financial analyst",
+        "severity": null
+      },
+      {
+        "text": "Profitability is high and expanding: gross margin was 64.1%, operating margin 42.8%, and net margin 39.0% in FY2025, with operating income rising from $1.5B in FY2022 to $3.9B in FY2025.",
+        "citations": [
+          "F41",
+          "F42",
+          "F43",
+          "F9",
+          "F12"
+        ],
+        "author": "Financial analyst",
+        "severity": null
+      },
+      {
+        "text": "Cash conversion is strong, with operating cash flow of $4.4B and free cash flow of $4.3B (47.2% FCF margin) in FY2025, both exceeding net income of $3.5B.",
+        "citations": [
+          "F24",
+          "F48",
+          "F49",
+          "F16"
+        ],
+        "author": "Financial analyst",
+        "severity": null
+      },
+      {
+        "text": "Capital intensity is low, with capital expenditures of only $119.5M in FY2025 versus $4.4B in operating cash flow, though capex rose sharply from $32.0M in FY2024.",
+        "citations": [
+          "F28",
+          "F24",
+          "F27"
+        ],
+        "author": "Financial analyst",
+        "severity": null
+      },
+      {
+        "text": "The balance sheet is well-capitalized, with stockholders' equity growing from $4.9B in FY2022 to $12.4B in FY2025 and cash & equivalents of $2.0B in FY2025 (down from $2.8B in FY2024).",
+        "citations": [
+          "F33",
+          "F36",
+          "F32",
+          "F31"
+        ],
+        "author": "Financial analyst",
+        "severity": null
+      },
+      {
+        "text": "Return on equity remained strong at 28.4% in FY2025, reflecting efficient use of a growing equity base.",
+        "citations": [
+          "F45",
+          "F36"
+        ],
+        "author": "Financial analyst",
+        "severity": null
+      },
+      {
+        "text": "Shareholder dilution is minimal, with diluted shares roughly flat at 1.28B in FY2025 versus 1.27B in FY2022, and a slight -0.4% YoY change in diluted share count in FY2025.",
+        "citations": [
+          "F40",
+          "F37",
+          "F50"
+        ],
+        "author": "Financial analyst",
+        "severity": null
+      },
+      {
+        "text": "Customer concentration is extreme and volatile: two customers together drove revenue swings, with one end customer at 26%, 20%, and 18% of total revenue and another at 16%, 15%, and 21% for 2025, 2024, and 2023 respectively \u2014 any change in their capex plans could materially move Arista's top line.",
+        "citations": [
+          "S28",
+          "S39"
+        ],
+        "author": "Risk analyst",
+        "severity": null
+      },
+      {
+        "text": "Arista is critically dependent on a single merchant silicon vendor, Broadcom, for switching chips; failure of this vendor to innovate, supply sufficient quantities, or continued collaboration could delay product launches, reduce gross margins, or make products less competitive.",
+        "citations": [
+          "S24",
+          "S27"
+        ],
+        "author": "Risk analyst",
+        "severity": null
+      },
+      {
+        "text": "Revenue growth is increasingly tied to AI-driven infrastructure demand, but management explicitly states the long-term trajectory of AI-related spending is unknown and demand estimates for new products are difficult to forecast, creating risk that current growth (28.6% YoY) is not sustainable.",
+        "citations": [
+          "S31",
+          "S41",
+          "F46"
+        ],
+        "author": "Risk analyst",
+        "severity": null
+      },
+      {
+        "text": "Large customer orders come with pricing discounts and favorable terms that compress gross margins in the periods such sales occur, even though overall gross margin held at 64.1% for both 2025 and 2024.",
+        "citations": [
+          "S30",
+          "S40",
+          "F41",
+          "S48"
+        ],
+        "author": "Risk analyst",
+        "severity": null
+      },
+      {
+        "text": "Supply chain risk is elevated by tariff escalation and tightening memory market conditions; management warns that if tariffs or supply conditions worsen and costs cannot be passed to customers, gross margins could be further impacted, despite capex more than tripling to $119.5M in 2025 from $32.0M in 2024 potentially reflecting supply-chain investment.",
+        "citations": [
+          "S44",
+          "F28",
+          "F27"
+        ],
+        "author": "Risk analyst",
+        "severity": null
+      },
+      {
+        "text": "Growing use of customer trials and contracts with acceptance periods has increased volatility in product deferred revenue balances, and failure to satisfy contract requirements could force product returns, preventing revenue recognition and requiring inventory write-downs.",
+        "citations": [
+          "S41"
+        ],
+        "author": "Risk analyst",
+        "severity": null
+      },
+      {
+        "text": "Geographic mix is shifting, with Non-Americas revenue reaching 20.9% of total revenue in 2025, partly driven by changes in large global customer sales mix \u2014 a concentration dynamic compounding the customer-concentration risk noted above.",
+        "citations": [
+          "S46"
+        ],
+        "author": "Risk analyst",
+        "severity": null
+      }
+    ],
+    "objections": [
+      {
+        "text": "Management states directly that large-customer sales come with pricing discounts, bundled upgrades, and extended warranties that reduce gross margins in the periods such sales occur, and that gross margin will 'continue to fluctuate' based on this large-customer mix \u2014 the reported 64.1% gross margin held flat in 2025 only coincidentally, and is not structurally insulated from concentration risk as the thesis implies.",
+        "citations": [
+          "S30",
+          "S40",
+          "S48",
+          "F41"
+        ],
+        "author": "Red team",
+        "severity": "medium"
+      },
+      {
+        "text": "The 'asset-light' framing is undercut by capex more than tripling from $32.0M in FY2024 to $119.5M in FY2025, even before accounting for supply-chain pressures; management separately warns that tightening memory market conditions and potential tariff escalation could further pressure margins if costs cannot be passed to customers, suggesting the capital-light, high-FCF-margin model may face rising cost and investment intensity going forward.",
+        "citations": [
+          "F27",
+          "F28",
+          "S44"
+        ],
+        "author": "Red team",
+        "severity": "medium"
+      },
+      {
+        "text": "Cash & equivalents actually declined from $2.8B in FY2024 to $2.0B in FY2025 even as operating cash flow rose to $4.4B, indicating cash is being deployed elsewhere (buybacks, working capital, etc.) rather than accumulating as a buffer \u2014 a detail the thesis's cash-generation narrative omits.",
+        "citations": [
+          "F31",
+          "F32",
+          "F24"
+        ],
+        "author": "Red team",
+        "severity": "low"
+      },
+      {
+        "text": "Management explicitly states the long-term trajectory of AI-related demand is 'unknown' and that demand estimates for new products are 'difficult to forecast,' while also noting that large customers' AI infrastructure prioritization has come 'in conjunction with... cost reduction measures' in non-AI capex \u2014 meaning even continued AI strength does not guarantee stable blended growth, directly undermining the durability of the 28.6% YoY growth rate the thesis is built on.",
+        "citations": [
+          "S31",
+          "S41",
+          "F46"
+        ],
+        "author": "Red team",
+        "severity": "high"
+      },
+      {
+        "text": "Rising customer trials and acceptance-period contracts have increased volatility in product deferred revenue, and failure to satisfy trial/contract requirements could force product returns, block revenue recognition, and require inventory write-downs \u2014 a structural risk to revenue quality that is not captured in the thesis's headline growth and margin metrics.",
+        "citations": [
+          "S41"
+        ],
+        "author": "Red team",
+        "severity": "medium"
+      },
+      {
+        "text": "Geographic revenue mix is itself a function of large-customer concentration: Non-Americas revenue reached 20.9% of total revenue in 2025 'primarily driven by changes in the geographic mix of sales to our large global customers,' meaning the customer-concentration risk cited in the thesis also compounds into geographic and regulatory (tariff/export control) exposure not separately underwritten.",
+        "citations": [
+          "S46"
+        ],
+        "author": "Red team",
+        "severity": "low"
+      }
+    ]
+  },
+  "grounding": {
+    "proposed": 43,
+    "kept": 41,
+    "dropped": [
+      {
+        "stage": "Business analyst",
+        "claim": "Arista is positioning its Etherlink portfolio (20+ products, including 800G switches) to capture share as the industry shifts AI cluster interconnects from proprietary approaches like InfiniBand to open Ethernet standards defined by the Ultra Ethernet Consortium, a key structural growth driver reflected in 28.6% YoY revenue growth to $9.0B in FY2025.",
+        "reason": "number '20' not supported by cited evidence ['S8', 'S9', 'F46', 'F4']"
+      },
+      {
+        "stage": "Red team",
+        "claim": "Customer concentration is not just high but highly volatile: the two largest customers' revenue shares swung from 21% and 18% in 2023 to 26% and 16% in 2025, with management explicitly warning that timing of orders, capex mix changes, and cost-reduction efforts at these customers create material quarter-to-quarter and annual revenue fluctuations \u2014 the thesis's 28.6% growth rate is thus anchored to a small number of accounts whose spending patterns have already proven unstable.",
+        "reason": "number '28.6%' not supported by cited evidence ['S28', 'S39']"
+      }
+    ]
+  },
+  "llm_trace": [
+    {
+      "stage": "Financial analyst",
+      "reply": "{\"claims\": [{\"text\": \"Revenue grew 28.6% YoY to $9.0B in FY2025, continuing strong multi-year growth from $4.4B in FY2022, with a 3-year revenue CAGR of 27.1%.\", \"citations\": [\"F46\", \"F4\", \"F1\", \"F47\"]}, {\"text\": \"Profitability is high and expanding: gross margin was 64.1%, operating margin 42.8%, and net margin 39.0% in FY2025, with operating income rising from $1.5B in FY2022 to $3.9B in FY2025.\", \"citations\": [\"F41\", \"F42\", \"F43\", \"F9\", \"F12\"]}, {\"text\": \"Cash conversion is strong, with operating cash flow of $4.4B and free cash flow of $4.3B (47.2% FCF margin) in FY2025, both exceeding net income of $3.5B.\", \"citations\": [\"F24\", \"F48\", \"F49\", \"F16\"]}, {\"text\": \"Capital intensity is low, with capital expenditures of only $119.5M in FY2025 versus $4.4B in operating cash flow, though capex rose sharply from $32.0M in FY2024.\", \"citations\": [\"F28\", \"F24\", \"F27\"]}, {\"text\": \"The balance sheet is well-capitalized, with stockholders' equity growing from $4.9B in FY2022 to $12.4B in FY2025 and cash & equivalents of $2.0B in FY2025 (down from $2.8B in FY2024).\", \"citations\": [\"F33\", \"F36\", \"F32\", \"F31\"]}, {\"text\": \"Return on equity remained strong at 28.4% in FY2025, reflecting efficient use of a growing equity base.\", \"citations\": [\"F45\", \"F36\"]}, {\"text\": \"Shareholder dilution is minimal, with diluted shares roughly flat at 1.28B in FY2025 versus 1.27B in FY2022, and a slight -0.4% YoY change in diluted share count in FY2025.\", \"citations\": [\"F40\", \"F37\", \"F50\"]}]}"
+    },
+    {
+      "stage": "Risk analyst",
+      "reply": "{\"claims\": [{\"text\": \"Customer concentration is extreme and volatile: two customers together drove revenue swings, with one end customer at 26%, 20%, and 18% of total revenue and another at 16%, 15%, and 21% for 2025, 2024, and 2023 respectively \\u2014 any change in their capex plans could materially move Arista's top line.\", \"citations\": [\"S28\", \"S39\"]}, {\"text\": \"Arista is critically dependent on a single merchant silicon vendor, Broadcom, for switching chips; failure of this vendor to innovate, supply sufficient quantities, or continued collaboration could delay product launches, reduce gross margins, or make products less competitive.\", \"citations\": [\"S24\", \"S27\"]}, {\"text\": \"Revenue growth is increasingly tied to AI-driven infrastructure demand, but management explicitly states the long-term trajectory of AI-related spending is unknown and demand estimates for new products are difficult to forecast, creating risk that current growth (28.6% YoY) is not sustainable.\", \"citations\": [\"S31\", \"S41\", \"F46\"]}, {\"text\": \"Large customer orders come with pricing discounts and favorable terms that compress gross margins in the periods such sales occur, even though overall gross margin held at 64.1% for both 2025 and 2024.\", \"citations\": [\"S30\", \"S40\", \"F41\", \"S48\"]}, {\"text\": \"Supply chain risk is elevated by tariff escalation and tightening memory market conditions; management warns that if tariffs or supply conditions worsen and costs cannot be passed to customers, gross margins could be further impacted, despite capex more than tripling to $119.5M in 2025 from $32.0M in 2024 potentially reflecting supply-chain investment.\", \"citations\": [\"S44\", \"F28\", \"F27\"]}, {\"text\": \"Growing use of customer trials and contracts with acceptance periods has increased volatility in product deferred revenue balances, and failure to satisfy contract requirements could force product returns, preventing revenue recognition and requiring inventory write-downs.\", \"citations\": [\"S41\"]}, {\"text\": \"Geographic mix is shifting, with Non-Americas revenue reaching 20.9% of total revenue in 2025, partly driven by changes in large global customer sales mix \\u2014 a concentration dynamic compounding the customer-concentration risk noted above.\", \"citations\": [\"S46\"]}]}"
+    },
+    {
+      "stage": "Business analyst",
+      "reply": "{\"claims\": [\n  {\"text\": \"Arista's core business model is a 'network-as-a-service' platform (built on its EOS operating system and Network Data Lake) that unifies AI, Data, Campus, and WAN networking, sold to a global customer base segmented into Cloud and AI Titans, AI and Specialty Providers, and Enterprise.\", \"citations\": [\"S1\", \"S2\"]},\n  {\"text\": \"Revenue is generated across three product/service categories\u2014Core (AI, Cloud, and Data Center Networking), Cognitive Adjacencies (Campus and Routing), and Cognitive Networks (Software and Services)\u2014giving Arista a mix of hardware and recurring software/services revenue streams.\", \"citations\": [\"S5\"]},\n  {\"text\": \"Arista differentiates competitively through open, standards-based technology that avoids vendor lock-in, high reliability, and real-time telemetry/automation via EOS and NetDL, positioning it against proprietary incumbents.\", \"citations\": [\"S2\", \"S13\"]},\n  {\"text\": \"Arista is positioning its Etherlink portfolio (20+ products, including 800G switches) to capture share as the industry shifts AI cluster interconnects from proprietary approaches like InfiniBand to open Ethernet standards defined by the Ultra Ethernet Consortium, a key structural growth driver reflected in 28.6% YoY revenue growth to $9.0B in FY2025.\", \"citations\": [\"S8\", \"S9\", \"F46\", \"F4\"]},\n  {\"text\": \"The business model is highly profitable and cash-generative, with FY2025 gross margin of 64.1%, operating margin of 42.8%, and free cash flow margin of 47.2% ($4.3B FCF on $9.0B revenue), supporting continued R&D investment of 13.7% of revenue ($1.2B).\", \"citations\": [\"F41\", \"F42\", \"F49\", \"F48\", \"F4\", \"F44\", \"F20\"]},\n  {\"text\": \"Arista is expanding beyond its core data-center switching franchise into Enterprise campus and WAN via its cognitive campus portfolio, CloudVision management platform, and the recently added VeloCloud SD-WAN offering, broadening its addressable market and cross-sell opportunity.\", \"citations\": [\"S11\", \"S14\"]},\n  {\"text\": \"The company's capital-light model (capex of only $119.5M in FY2025 against $9.0B revenue) combined with rising operating cash flow of $4.4B and growing stockholders' equity of $12.4B reflects an asset-light, R&D/software-driven business rather than a capital-intensive manufacturing model.\", \"citations\": [\"F28\", \"F4\", \"F24\", \"F36\"]}\n]}"
+    },
+    {
+      "stage": "PM draft",
+      "reply": "{\"thesis\": {\"text\": \"Arista's asset-light, software-enabled networking platform delivered 28.6% YoY revenue growth to $9.0B with 64.1% gross margin, 42.8% operating margin, and 47.2% FCF margin ($4.3B FCF), while ROE reached 28.4% and equity grew to $12.4B, reflecting a highly efficient, cash-generative compounder riding AI-driven data center demand. However, this growth is concentrated and fragile: two customers alone represented 26% and 16% of FY2025 revenue, the company is singularly dependent on Broadcom for merchant silicon, and management explicitly warns that AI-related demand's long-term trajectory is unknown, making the current growth rate difficult to underwrite as durable.\", \"citations\": [\"F46\", \"F4\", \"F41\", \"F42\", \"F49\", \"F48\", \"F45\", \"F36\", \"S28\", \"S24\", \"S31\"]}}"
+    },
+    {
+      "stage": "Red team",
+      "reply": "{\"objections\": [{\"text\": \"Customer concentration is not just high but highly volatile: the two largest customers' revenue shares swung from 21% and 18% in 2023 to 26% and 16% in 2025, with management explicitly warning that timing of orders, capex mix changes, and cost-reduction efforts at these customers create material quarter-to-quarter and annual revenue fluctuations \\u2014 the thesis's 28.6% growth rate is thus anchored to a small number of accounts whose spending patterns have already proven unstable.\", \"citations\": [\"S28\", \"S39\"], \"severity\": \"high\"}, {\"text\": \"Management states directly that large-customer sales come with pricing discounts, bundled upgrades, and extended warranties that reduce gross margins in the periods such sales occur, and that gross margin will 'continue to fluctuate' based on this large-customer mix \\u2014 the reported 64.1% gross margin held flat in 2025 only coincidentally, and is not structurally insulated from concentration risk as the thesis implies.\", \"citations\": [\"S30\", \"S40\", \"S48\", \"F41\"], \"severity\": \"medium\"}, {\"text\": \"The 'asset-light' framing is undercut by capex more than tripling from $32.0M in FY2024 to $119.5M in FY2025, even before accounting for supply-chain pressures; management separately warns that tightening memory market conditions and potential tariff escalation could further pressure margins if costs cannot be passed to customers, suggesting the capital-light, high-FCF-margin model may face rising cost and investment intensity going forward.\", \"citations\": [\"F27\", \"F28\", \"S44\"], \"severity\": \"medium\"}, {\"text\": \"Cash & equivalents actually declined from $2.8B in FY2024 to $2.0B in FY2025 even as operating cash flow rose to $4.4B, indicating cash is being deployed elsewhere (buybacks, working capital, etc.) rather than accumulating as a buffer \\u2014 a detail the thesis's cash-generation narrative omits.\", \"citations\": [\"F31\", \"F32\", \"F24\"], \"severity\": \"low\"}, {\"text\": \"Management explicitly states the long-term trajectory of AI-related demand is 'unknown' and that demand estimates for new products are 'difficult to forecast,' while also noting that large customers' AI infrastructure prioritization has come 'in conjunction with... cost reduction measures' in non-AI capex \\u2014 meaning even continued AI strength does not guarantee stable blended growth, directly undermining the durability of the 28.6% YoY growth rate the thesis is built on.\", \"citations\": [\"S31\", \"S41\", \"F46\"], \"severity\": \"high\"}, {\"text\": \"Rising customer trials and acceptance-period contracts have increased volatility in product deferred revenue, and failure to satisfy trial/contract requirements could force product returns, block revenue recognition, and require inventory write-downs \\u2014 a structural risk to revenue quality that is not captured in the thesis's headline growth and margin metrics.\", \"citations\": [\"S41\"], \"severity\": \"medium\"}, {\"text\": \"Geographic revenue mix is itself a function of large-customer concentration: Non-Americas revenue reached 20.9% of total revenue in 2025 'primarily driven by changes in the geographic mix of sales to our large global customers,' meaning the customer-concentration risk cited in the thesis also compounds into geographic and regulatory (tariff/export control) exposure not separately underwritten.\", \"citations\": [\"S46\"], \"severity\": \"low\"}]}"
+    },
+    {
+      "stage": "PM final",
+      "reply": "{\n  \"thesis\": {\n    \"text\": \"Arista's software-enabled networking platform delivered 28.6% YoY revenue growth to $9.0B with 64.1% gross margin, 42.8% operating margin, and 47.2% FCF margin ($4.3B FCF), while ROE reached 28.4% and equity grew to $12.4B \u2014 a highly efficient, cash-generative compounder riding AI-driven data center demand. However, the growth and margin profile is less structurally durable than headline metrics suggest: two customers represented 26% and 16% of FY2025 revenue with historically volatile mix (18-21% and 15-21% ranges over the prior two years), gross margin stability is explicitly tied to large-customer sales mix rather than structural insulation, capex more than tripled YoY ($119.5M vs $32.0M) amid tariff and memory-market cost pressure that management says could further hit margins, and management explicitly states AI demand's long-term trajectory is unknown \u2014 making the current growth rate difficult to underwrite as durable.\",\n    \"citations\": [\"F46\", \"F4\", \"F41\", \"F42\", \"F49\", \"F48\", \"F45\", \"F36\", \"S28\", \"S39\", \"S24\", \"S31\", \"S48\", \"F28\", \"F27\", \"S44\"]\n  },\n  \"bull\": [\n    {\"text\": \"Revenue grew 28.6% YoY to $9.0B in FY2025, continuing a strong multi-year trajectory from $4.4B in FY2022 with a 3-year CAGR of 27.1%.\", \"citations\": [\"F46\", \"F4\", \"F1\", \"F47\"]},\n    {\"text\": \"Profitability is high and expanding: 64.1% gross margin, 42.8% operating margin, and 39.0% net margin, with operating income rising from $1.5B in FY2022 to $3.9B in FY2025.\", \"citations\": [\"F41\", \"F42\", \"F43\", \"F9\", \"F12\"]},\n    {\"text\": \"Cash conversion is strong: operating cash flow of $4.4B and free cash flow of $4.3B (47.2% FCF margin), both exceeding net income of $3.5B, funding $1.2B (13.7% of revenue) of R&D.\", \"citations\": [\"F24\", \"F48\", \"F49\", \"F16\", \"F20\", \"F44\"]},\n    {\"text\": \"The balance sheet strengthened materially, with stockholders' equity growing from $4.9B in FY2022 to $12.4B in FY2025 and ROE holding at 28.4%, while diluted shares stayed roughly flat (1.28B vs 1.27B in FY2022, -0.4% YoY).\", \"citations\": [\"F33\", \"F36\", \"F45\", \"F40\", \"F37\", \"F50\"]},\n    {\"text\": \"Arista is broadening its addressable market beyond core data-center switching into Enterprise campus and WAN via CloudVision and the newly added VeloCloud SD-WAN portfolio, diversifying revenue mix (Core 65%, Cognitive Adjacencies 18%, Software/Services 17% of FY2025 revenue).\", \"citations\": [\"S11\", \"S14\", \"S37\"]}\n  ],\n  \"bear\": [\n    {\"text\": \"Customer concentration is extreme and volatile: one end customer represented 26%, 20%, and 18% of total revenue and another 16%, 15%, and 21% for 2025, 2024, and 2023 respectively \u2014 any shift in their capex plans could materially move the top line, and management explicitly expects this variability to continue.\", \"citations\": [\"S28\", \"S39\"]},\n    {\"text\": \"Management states the long-term trajectory of AI-related demand is 'unknown' and that demand estimates for new products are 'difficult to forecast,' while large customers' AI prioritization has at times coincided with cost-reduction measures in non-AI capex \u2014 directly undermining the durability of the 28.6% YoY growth rate.\", \"citations\": [\"S31\", \"S41\", \"F46\"]},\n    {\"text\": \"The 64.1% gross margin is not structurally insulated from concentration risk: management states large-customer sales come with pricing discounts, bundled upgrades, and extended warranties that reduce margins in the periods such sales occur, and gross margin will 'continue to fluctuate' based on this mix.\", \"citations\": [\"S30\", \"S40\", \"S48\", \"F41\"]},\n    {\"text\": \"The asset-light narrative is undercut by capex more than tripling from $32.0M in FY2024 to $119.5M in FY2025, alongside management warnings that tightening memory-market conditions and potential tariff escalation could further pressure gross margins if costs cannot be passed to customers.\", \"citations\": [\"F27\", \"F28\", \"S44\"]},\n    {\"text\": \"Arista is singularly dependent on Broadcom for merchant silicon; failure of this vendor to innovate, supply sufficient quantities, or continue collaborating could delay product launches, reduce gross margins, or make products less competitive.\", \"citations\": [\"S24\", \"S27\"]},\n    {\"text\": \"Cash & equivalents actually declined from $2.8B in FY2024 to $2.0B in FY2025 despite operating cash flow rising to $4.4B, indicating cash is being deployed elsewhere rather than accumulating as a buffer.\", \"citations\": [\"F31\", \"F32\", \"F24\"]},\n    {\"text\": \"Rising customer trials and acceptance-period contracts have increased volatility in product deferred revenue balances, and failure to satisfy trial/contract requirements could force product returns, block revenue recognition, and require inventory write-downs \u2014 a revenue-quality risk not captured in headline growth metrics; this compounds with geographic concentration, as Non-Americas revenue reaching 20.9% of total in 2025 was 'primarily driven by changes in the geographic mix of sales to our large global customers.'\", \"citations\": [\"S41\", \"S46\"]}\n  ],\n  \"questions\": [\n    \"What specifically drove the tripling of capex from $32.0M to $119.5M \u2014 is it discretionary supply-chain investment or a structural shift toward owning more manufacturing/inventory infrastructure?\",\n    \"What is the identity and contractual structure (multi-year commitments vs. purchase orders) of the two customers representing 26% and 16% of revenue, and how much visibility does Arista have into their forward capex plans?\",\n    \"Does Arista have any qualified second-source or roadmap contingency for merchant silicon if Broadcom's collaboration or supply falters?\",\n    \"How much of the flat 64.1% gross margin in 2025 vs 2024 was masked by product/customer mix shifts, and what would margin look like excluding the two largest customers?\",\n    \"What is the magnitude and trend of product deferred revenue tied to customer trials/acceptance periods, and how large is exposure to potential product returns or inventory write-downs?\",\n    \"What is driving the decline in cash & equivalents despite rising operating cash flow \u2014 buybacks, working capital build, or other capital allocation choices?\",\n    \"How exposed is the 20.9% Non-Americas revenue mix to tariff/export-control risk, and is it concentrated in the same large customers driving overall concentration risk?\",\n    \"What would blended revenue growth look like if the two largest customers' non-AI capex normalizes or declines, per management's own cited risk of cost-reduction measures?\"\n  ],\n  \"verdict\": \"Dig deeper\",\n  \"verdict_rationale\": {\n    \"text\": \"Arista shows genuinely strong, high-quality financial performance (28.6% revenue growth, 64.1% gross margin, 47.2% FCF margin, 28.4% ROE) that merits continued attention, but the red team surfaced high-severity, filing-sourced evidence that growth durability, margin stability, and the asset-light characterization all hinge on customer concentration and AI-demand assumptions management itself calls unpredictable ('long-term trajectory is unknown'), compounded by a tripling of capex and a single-vendor silicon dependency. These are not disqualifying but require targeted diligence before forming a durable investment view.\",\n    \"citations\": [\"F46\", \"F41\", \"F49\", \"F45\", \"S31\", \"S28\", \"F28\", \"F27\", \"S24\"]\n  }\n}"
+    }
+  ]
+}

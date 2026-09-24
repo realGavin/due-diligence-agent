@@ -28,6 +28,7 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="ddagent", description=__doc__)
     ap.add_argument("tickers", nargs="+")
     ap.add_argument("--out", default="memos")
+    ap.add_argument("--no-research", action="store_true", help="skip web research (valuation + question answering)")
     ap.add_argument("--model", default=None, help="Anthropic model id (default: $DD_MODEL or claude-sonnet-5)")
     args = ap.parse_args(argv)
 
@@ -39,12 +40,14 @@ def main(argv: list[str] | None = None) -> int:
         pack = build_pack(edgar, t)
         print(f"[{t}] {len(pack.facts)} facts, {len(pack.excerpts)} excerpts; running agents…", file=sys.stderr)
         team = Team(llm, pack)
-        memo = team.run()
+        memo = team.run(research=not args.no_research)
         (out / f"{pack.ticker}.md").write_text(render(memo, pack, team.report, llm.model))
         trace = {"evidence": pack.to_dict(), "memo": asdict(memo), "grounding": asdict(team.report),
                  "llm_trace": team.trace}
         (out / f"{pack.ticker}.trace.json").write_text(json.dumps(trace, indent=2))
-        print(f"[{t}] {memo.verdict} · grounding {team.report.kept}/{team.report.proposed} → {out / pack.ticker}.md",
+        verdict = memo.scorecard.verdict if memo.scorecard else memo.verdict
+        answered = sum(1 for r in memo.research if r.claims)
+        print(f"[{t}] {verdict} (score {memo.scorecard.pct:.0%}) · research answered {answered}/{len(memo.research)} · grounding {team.report.kept}/{team.report.proposed} → {out / pack.ticker}.md",
               file=sys.stderr)
     return 0
 
