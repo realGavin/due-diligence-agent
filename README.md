@@ -44,7 +44,7 @@ Example memos from real 10-Ks: [NVIDIA](memos/NVDA.md) · [Costco](memos/COST.md
 | Claims proposed by agents | 43 | 42 | 43 | 128 |
 | Passed the grounding gate | 42 | 41 | 41 | **124 (97%)** |
 
-**What the first real run taught me.** v0.1 passed only 91 of 124 claims (73%). I replayed the verifier on every dropped claim and sorted each drop into one of two buckets:
+**What the first real run taught me.** v0.1 passed only 91 of 121 claims (75%). I replayed the verifier on every dropped claim and sorted each drop into one of two buckets:
 
 - **20 were the verifier being wrong.** It read "FY22" as a claim about the number 22, read "444.5M-444.8M" as a negative number, and applied a flat tolerance that rejected correctly rounded figures. Rounding tolerance is now based on how many digits the writer used, so $4.4B is checked to ±$0.05B.
 - **10 were real catches.** A number was cited to the wrong source, or the model had added two disclosed figures together ("26% + 16% = 42%") without anything in the filing to back the sum. The prompt now forbids self-computed totals. The gate still rejects them anyway.
