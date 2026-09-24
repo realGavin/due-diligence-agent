@@ -24,7 +24,20 @@ def build_pack(edgar: Edgar, ticker: str) -> EvidencePack:
     return pack
 
 
+def load_dotenv(path: str = ".env") -> None:
+    """Read KEY=VALUE lines from .env (git-ignored) without overriding the real environment."""
+    import os
+
+    if not Path(path).exists():
+        return
+    for line in Path(path).read_text().splitlines():
+        if "=" in line and not line.lstrip().startswith("#"):
+            k, v = line.split("=", 1)
+            os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
+
+
 def main(argv: list[str] | None = None) -> int:
+    load_dotenv()
     ap = argparse.ArgumentParser(prog="ddagent", description=__doc__)
     ap.add_argument("tickers", nargs="+")
     ap.add_argument("--out", default="memos")
