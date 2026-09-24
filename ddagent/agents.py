@@ -83,9 +83,23 @@ class Team:
 
     # -- plumbing --------------------------------------------------------------
     def _ask(self, stage: str, system: str, user: str) -> dict:
+        """Ask for JSON; if the reply is cut off or malformed, ask once more for a compact
+        version. If that also fails, the stage contributes nothing instead of crashing the run."""
         raw = self.llm.complete(system, user)
         self.trace.append({"stage": stage, "reply": raw})
-        return parse_json(raw)
+        try:
+            return parse_json(raw)
+        except (ValueError, json.JSONDecodeError):
+            retry = user + ("\n\nIMPORTANT: your previous reply was cut off or was not valid JSON. "
+                            "Reply again with compact JSON only: at most 6 items, one or two sentences each.")
+            raw = self.llm.complete(system, retry)
+            self.trace.append({"stage": f"{stage} (retry)", "reply": raw})
+            try:
+                return parse_json(raw)
+            except (ValueError, json.JSONDecodeError):
+                self.report.dropped.append({"stage": stage, "claim": "(whole stage)",
+                                            "reason": "model reply was not valid JSON after one retry"})
+                return {}
 
     def _keep(self, stage: str, author: str, items: list[dict], with_severity: bool = False) -> list[Claim]:
         kept = []

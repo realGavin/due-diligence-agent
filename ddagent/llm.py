@@ -30,7 +30,7 @@ class LLM(Protocol):
 
 
 class AnthropicLLM:
-    def __init__(self, model: str | None = None, max_tokens: int = 4000):
+    def __init__(self, model: str | None = None, max_tokens: int = 8000):
         import anthropic  # imported lazily so the test suite doesn't need it
 
         key = os.environ.get("ANTHROPIC_API_KEY", "")

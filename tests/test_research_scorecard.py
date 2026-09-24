@@ -109,3 +109,40 @@ def test_full_run_with_research(pack):
     assert "answered 1 from cited public sources" in md
     assert "[EXMP quote](https://markets.example.com/exmp)" in md
     assert "| Market cap | $3.0B |" in md
+
+
+def test_truncated_citation_is_expanded_from_the_page(pack, monkeypatch):
+    from ddagent import passages
+
+    page = ("Intro text. According to BofA's read of the company's 10-K, Microsoft made up 26% of Arista's 2025 "
+            "revenue, while Meta accounted for 16%. More text follows here.")
+    monkeypatch.setattr(passages, "_page_text", lambda url: page)
+    cited = "According to BofA&#x27;s read of the company&#x27;s 10-K, Microsoft made up 26% of Arista&#x27;s 2025 revenue, wh..."
+    segs = [Segment("Microsoft made up 26% of 2025 revenue, while Meta accounted for 16%.",
+                    [Source("https://news.example.com/a", "News", cited)])]
+    ans = _researcher(pack, {"customers": segs}).answer("Who are the largest customers?")
+    assert ans.claims, "16% is on the page, so the claim should pass once the passage is expanded"
+    assert "Meta accounted for 16%" in pack.get(ans.claims[0].citations[0]).text
+
+
+def test_truncated_citation_stays_strict_when_page_unavailable(pack):
+    cited = "Microsoft made up 26% of Arista&#x27;s 2025 revenue, wh..."
+    segs = [Segment("Microsoft made up 26% of revenue and Meta 16%.", [Source("https://x.example", "x", cited)])]
+    assert not _researcher(pack, {"customers": segs}).answer("Who are the largest customers?").claims
+
+
+def test_invalid_json_is_retried_then_skipped(pack):
+    class Flaky:
+        def __init__(self):
+            self.n = 0
+
+        def complete(self, system, user):
+            self.n += 1
+            return '{"claims": [{"text": "cut off'  # truncated every time
+
+        def research(self, system, question):
+            return [Segment("UNANSWERED: offline")]
+
+    team = Team(Flaky(), pack)
+    assert team.analyst("Risk analyst") == []
+    assert any(d["reason"].startswith("model reply was not valid JSON") for d in team.report.dropped)

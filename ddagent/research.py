@@ -40,6 +40,11 @@ class Researcher:
 
     def _ingest(self, stage: str, segments: list[Segment]) -> list[Claim]:
         """Register cited passages as W-evidence, then gate each cited segment as a claim."""
+        from .passages import expand
+        from .llm import Source
+
+        for seg in segments:  # network fetches happen outside the lock
+            seg.sources = [Source(x.url, x.title, expand(x.url, x.cited_text)) for x in seg.sources]
         with self._lock:
             return self._ingest_locked(stage, segments)
 

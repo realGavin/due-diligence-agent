@@ -2,8 +2,11 @@
 from __future__ import annotations
 
 import json
+import os
 
 import pytest
+
+os.environ["DD_NO_FETCH"] = "1"  # never hit the network from tests
 
 from ddagent.evidence import EvidencePack, build_facts
 from ddagent.filing import build_excerpts
