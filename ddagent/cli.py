@@ -28,7 +28,7 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="ddagent", description=__doc__)
     ap.add_argument("tickers", nargs="+")
     ap.add_argument("--out", default="memos")
-    ap.add_argument("--model", default=None, help="Anthropic model id (default: $DD_MODEL or claude-sonnet-4-5)")
+    ap.add_argument("--model", default=None, help="Anthropic model id (default: $DD_MODEL or claude-sonnet-5)")
     args = ap.parse_args(argv)
 
     edgar, llm = Edgar(), AnthropicLLM(args.model)

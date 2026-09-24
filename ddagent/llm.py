@@ -15,15 +15,17 @@ class AnthropicLLM:
     def __init__(self, model: str | None = None, max_tokens: int = 4000):
         import anthropic  # imported lazily so the test suite doesn't need it
 
+        key = os.environ.get("ANTHROPIC_API_KEY", "")
+        if not key.startswith("sk-ant-") or "your-key" in key:
+            raise RuntimeError("Set ANTHROPIC_API_KEY to your real key (from console.anthropic.com).")
         self.client = anthropic.Anthropic()
-        self.model = model or os.environ.get("DD_MODEL", "claude-sonnet-4-5")
+        self.model = model or os.environ.get("DD_MODEL", "claude-sonnet-5")
         self.max_tokens = max_tokens
 
     def complete(self, system: str, user: str) -> str:
         msg = self.client.messages.create(
             model=self.model,
             max_tokens=self.max_tokens,
-            temperature=0,
             system=system,
             messages=[{"role": "user", "content": user}],
         )
