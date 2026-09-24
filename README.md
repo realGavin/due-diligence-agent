@@ -12,7 +12,7 @@ Three specialist agents analyze the filing. A red-team agent attacks their thesi
 
 ## Results
 
-Five real memos, generated September 2026:
+Five sample memos, generated September 2026:
 
 | Company | Verdict (scorecard) | PM's own view | What the memo caught |
 |---|---|---|---|
@@ -79,15 +79,6 @@ A claim survives only if every id it cites exists and **every number in it trace
 | Control: unmodified claims still pass | 440 / 440 |
 
 The gate checks numbers and ids, not meaning. A qualitative claim cited to the wrong passage gets through, and the table shows that openly because hiding it would defeat the point. Misses are listed in [`eval/RESULTS.md`](eval/RESULTS.md).
-
-## How it got here
-
-Each version was driven by what real runs exposed, and every fix has a regression test.
-
-- **v0.1 → first real run (75% of claims passed).** Replaying every dropped claim showed that 20 of 30 drops were the verifier being wrong: "FY22" read as the number 22, a range dash read as a minus sign, and a flat rounding tolerance. Costco's em-dash headings ("Item 1A—Risk Factors") left it with a single excerpt. NVIDIA's and Arista's capex came from a tag they had stopped using years earlier, and the red team caught that one.
-- **Planted-error eval.** It found two real holes: excerpt numbers were matched as substrings ("14" inside "914"), and ratios could borrow a same-valued number from a different metric. Both are fixed.
-- **Web research.** The first version rejected true quotes because the API truncates cited passages, so the agent now recovers the full passage from the page. A live market-cap page had moved from $250.6B to $258.8B between search and verification, so the gate now accepts the number the model was shown or the one the page currently shows. It never accepts anything else.
-- **Replay** (`scripts/replay.py`). Saved runs are re-graded with current code by feeding back the recorded model replies. This needs no API key, and it's how the numbers above were refreshed after the last fixes.
 
 ## Run it
 
