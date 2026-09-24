@@ -3,7 +3,7 @@
 **A team of AI analysts that reads a company's 10-K and writes an investment memo, and is structurally prevented from making things up.**
 
 ```bash
-dd NVDA COST ANET      # → memos/NVDA.md, memos/COST.md, memos/ANET.md
+ddagent NVDA COST ANET   # → memos/NVDA.md, memos/COST.md, memos/ANET.md
 ```
 
 Three specialist agents analyze the filing. A red-team agent then attacks their thesis, and a portfolio-manager agent writes the final memo, which covers the thesis, the bull and bear cases, diligence questions, and a triage verdict. Every claim in the memo cites the evidence behind it, and **code rather than a prompt checks every citation and every number before the claim can move on to the next agent.**
@@ -50,12 +50,12 @@ flowchart LR
 
 ```bash
 pip install -e ".[dev]"
-export ANTHROPIC_API_KEY=...                         # your key
+export ANTHROPIC_API_KEY=...                         # your real key
 export SEC_USER_AGENT="Your Name you@example.com"    # SEC requires a contact
-dd AAPL MSFT --out memos
+ddagent AAPL MSFT --out memos
 ```
 
-Each run writes `memos/<TICKER>.md` and a full `trace.json` containing the evidence pack, every raw model reply, and the grounding report, so any memo can be audited end to end. EDGAR responses are cached in `.cache/`, and requests stay under SEC's 10-per-second limit.
+The command is `ddagent` (not `dd`, which is a built-in Unix tool). Each run writes `memos/<TICKER>.md` and a full `trace.json` containing the evidence pack, every raw model reply, and the grounding report, so any memo can be audited end to end. EDGAR responses are cached in `.cache/`, and requests stay under SEC's 10-per-second limit.
 
 ## Limitations (honest ones)
 

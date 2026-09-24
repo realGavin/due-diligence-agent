@@ -1,4 +1,4 @@
-"""dd TICKER [TICKER ...]: write a grounded due-diligence memo for each ticker."""
+"""ddagent TICKER [TICKER ...]: write a grounded due-diligence memo for each ticker."""
 from __future__ import annotations
 
 import argparse
@@ -25,7 +25,7 @@ def build_pack(edgar: Edgar, ticker: str) -> EvidencePack:
 
 
 def main(argv: list[str] | None = None) -> int:
-    ap = argparse.ArgumentParser(prog="dd", description=__doc__)
+    ap = argparse.ArgumentParser(prog="ddagent", description=__doc__)
     ap.add_argument("tickers", nargs="+")
     ap.add_argument("--out", default="memos")
     ap.add_argument("--model", default=None, help="Anthropic model id (default: $DD_MODEL or claude-sonnet-4-5)")
