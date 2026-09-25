@@ -6,7 +6,7 @@
 ddagent NVDA COST ANET NKE BYND   # → memos/<TICKER>.md
 ```
 
-Three specialist agents analyze the filing. A red-team agent attacks their thesis, and a PM agent writes the memo. A research agent then answers the PM's open questions with live web search. Every claim cites its evidence, and code rather than a prompt checks every citation and every number before the claim can move on. The verdict comes from a scorecard computed in code, not from the model's mood.
+Three specialist agents analyze the filing, a red-team agent attacks their thesis, and a PM agent writes the memo. A research agent then answers the PM's open questions with live web search. A scorecard turns the evidence into a verdict, and the memo shows exactly where the scorecard and the PM disagree.
 
 > Research triage, not investment advice.
 
@@ -23,16 +23,6 @@ Five sample memos, generated September 2026:
 | [Beyond Meat](memos/BYND.md) | **Pass** · 0% | Watch | Reported $219M net income came from a $548.7M debt-restructuring gain; operating loss $333.6M, operating cash burn $144.9M |
 
 The scorecard and the PM disagree on every company, and that's useful information. The scorecard is mechanical and backward-looking: it reads the last fiscal year. The PM weighs the story, including turnarounds. The memo shows both, and it shows the scorecard line by line so a reader can see exactly where they disagree.
-
-**Grounding across the five runs**
-
-| | Passed the gate |
-|---|---|
-| Analyst, red-team and PM claims (evidence: 10-K facts and excerpts) | 195 / 206 (95%) |
-| Research claims with web citations | 257 / 294 (87%) |
-| Research sentences containing numbers but no citation | 0 / 85 (dropped by design) |
-
-The research agent answered 30 of 30 diligence questions from cited public sources, so none were left for a human.
 
 ## How it works
 
