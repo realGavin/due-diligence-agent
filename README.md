@@ -67,7 +67,7 @@ A claim survives only if every id it cites exists and **every number in it trace
 
 ## Measuring the gate
 
-`eval/planted_errors.py` takes every claim that passed in the five real runs, corrupts it, and re-checks it. It makes no model calls, uses a fixed seed, and runs in CI.
+`eval/planted_errors.py` takes every claim that passed in the five runs, corrupts it, and re-checks it. It makes no model calls, uses a fixed seed, and runs in CI.
 
 | Corruption | Caught |
 |---|---|
