@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ddagent"
-version = "0.1.0"
-description = "Grounded multi-agent due diligence on SEC filings: analysts, a red team, and a code-enforced citation gate."
+version = "0.3.0"
+description = "Multi-agent equity research on SEC filings, with a scorecard that is backtested point-in-time and a ledger that grades every verdict."
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
@@ -13,10 +13,12 @@ authors = [{name = "Gavin Zeng"}]
 dependencies = ["httpx>=0.27", "beautifulsoup4>=4.12", "anthropic>=0.40"]
 
 [project.optional-dependencies]
-dev = ["pytest>=8"]
+backtest = ["numpy>=1.26", "matplotlib>=3.8", "curl_cffi>=0.7"]
+dev = ["pytest>=8", "numpy>=1.26"]
 
 [project.scripts]
 ddagent = "ddagent.cli:main"
+ddagent-grade = "ddagent.ledger:main"
 
 [tool.setuptools]
-packages = ["ddagent"]
+packages = ["ddagent", "backtest"]

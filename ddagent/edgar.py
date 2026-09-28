@@ -85,6 +85,10 @@ class Edgar:
                 )
         raise LookupError(f"No {form} found for CIK {cik}")
 
+    def sic(self, cik: int) -> int:
+        """Standard Industrial Classification code, used to pick peers."""
+        return int(self._json(SUBMISSIONS_URL.format(cik=cik)).get("sic") or 0)
+
     def filing_html(self, filing: Filing) -> str:
         return self._get(filing.url).decode("utf-8", errors="replace")
 

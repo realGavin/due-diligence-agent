@@ -6,12 +6,15 @@ objections subtract. The verdict follows from the share of available points:
 Missing dimensions (a bank has no gross margin; no market cap was found) are left out
 of the denominator instead of counting as zero.
 
-The thresholds are generic across industries on purpose. The scorecard's job is to make
-the triage transparent and repeatable, not to be the last word; a reader can see
-exactly why a company landed where it did and disagree with a specific line.
+The absolute thresholds are the same for every industry, which is unfair to some (a
+retailer's 4% operating margin fails a test built for software). `score_relative` scores
+the same dimensions against the company's industry peers instead, using percentile
+tables the backtest writes (backtest/peers.json). Both appear in the memo.
 """
 from __future__ import annotations
 
+import bisect
+import math
 from dataclasses import dataclass
 
 from .agents import Claim
@@ -124,3 +127,126 @@ def score(pack: EvidencePack, objections: list[Claim]) -> Scorecard:
     verdict = "Dig deeper" if pct >= THRESHOLDS[0] else "Watch" if pct >= THRESHOLDS[1] else "Pass"
     return Scorecard(lines, penalty, f"{highs} high-severity red-team objection(s) × 0.5, capped at 2",
                      points, possible, verdict)
+
+
+# ----------------------------------------------------------------------------- relative
+
+# Dimension -> (metric key, higher is better?)
+RELATIVE_DIMS = {
+    "Growth": [("growth", True)],
+    "Profitability": [("op_margin", True), ("roe", True)],
+    "Cash conversion": [("cash_conversion", True)],
+    "Balance sheet": [("leverage_years", False)],
+    "Dilution": [("dilution", False)],
+    "Valuation": [("fcf_yield", True)],
+}
+
+
+def metrics(pack: EvidencePack) -> dict[str, float]:
+    """Raw values behind each dimension, on a scale where comparing to peers makes sense.
+
+    Cases the absolute rubric treats as automatic fails are mapped to +/-inf so they rank
+    last among peers (negative FCF has no meaningful "leverage in years of FCF").
+    """
+    L = _latest(pack)
+    v = lambda k: L[k].value if k in L else None  # noqa: E731
+    out: dict[str, float] = {}
+    if v("Revenue growth (YoY)") is not None:
+        out["growth"] = v("Revenue growth (YoY)")
+    if v("Operating margin") is not None:
+        out["op_margin"] = v("Operating margin")
+    if v("Return on equity") is not None and v("Return on equity") > 0:
+        out["roe"] = v("Return on equity")  # negative equity makes ROE meaningless
+    fcf, ni, nd = v("Free cash flow"), v("Net income"), v("Net debt (LT debt - cash)")
+    if fcf is not None and ni is not None:
+        out["cash_conversion"] = fcf / ni if (fcf > 0 and ni > 0) else (-math.inf if fcf <= 0 else math.inf)
+    if nd is not None and fcf is not None:
+        # Net cash ranks best, debt with negative FCF ranks worst, as in the absolute rubric.
+        out["leverage_years"] = -math.inf if nd <= 0 else (nd / fcf if fcf > 0 else math.inf)
+    if v("Diluted share count change (YoY)") is not None:
+        out["dilution"] = v("Diluted share count change (YoY)")
+    if v("FCF yield") is not None:
+        out["fcf_yield"] = v("FCF yield")
+    elif v("Market cap") is not None and fcf is not None and fcf <= 0:
+        out["fcf_yield"] = -math.inf
+    return out
+
+
+def percentile(value: float, peers: list[float]) -> float:
+    """Share of peers below `value` (ties count half). `peers` must be sorted."""
+    if not peers:
+        return 0.5
+    lo, hi = bisect.bisect_left(peers, value), bisect.bisect_right(peers, value)
+    return (lo + 0.5 * (hi - lo)) / len(peers)
+
+
+def score_relative(m: dict[str, float], peers: dict[str, list[float]], group: str,
+                   objections: list[Claim] | None = None, min_peers: int = 15) -> Scorecard:
+    """Top third of the peer group = 2, middle third = 1, bottom third = 0, per dimension."""
+    lines: list[Line] = []
+    for dim, keys in RELATIVE_DIMS.items():
+        best, parts = None, []
+        for key, higher in keys:
+            if key not in m or len(peers.get(key, [])) < min_peers:
+                continue
+            p = percentile(m[key], peers[key])
+            p = p if higher else 1 - p
+            s = 2 if p >= 2 / 3 else 1 if p >= 1 / 3 else 0
+            parts.append(f"{key.replace('_', ' ')} at {p * 100:.0f}th pct")
+            best = s if best is None else max(best, s)
+        basis = (", ".join(parts) + f" of {group_label(group)} peers") if parts else "not enough peers or data"
+        lines.append(Line(dim, best, basis, []))
+    highs = sum(1 for o in (objections or []) if (o.severity or "").lower() == "high")
+    penalty = min(0.5 * highs, 2.0)
+    scored = [x for x in lines if x.score is not None]
+    possible = 2 * len(scored)
+    points = max(0.0, sum(x.score for x in scored) - penalty)
+    pct = points / possible if possible else 0.0
+    verdict = "Dig deeper" if pct >= THRESHOLDS[0] else "Watch" if pct >= THRESHOLDS[1] else "Pass"
+    return Scorecard(lines, penalty, f"{highs} high-severity red-team objection(s) × 0.5, capped at 2",
+                     points, possible, verdict)
+
+
+# ----------------------------------------------------------------------------- peer groups
+
+def division(sic: int) -> str:
+    """SIC division: the fallback peer group when a 2-digit industry is too thin."""
+    s = sic // 100
+    for lo, hi, name in [(1, 9, "Agriculture"), (10, 14, "Mining"), (15, 17, "Construction"),
+                         (20, 39, "Manufacturing"), (40, 49, "Transport & utilities"), (50, 51, "Wholesale"),
+                         (52, 59, "Retail"), (60, 67, "Finance"), (70, 89, "Services"), (90, 99, "Public admin")]:
+        if lo <= s <= hi:
+            return name
+    return "All"
+
+
+def group_keys(sic: int) -> list[str]:
+    """Most specific first: SIC 2-digit industry, then division, then everyone."""
+    return ([f"sic2:{sic // 100:02d}"] if sic else []) + [f"div:{division(sic)}", "All"]
+
+
+def pick_group(sic: int, tables: dict, min_peers: int = 15) -> str:
+    for g in group_keys(sic):
+        t = tables.get(g, {})
+        if t and max(len(v) for v in t.values()) >= min_peers:
+            return g
+    return "All"
+
+
+def load_peers(path) -> tuple[str, dict, int] | None:
+    """(as_of, group -> metric -> sorted values, min_peers) from backtest/results/peers.json."""
+    import json
+    from pathlib import Path
+
+    p = Path(path)
+    if not p.exists():
+        return None
+    raw = json.loads(p.read_text())
+    fix = lambda v: math.inf if v >= 1e18 else -math.inf if v <= -1e18 else v  # noqa: E731
+    groups = {g: {k: [fix(v) for v in vals] for k, vals in t.items()} for g, t in raw["groups"].items()}
+    return raw["as_of"], groups, raw.get("min_peers", 15)
+
+
+def group_label(g: str) -> str:
+    kind, _, name = g.partition(":")
+    return {"sic2": f"SIC {name}", "div": name}.get(kind, "all")

@@ -8,6 +8,8 @@ ddagent NVDA COST ANET NKE BYND   # → memos/<TICKER>.md
 
 Three specialist agents analyze the filing, a red-team agent attacks their thesis, and a PM agent writes the memo. A research agent then answers the PM's open questions with live web search. A scorecard turns the evidence into a verdict, and the memo shows exactly where the scorecard and the PM disagree.
 
+Every verdict is also a prediction. The scorecard is backtested point-in-time on 14,514 company-years (2012–2025), and every live run is logged and graded against the market twelve months later.
+
 > Research triage, not investment advice.
 
 ## Results
@@ -23,6 +25,26 @@ Five sample memos, generated September 2026:
 | [Beyond Meat](memos/BYND.md) | **Pass** · 0% | Watch | Reported $219M net income came from a $548.7M debt-restructuring gain; operating loss $333.6M, operating cash burn $144.9M |
 
 The scorecard and the PM disagree on every company, and that's useful information. The scorecard is mechanical and backward-looking: it reads the last fiscal year. The PM weighs the story, including turnarounds. The memo shows both, and it shows the scorecard line by line so a reader can see exactly where they disagree.
+
+## Does the scorecard predict anything?
+
+Every June 30 from 2012 to 2025, the same scorecard code scored every US-listed non-financial company worth at least $300M, using only the 10-K data public that day, then held each verdict group for twelve months. No model is involved. Full report: [`backtest/results/RESULTS.md`](backtest/results/RESULTS.md).
+
+| | Dig deeper | Watch | Pass |
+|---|---|---|---|
+| Beat the median stock over the next 12 months | 53% | 50% | 46% |
+| Return, value-weighted (annualized) | 17.5% | 16.4% | 12.6% |
+| Return, equal-weighted (annualized) | 16.9% | 15.9% | 18.3% |
+
+- **It ranks stocks, weakly.** The score's rank correlation with the next year's return averages 0.055 (t = 2.3) and is positive in 10 of 14 years.
+- **It is not alpha.** Equal-weighted, Dig deeper minus Pass earns −1.3% a year, and −0.3% after the Fama-French five factors and momentum. The spread loads heavily on profitability (RMW 0.61, t = 7.8) and on larger companies. Value-weighted it earns 4.4% (alpha 6.6%, t = 1.4), which is not significant.
+- **It loses in speculative rallies.** The spread fell sharply in 2020 and again from mid-2025.
+- **Scoring against industry peers barely changes this** (rank correlation 0.049, equal-weighted alpha 0.4%).
+- **Survivorship flatters Pass.** Prices come from today's listings. Among companies that later disappeared, 48% would have scored Pass, against 31% of survivors, so the missing losers make Pass look better than it was.
+
+<img src="backtest/results/spread.png" width="640">
+
+So the scorecard is a transparent quality screen, not a return forecast, and the memos now say so: each verdict is printed with its backtest track record. What the backtest cannot test is the agents. Whether the red team and the PM add anything the rubric misses is what the verdict ledger measures from here on.
 
 ## How it works
 
@@ -44,7 +66,8 @@ flowchart LR
 2. **Valuation.** The research agent finds a cited market cap. Code computes P/E, P/FCF, FCF yield and EV/revenue from it.
 3. **Specialists → PM draft → red team → PM final.** Every stage returns JSON claims with citations, and each claim goes through the gate before the next agent sees it. The red team attacks only claims that passed, and its own objections face the same check.
 4. **Research agent.** It answers the PM's diligence questions with Anthropic's web search. The API truncates each quoted passage to about 150 characters, so `passages.py` fetches the page and recovers the full passage around the citation. Numbers are checked against what the page actually says, and anything the agent writes with a number but no citation is dropped.
-5. **Scorecard** (`scorecard.py`). It scores growth, profitability, cash conversion, balance sheet, dilution and valuation from 0 to 2 each, minus 0.5 per high-severity red-team objection. Dig deeper is ≥65%, Watch ≥40%, and Pass <40%. Missing data counts as n/a rather than zero. Given the evidence, the only model-dependent input is the red-team penalty, capped at 2 points.
+5. **Scorecard** (`scorecard.py`). It scores growth, profitability, cash conversion, balance sheet, dilution and valuation from 0 to 2 each, minus 0.5 per high-severity red-team objection. Dig deeper is ≥65%, Watch ≥40%, and Pass <40%. Missing data counts as n/a rather than zero. Given the evidence, the only model-dependent input is the red-team penalty, capped at 2 points. The memo also scores the same dimensions against the company's industry peers (top, middle or bottom third of its SIC industry, from the backtest's peer tables), so a retailer isn't judged by a software company's margins.
+6. **Ledger** (`ledger.py`). Each run appends the scorecard verdict, the peer-relative verdict and the PM's view to `ledger.jsonl` with a twelve-month horizon. `ddagent-grade` scores entries that have come due against SPY, including who was right when the scorecard and the PM disagreed.
 
 ### The grounding gate (`verify.py`)
 
@@ -78,13 +101,18 @@ cp .env.example .env        # add ANTHROPIC_API_KEY and SEC_USER_AGENT="Your Nam
 ddagent AAPL MSFT           # add --no-research to skip web search
 python scripts/replay.py memos/*.trace.json   # re-grade saved runs, no API calls
 python eval/planted_errors.py
+ddagent-grade               # score logged verdicts that have come due
+
+pip install -e ".[backtest]"
+python -m backtest          # ~1.4 GB SEC download on first run, then about 30 minutes
 ```
 
 Each run writes `memos/<TICKER>.md` and a `trace.json` with the evidence pack, every raw model reply and the grounding report, so any memo can be audited end to end. EDGAR and web pages are cached in `.cache/`. A run makes about 7 model calls and about 15 web searches per company.
 
 ## Limitations
 
-- The scorecard uses generic thresholds across industries (Costco's 3.8% operating margin would fail the margin test; it scores on ROE instead). It makes the triage transparent and repeatable, but it isn't the last word.
+- The scorecard is a quality screen. The backtest shows it ranks stocks weakly and earns nothing beyond known factors, so a Dig deeper verdict means "worth an analyst's time", not "will outperform".
+- The backtest uses prices for companies listed today, so it can't include companies that were later delisted.
 - It uses the 10-K plus web research. It doesn't read earnings-call audio, sell-side models or alternative data.
 - The gate verifies provenance, not reasoning. A claim can cite correct numbers and still draw a weak conclusion, which is the gap the red team is there to cover.
 - Filing excerpts are capped per section, so the long tail of risk factors isn't read.
@@ -100,8 +128,12 @@ ddagent/verify.py     the grounding gate
 ddagent/agents.py     analysts, red team, PM; the pipeline
 ddagent/research.py   web research agent (valuation + diligence questions)
 ddagent/passages.py   recovers full passages behind truncated web citations
-ddagent/scorecard.py  code-computed verdict
+ddagent/scorecard.py  code-computed verdict, absolute and against industry peers
 ddagent/render.py     Markdown memo
+ddagent/pit.py        point-in-time view of SEC facts (only what was filed by a date)
+ddagent/prices.py     monthly prices, split-aware
+ddagent/ledger.py     verdict log and grading
+backtest/             point-in-time backtest: data, scoring panel, portfolios, factor regressions
 eval/                 planted-error eval
 scripts/replay.py     re-grade saved runs without the model
 tests/                offline tests: synthetic SEC fixtures + scripted model
