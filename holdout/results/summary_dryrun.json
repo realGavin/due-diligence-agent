@@ -1,0 +1,284 @@
+{
+  "facts_snapshot": "2026-10-08",
+  "fundamentals": {
+    "n": 322,
+    "ic": {
+      "margin_change": {
+        "scorecard": {
+          "label": "Scorecard (code only)",
+          "n": 297,
+          "ic": -0.023688270332565636,
+          "ci": [
+            -0.15544411098102373,
+            0.09626420196889993
+          ]
+        }
+      },
+      "growth_change": {
+        "scorecard": {
+          "label": "Scorecard (code only)",
+          "n": 320,
+          "ic": -0.07935905135792341,
+          "ci": [
+            -0.20647433385579936,
+            0.0315933444174259
+          ]
+        }
+      }
+    },
+    "auc": {
+      "scorecard": {
+        "label": "Scorecard (code only)",
+        "n": 322,
+        "auc": 0.6133650940013319,
+        "ci": [
+          0.5384630982737394,
+          0.6782202159315249
+        ],
+        "base_rate": 0.2515527950310559
+      }
+    },
+    "incremental": {},
+    "forecasts": {
+      "revenue_growth": {
+        "n": 320,
+        "best_baseline": "Baseline: mean reversion",
+        "results": {
+          "Agent team (PM)": {
+            "accuracy": 0.20625,
+            "answered": 320,
+            "vs_best_baseline": -0.325,
+            "ci": [
+              -0.415625,
+              -0.2375
+            ]
+          },
+          "Single prompt": {
+            "accuracy": 0.20625,
+            "answered": 320,
+            "vs_best_baseline": -0.325,
+            "ci": [
+              -0.4125,
+              -0.2375
+            ]
+          },
+          "Baseline: most common outcome in dev": {
+            "accuracy": 0.478125,
+            "answered": 320
+          },
+          "Baseline: mean reversion": {
+            "accuracy": 0.53125,
+            "answered": 320
+          }
+        }
+      },
+      "operating_margin": {
+        "n": 297,
+        "best_baseline": "Baseline: most common outcome in dev",
+        "results": {
+          "Agent team (PM)": {
+            "accuracy": 0.2558922558922559,
+            "answered": 297,
+            "vs_best_baseline": -0.21885521885521886,
+            "ci": [
+              -0.31313131313131315,
+              -0.12786195286195332
+            ]
+          },
+          "Single prompt": {
+            "accuracy": 0.2558922558922559,
+            "answered": 297,
+            "vs_best_baseline": -0.21885521885521886,
+            "ci": [
+              -0.3098484848484848,
+              -0.12121212121212122
+            ]
+          },
+          "Baseline: most common outcome in dev": {
+            "accuracy": 0.47474747474747475,
+            "answered": 297
+          },
+          "Baseline: mean reversion": {
+            "accuracy": 0.4107744107744108,
+            "answered": 297
+          }
+        }
+      }
+    },
+    "baselines_from": "same rows (no dev split available)"
+  },
+  "returns_6m": {
+    "n": 400,
+    "months": 6,
+    "filed": [
+      "2025-08-01",
+      "2026-03-31"
+    ],
+    "spy": 0.12410723524800682,
+    "median_return": 0.015873129301530287,
+    "signals": {
+      "scorecard": {
+        "label": "Scorecard (code only)",
+        "n": 400,
+        "ic": 0.062489265557909734,
+        "ci": [
+          -0.03286603510021937,
+          0.1687188794929967
+        ]
+      },
+      "team_score": {
+        "label": "Agent team: scorecard incl. red-team penalty",
+        "n": 400,
+        "ic": 0.062489265557909734,
+        "ci": [
+          -0.03286603510021937,
+          0.1687188794929967
+        ]
+      }
+    },
+    "buckets": {
+      "scorecard": {
+        "Dig deeper": {
+          "n": 124,
+          "mean_excess": -0.010074788395275092,
+          "median_ret": 0.015340725570731073,
+          "beat_median": 0.49193548387096775
+        },
+        "Watch": {
+          "n": 153,
+          "mean_excess": 0.024507733545581778,
+          "median_ret": 0.04906279543203751,
+          "beat_median": 0.5424836601307189
+        },
+        "Pass": {
+          "n": 123,
+          "mean_excess": 0.026435184737981846,
+          "median_ret": -0.03110770750486347,
+          "beat_median": 0.45528455284552843
+        }
+      },
+      "single": {
+        "Watch": {
+          "n": 400,
+          "mean_excess": 0.014379842985579159,
+          "median_ret": 0.015873129301530287,
+          "beat_median": 0.5
+        }
+      },
+      "team_pm": {
+        "Watch": {
+          "n": 400,
+          "mean_excess": 0.014379842985579159,
+          "median_ret": 0.015873129301530287,
+          "beat_median": 0.5
+        }
+      }
+    },
+    "incremental": {},
+    "disagreements": {
+      "n": 247,
+      "pm_right": 0,
+      "pm_scored": 0,
+      "scorecard_right": 128,
+      "scorecard_scored": 247
+    },
+    "red_flags": {
+      "ic_vs_drawdown": 0.03809930062062887,
+      "flagged_n": 0,
+      "clean_n": 400,
+      "flagged_dd30": null,
+      "clean_dd30": 0.2325
+    },
+    "cost": {
+      "tokens_in": 22263301,
+      "tokens_out": 1888000
+    }
+  },
+  "returns_12m": {
+    "n": 78,
+    "months": 12,
+    "filed": [
+      "2025-08-01",
+      "2025-09-29"
+    ],
+    "spy": 0.2023084959329282,
+    "median_return": 0.04011668682387415,
+    "signals": {
+      "scorecard": {
+        "label": "Scorecard (code only)",
+        "n": 78,
+        "ic": 0.10889110889110888,
+        "ci": [
+          -0.15834039378343176,
+          0.353274573527738
+        ]
+      },
+      "team_score": {
+        "label": "Agent team: scorecard incl. red-team penalty",
+        "n": 78,
+        "ic": 0.10889110889110888,
+        "ci": [
+          -0.15834039378343176,
+          0.353274573527738
+        ]
+      }
+    },
+    "buckets": {
+      "scorecard": {
+        "Dig deeper": {
+          "n": 30,
+          "mean_excess": -0.01663666281677824,
+          "median_ret": 0.060804975405327255,
+          "beat_median": 0.5666666666666667
+        },
+        "Watch": {
+          "n": 33,
+          "mean_excess": 0.26841222022466427,
+          "median_ret": 0.05191771066055373,
+          "beat_median": 0.5151515151515151
+        },
+        "Pass": {
+          "n": 15,
+          "mean_excess": 1.951914329052586,
+          "median_ret": -0.23229817616010928,
+          "beat_median": 0.3333333333333333
+        }
+      },
+      "single": {
+        "Watch": {
+          "n": 78,
+          "mean_excess": 0.4825284399833251,
+          "median_ret": 0.04011668682387415,
+          "beat_median": 0.5
+        }
+      },
+      "team_pm": {
+        "Watch": {
+          "n": 78,
+          "mean_excess": 0.4825284399833251,
+          "median_ret": 0.04011668682387415,
+          "beat_median": 0.5
+        }
+      }
+    },
+    "incremental": {},
+    "disagreements": {
+      "n": 45,
+      "pm_right": 0,
+      "pm_scored": 0,
+      "scorecard_right": 27,
+      "scorecard_scored": 45
+    },
+    "red_flags": {
+      "ic_vs_drawdown": -0.2571479153757635,
+      "flagged_n": 0,
+      "clean_n": 78,
+      "flagged_dd30": null,
+      "clean_dd30": 0.5512820512820513
+    },
+    "cost": {
+      "tokens_in": 4468732,
+      "tokens_out": 368160
+    }
+  }
+}

@@ -21,4 +21,4 @@ ddagent = "ddagent.cli:main"
 ddagent-grade = "ddagent.ledger:main"
 
 [tool.setuptools]
-packages = ["ddagent", "backtest"]
+packages = ["ddagent", "backtest", "holdout"]

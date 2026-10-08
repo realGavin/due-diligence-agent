@@ -39,6 +39,7 @@ class AnthropicLLM:
         self.client = anthropic.Anthropic()
         self.model = model or os.environ.get("DD_MODEL", "claude-sonnet-5")
         self.max_tokens = max_tokens
+        self.usage: list[tuple[int, int]] = []  # (input, output) tokens per call, for cost tracking
 
     def complete(self, system: str, user: str) -> str:
         msg = self.client.messages.create(
@@ -47,6 +48,9 @@ class AnthropicLLM:
             system=system,
             messages=[{"role": "user", "content": user}],
         )
+        u = getattr(msg, "usage", None)
+        if u is not None:
+            self.usage.append((int(getattr(u, "input_tokens", 0)), int(getattr(u, "output_tokens", 0))))
         return "".join(b.text for b in msg.content if getattr(b, "type", "") == "text")
 
     def research(self, system: str, question: str, max_searches: int = 4) -> list[Segment]:

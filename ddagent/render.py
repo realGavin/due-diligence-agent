@@ -67,6 +67,14 @@ def render(memo: Memo, pack: EvidencePack, report: GroundingReport, model: str,
     ]
     if memo.verdict_rationale.text != memo.thesis.text:
         out += ["", f"**PM's rationale:** {_cite(memo.verdict_rationale)}"]
+    if memo.score is not None or memo.forecast:
+        f = memo.forecast
+        bits = [f"attractiveness {memo.score}/100 vs a typical US-listed company" if memo.score is not None else ""]
+        if "revenue_growth_pct" in f:
+            bits.append(f"next-year revenue growth {f['revenue_growth_pct']:.1f}%")
+        if "operating_margin_pct" in f:
+            bits.append(f"operating margin {f['operating_margin_pct']:.1f}%")
+        out += ["", "**PM's judgment (forecasts, not verified claims):** " + "; ".join(b for b in bits if b) + "."]
 
     if sc:
         out += ["", "## Scorecard", "",

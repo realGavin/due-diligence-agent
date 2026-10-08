@@ -53,6 +53,8 @@ class Memo:
     research: list = field(default_factory=list)  # ResearchAnswer
     valuation: list = field(default_factory=list)  # Fact ids added by research
     scorecard: object = None  # scorecard.Scorecard
+    score: int | None = None  # PM's 0-100 attractiveness vs a typical US-listed company
+    forecast: dict = field(default_factory=dict)  # PM's next-fiscal-year revenue growth % and operating margin %
 
 
 ANALYSTS = {
@@ -72,6 +74,34 @@ ANALYSTS = {
         ("Risk Factors", "MD&A"),
     ),
 }
+
+
+# Asked of the PM (and of the single-prompt baseline in the holdout test). Numbers rather than
+# categories: in development runs, categorical calls piled into "Watch" and "stable".
+JUDGMENT_PROMPT = (
+    "Finally, give three numbers of your own judgment (these are forecasts, not claims, so they need no citations "
+    "and are exempt from the no-new-numbers rule): `score`, 0-100, how attractive this business looks over the next "
+    "twelve months compared with a typical US-listed company (50 = typical; use the whole range); "
+    "`revenue_growth_pct`, your forecast of revenue growth for the next fiscal year, in percent; and "
+    "`operating_margin_pct`, your forecast of operating margin for the next fiscal year, in percent."
+)
+JUDGMENT_SCHEMA = '"score": 50, "forecast": {"revenue_growth_pct": 0.0, "operating_margin_pct": 0.0}'
+
+
+def clean_judgment(out: dict) -> tuple[int | None, dict]:
+    """Score and forecast from a model reply; anything missing or not a number is dropped, not guessed."""
+    def num(v):
+        try:
+            x = float(v)
+        except (TypeError, ValueError):
+            return None
+        return x if x == x and abs(x) < 1e4 else None  # rejects NaN and absurd values
+
+    score = num(out.get("score"))
+    score = int(round(max(0.0, min(100.0, score)))) if score is not None else None
+    raw = out.get("forecast") if isinstance(out.get("forecast"), dict) else {}
+    fc = {k: num(raw.get(k)) for k in ("revenue_growth_pct", "operating_margin_pct")}
+    return score, {k: v for k, v in fc.items() if v is not None}
 
 
 class Team:
@@ -146,11 +176,13 @@ class Team:
             "must honestly carry the strongest objections. List 4-6 diligence questions whose answers would most "
             "change the thesis (no citations needed; a research agent will try to answer them from public sources "
             "next, and anything it can't answer goes to a human). Give your own view: 'Dig deeper', 'Watch', or 'Pass'. "
-            "This is research triage, not a buy/sell recommendation.\n\n"
+            "This is research triage, not a buy/sell recommendation. "
+            f"{JUDGMENT_PROMPT}\n\n"
             f"{RULES}\n"
             'Schema: {"thesis": {"text": "", "citations": []}, "bull": [{"text": "", "citations": []}], '
             '"bear": [{"text": "", "citations": []}], "questions": ["..."], '
-            '"verdict": "Dig deeper|Watch|Pass", "verdict_rationale": {"text": "", "citations": []}}'
+            '"verdict": "Dig deeper|Watch|Pass", "verdict_rationale": {"text": "", "citations": []}, '
+            + JUDGMENT_SCHEMA + "}"
         )
         obj = "\n".join(o.to_prompt(i + 1) for i, o in enumerate(objections)) or "(none survived verification)"
         user = f"DRAFT THESIS: {thesis.text} {json.dumps(thesis.citations)}\n\n{self._findings(claims)}\n\nRED TEAM OBJECTIONS:\n{obj}"
@@ -158,6 +190,7 @@ class Team:
 
         final_thesis = (self._keep("PM final", "PM", [out.get("thesis", {})]) or [thesis])[0]
         rationale = (self._keep("PM final", "PM", [out.get("verdict_rationale", {})]) or [final_thesis])[0]
+        score, forecast = clean_judgment(out)
         verdict = out.get("verdict", "Dig deeper")
         if verdict not in ("Dig deeper", "Watch", "Pass"):
             verdict = "Dig deeper"
@@ -173,6 +206,8 @@ class Team:
             verdict_rationale=rationale,
             analyst_claims=claims,
             objections=objections,
+            score=score,
+            forecast=forecast,
         )
 
     def _findings(self, claims: list[Claim]) -> str:

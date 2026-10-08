@@ -125,7 +125,7 @@ class FakePrices:
     def __init__(self, series):
         self.series = series
 
-    def monthly(self, ticker, start=None):
+    def monthly(self, ticker, start=None, refresh=False):
         return self.series.get(ticker)
 
 

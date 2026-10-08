@@ -103,10 +103,10 @@ class Prices:
         self._delay = delay
         self._last = 0.0
 
-    def monthly(self, ticker: str, start: str = "2010-01-01") -> Series | None:
+    def monthly(self, ticker: str, start: str = "2010-01-01", refresh: bool = False) -> Series | None:
         sym = ticker.upper().replace(".", "-")
         path = self._cache / f"{sym}.json"
-        if path.exists():
+        if path.exists() and not refresh:
             payload = json.loads(path.read_text())
         else:
             p1 = int(datetime.fromisoformat(start).replace(tzinfo=timezone.utc).timestamp())
