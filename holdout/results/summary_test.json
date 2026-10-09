@@ -1,0 +1,637 @@
+{
+  "facts_snapshot": "2026-10-08",
+  "fundamentals": {
+    "n": 265,
+    "ic": {
+      "margin_change": {
+        "scorecard": {
+          "label": "Scorecard (code only)",
+          "n": 243,
+          "ic": -0.027678674474501598,
+          "ci": [
+            -0.17253648841453112,
+            0.10164434124319854
+          ]
+        },
+        "single_score": {
+          "label": "Single prompt: score 0-100",
+          "n": 243,
+          "ic": 0.015729408675260636,
+          "ci": [
+            -0.11903465019461044,
+            0.15753808159421645
+          ]
+        },
+        "team_score": {
+          "label": "Agent team: PM score 0-100",
+          "n": 243,
+          "ic": -0.003467361142472916,
+          "ci": [
+            -0.12246623797170245,
+            0.13686128548274598
+          ]
+        },
+        "single": {
+          "label": "Single prompt: verdict",
+          "n": 243,
+          "ic": -0.011750222877893022,
+          "ci": [
+            -0.1011776148636556,
+            0.1687549238033589
+          ]
+        },
+        "team_pm": {
+          "label": "Agent team: PM verdict",
+          "n": 243,
+          "ic": 0.032495011382244365,
+          "ci": [
+            -0.12117009639364332,
+            0.13936832725332463
+          ]
+        },
+        "red_flags": {
+          "label": "Agent team: high-severity red-team objections (fewer = better)",
+          "n": 243,
+          "ic": -0.04711463032377091,
+          "ci": [
+            -0.20350286270554524,
+            0.05888912723860555
+          ]
+        }
+      },
+      "growth_change": {
+        "scorecard": {
+          "label": "Scorecard (code only)",
+          "n": 264,
+          "ic": -0.09107996530336725,
+          "ci": [
+            -0.21385726118346818,
+            0.04310777804590125
+          ]
+        },
+        "single_score": {
+          "label": "Single prompt: score 0-100",
+          "n": 264,
+          "ic": -0.1505677334359449,
+          "ci": [
+            -0.29081931663286137,
+            -0.020277801329168062
+          ]
+        },
+        "team_score": {
+          "label": "Agent team: PM score 0-100",
+          "n": 264,
+          "ic": -0.13853478467869743,
+          "ci": [
+            -0.2628953426944674,
+            -0.014714372362697311
+          ]
+        },
+        "single": {
+          "label": "Single prompt: verdict",
+          "n": 264,
+          "ic": -0.1114505409935498,
+          "ci": [
+            -0.24864154856550288,
+            0.005598696267503188
+          ]
+        },
+        "team_pm": {
+          "label": "Agent team: PM verdict",
+          "n": 264,
+          "ic": -0.08039901127640561,
+          "ci": [
+            -0.22277220877981327,
+            0.02168640635496215
+          ]
+        },
+        "red_flags": {
+          "label": "Agent team: high-severity red-team objections (fewer = better)",
+          "n": 264,
+          "ic": 0.04675371260492144,
+          "ci": [
+            -0.09282392763273743,
+            0.14979258652961913
+          ]
+        }
+      }
+    },
+    "auc": {
+      "scorecard": {
+        "label": "Scorecard (code only)",
+        "n": 265,
+        "auc": 0.6268710420264825,
+        "ci": [
+          0.5497952740866624,
+          0.7007002551422946
+        ],
+        "base_rate": 0.27169811320754716
+      },
+      "single_score": {
+        "label": "Single prompt: score 0-100",
+        "n": 265,
+        "auc": 0.566961715601612,
+        "ci": [
+          0.4790070705077611,
+          0.6527689580028561
+        ],
+        "base_rate": 0.27169811320754716
+      },
+      "team_score": {
+        "label": "Agent team: PM score 0-100",
+        "n": 265,
+        "auc": 0.5548359240069085,
+        "ci": [
+          0.46997807311375084,
+          0.6358817940590402
+        ],
+        "base_rate": 0.27169811320754716
+      },
+      "single": {
+        "label": "Single prompt: verdict",
+        "n": 265,
+        "auc": 0.5614205526770294,
+        "ci": [
+          0.48579588448139555,
+          0.6359826176164605
+        ],
+        "base_rate": 0.27169811320754716
+      },
+      "team_pm": {
+        "label": "Agent team: PM verdict",
+        "n": 265,
+        "auc": 0.534506332757628,
+        "ci": [
+          0.47842083036984356,
+          0.59035944551902
+        ],
+        "base_rate": 0.27169811320754716
+      },
+      "red_flags": {
+        "label": "Agent team: high-severity red-team objections (fewer = better)",
+        "n": 265,
+        "auc": 0.4788068508923431,
+        "ci": [
+          0.39823424369747895,
+          0.5560794290476286
+        ],
+        "base_rate": 0.27169811320754716
+      }
+    },
+    "incremental": {
+      "margin_change:team_score": {
+        "outcome": "margin_change",
+        "signal": "Agent team: PM score 0-100",
+        "n": 243,
+        "beta": 0.024583796206704273,
+        "t": 0.3200593255115042,
+        "scorecard_t": -0.6057798438159139
+      },
+      "margin_change:red_flags": {
+        "outcome": "margin_change",
+        "signal": "Agent team: high-severity red-team objections (fewer = better)",
+        "n": 243,
+        "beta": -0.07970597037048878,
+        "t": -1.1550532177388964,
+        "scorecard_t": -0.5531627207940144
+      },
+      "margin_change:single_score": {
+        "outcome": "margin_change",
+        "signal": "Single prompt: score 0-100",
+        "n": 243,
+        "beta": 0.04142256029029179,
+        "t": 0.5340792710124818,
+        "scorecard_t": -0.7153757123341501
+      },
+      "margin_change:team_pm": {
+        "outcome": "margin_change",
+        "signal": "Agent team: PM verdict",
+        "n": 243,
+        "beta": 0.033282897960632135,
+        "t": 0.3027917293706294,
+        "scorecard_t": -0.5921079299655254
+      },
+      "deteriorated:team_score": {
+        "outcome": "deteriorated",
+        "signal": "Agent team: PM score 0-100",
+        "n": 265,
+        "beta": 0.0044444394215952185,
+        "t": 0.04017229807267222,
+        "scorecard_t": -2.851009960736721
+      },
+      "deteriorated:red_flags": {
+        "outcome": "deteriorated",
+        "signal": "Agent team: high-severity red-team objections (fewer = better)",
+        "n": 265,
+        "beta": 0.048222354691212874,
+        "t": 0.47524660357851817,
+        "scorecard_t": -3.213206613231816
+      },
+      "deteriorated:single_score": {
+        "outcome": "deteriorated",
+        "signal": "Single prompt: score 0-100",
+        "n": 265,
+        "beta": -0.02754610507083767,
+        "t": -0.23912420646396704,
+        "scorecard_t": -2.6668534280044107
+      },
+      "deteriorated:team_pm": {
+        "outcome": "deteriorated",
+        "signal": "Agent team: PM verdict",
+        "n": 265,
+        "beta": -0.049159247463331564,
+        "t": -0.34346741748023546,
+        "scorecard_t": -2.996251296401108
+      }
+    },
+    "forecasts": {
+      "margin_change": {
+        "n": 243,
+        "results": {
+          "Baseline: mean reversion": {
+            "ic": 0.15032005767226828,
+            "accuracy": 0.40329218106995884
+          },
+          "Baseline: most common outcome in dev": {
+            "accuracy": 0.4732510288065844
+          },
+          "Agent team (PM)": {
+            "n": 242,
+            "ic": 0.17972295993168622,
+            "ci": [
+              0.025678385768917643,
+              0.32863210249102365
+            ],
+            "vs_reversion": 0.03997983100208677,
+            "vs_ci": [
+              -0.0561683730299347,
+              0.13485386155447768
+            ],
+            "accuracy": 0.4132231404958678
+          },
+          "Single prompt": {
+            "n": 243,
+            "ic": 0.1650977401101594,
+            "ci": [
+              0.021027567444606692,
+              0.32107653367588784
+            ],
+            "vs_reversion": 0.014777682437891126,
+            "vs_ci": [
+              -0.08256135205340372,
+              0.1176344083323715
+            ],
+            "accuracy": 0.43621399176954734
+          }
+        }
+      },
+      "growth_change": {
+        "n": 264,
+        "results": {
+          "Baseline: mean reversion": {
+            "ic": 0.48275733879435717,
+            "accuracy": 0.5037878787878788
+          },
+          "Baseline: most common outcome in dev": {
+            "accuracy": 0.4583333333333333
+          },
+          "Agent team (PM)": {
+            "n": 264,
+            "ic": 0.5044140377880244,
+            "ci": [
+              0.38442008687202023,
+              0.6105523253918045
+            ],
+            "vs_reversion": 0.021656698993667234,
+            "vs_ci": [
+              -0.04849932171996164,
+              0.09444707133027672
+            ],
+            "accuracy": 0.5340909090909091
+          },
+          "Single prompt": {
+            "n": 264,
+            "ic": 0.44694806592360203,
+            "ci": [
+              0.3200829751710374,
+              0.5672276607817175
+            ],
+            "vs_reversion": -0.03580927287075514,
+            "vs_ci": [
+              -0.133266847758741,
+              0.050847915267170536
+            ],
+            "accuracy": 0.5113636363636364
+          }
+        }
+      }
+    },
+    "baselines_from": "dev split"
+  },
+  "returns_6m": {
+    "n": 326,
+    "months": 6,
+    "filed": [
+      "2025-08-01",
+      "2026-03-31"
+    ],
+    "spy": 0.12410723524800682,
+    "median_return": 0.008649879633571111,
+    "signals": {
+      "scorecard": {
+        "label": "Scorecard (code only)",
+        "n": 326,
+        "ic": 0.0025999800840798195,
+        "ci": [
+          -0.11138823488663077,
+          0.11193421684973431
+        ]
+      },
+      "single": {
+        "label": "Single prompt: verdict",
+        "n": 326,
+        "ic": 0.08348147602945824,
+        "ci": [
+          -0.024239268133228846,
+          0.20742257686029825
+        ]
+      },
+      "single_conv": {
+        "label": "Single prompt: conviction 1-5",
+        "n": 326,
+        "ic": 0.04768408155136358,
+        "ci": [
+          -0.10090108281992112,
+          0.1260644236722359
+        ]
+      },
+      "team_pm": {
+        "label": "Agent team: PM verdict",
+        "n": 326,
+        "ic": -0.005759510934273134,
+        "ci": [
+          -0.11839913235860779,
+          0.10880210069662423
+        ]
+      },
+      "team_score": {
+        "label": "Agent team: scorecard incl. red-team penalty",
+        "n": 326,
+        "ic": -0.0021372380082348,
+        "ci": [
+          -0.11531192227595671,
+          0.11216843673015224
+        ]
+      }
+    },
+    "buckets": {
+      "scorecard": {
+        "Dig deeper": {
+          "n": 103,
+          "median_excess": -0.11525550505098514,
+          "median_ret": 0.0030496335523420015,
+          "beat_median": 0.49514563106796117
+        },
+        "Watch": {
+          "n": 123,
+          "median_excess": -0.09597351444032709,
+          "median_ret": 0.018131584345824736,
+          "beat_median": 0.5121951219512195
+        },
+        "Pass": {
+          "n": 100,
+          "median_excess": -0.14766761905286635,
+          "median_ret": -0.016705034879048952,
+          "beat_median": 0.49
+        }
+      },
+      "single": {
+        "Dig deeper": {
+          "n": 59,
+          "median_excess": -0.07825974804228242,
+          "median_ret": 0.06090707174670951,
+          "beat_median": 0.576271186440678
+        },
+        "Watch": {
+          "n": 185,
+          "median_excess": -0.11400161702437295,
+          "median_ret": 0.002014372760088756,
+          "beat_median": 0.4972972972972973
+        },
+        "Pass": {
+          "n": 82,
+          "median_excess": -0.17218008843648797,
+          "median_ret": -0.04747255791018756,
+          "beat_median": 0.45121951219512196
+        }
+      },
+      "team_pm": {
+        "Dig deeper": {
+          "n": 10,
+          "median_excess": -0.4232335301392102,
+          "median_ret": -0.37028925903099025,
+          "beat_median": 0.3
+        },
+        "Watch": {
+          "n": 252,
+          "median_excess": -0.11235755567664563,
+          "median_ret": 0.012412124829728532,
+          "beat_median": 0.5079365079365079
+        },
+        "Pass": {
+          "n": 64,
+          "median_excess": -0.11682333920689791,
+          "median_ret": 0.01022101024652844,
+          "beat_median": 0.5
+        }
+      }
+    },
+    "incremental": {
+      "team_pm": {
+        "n": 326,
+        "scorecard_beta": -0.027671225927200678,
+        "scorecard_t": -0.24937689699395713,
+        "model_beta": 0.02655874094920929,
+        "model_t": 0.5261392140971657
+      },
+      "single": {
+        "n": 326,
+        "scorecard_beta": -0.11795294177610317,
+        "scorecard_t": -1.0444729639319212,
+        "model_beta": 0.08836213402347687,
+        "model_t": 1.798045774289476
+      }
+    },
+    "disagreements": {
+      "n": 189,
+      "pm_right": 17,
+      "pm_scored": 36,
+      "scorecard_right": 84,
+      "scorecard_scored": 165
+    },
+    "red_flags": {
+      "ic_vs_drawdown": 0.030142485420247563,
+      "flagged_n": 177,
+      "clean_n": 33,
+      "flagged_dd30": 0.24858757062146894,
+      "clean_dd30": 0.12121212121212122
+    },
+    "cost": {
+      "tokens_in": 17074770,
+      "tokens_out": 1553492
+    }
+  },
+  "returns_12m": {
+    "n": 67,
+    "months": 12,
+    "filed": [
+      "2025-08-01",
+      "2025-09-26"
+    ],
+    "spy": 0.2023084959329282,
+    "median_return": 0.04406509450240215,
+    "signals": {
+      "scorecard": {
+        "label": "Scorecard (code only)",
+        "n": 67,
+        "ic": 0.09462048048527417,
+        "ci": [
+          -0.19544656397158594,
+          0.3565228669486789
+        ]
+      },
+      "single": {
+        "label": "Single prompt: verdict",
+        "n": 67,
+        "ic": 0.0280549126027616,
+        "ci": [
+          -0.19414358687844205,
+          0.3264616090669646
+        ]
+      },
+      "single_conv": {
+        "label": "Single prompt: conviction 1-5",
+        "n": 67,
+        "ic": 0.008580094181498923,
+        "ci": [
+          -0.34472224439300825,
+          0.17264147178545775
+        ]
+      },
+      "team_pm": {
+        "label": "Agent team: PM verdict",
+        "n": 67,
+        "ic": -0.011373613217335782,
+        "ci": [
+          -0.17609246548008622,
+          0.29766741160507604
+        ]
+      },
+      "team_score": {
+        "label": "Agent team: scorecard incl. red-team penalty",
+        "n": 67,
+        "ic": 0.1288610423816745,
+        "ci": [
+          -0.14792980285737092,
+          0.39047010934631626
+        ]
+      }
+    },
+    "buckets": {
+      "scorecard": {
+        "Dig deeper": {
+          "n": 25,
+          "median_excess": -0.13193467812892123,
+          "median_ret": 0.061075666361438685,
+          "beat_median": 0.56
+        },
+        "Watch": {
+          "n": 28,
+          "median_excess": -0.1518069018382071,
+          "median_ret": 0.040381073827704506,
+          "beat_median": 0.5
+        },
+        "Pass": {
+          "n": 14,
+          "median_excess": -0.36729759389479666,
+          "median_ret": -0.1875776689795462,
+          "beat_median": 0.35714285714285715
+        }
+      },
+      "single": {
+        "Dig deeper": {
+          "n": 17,
+          "median_excess": -0.25927745985903206,
+          "median_ret": -0.07366575846889467,
+          "beat_median": 0.4117647058823529
+        },
+        "Watch": {
+          "n": 35,
+          "median_excess": -0.07396257566921327,
+          "median_ret": 0.08316877822835944,
+          "beat_median": 0.5714285714285714
+        },
+        "Pass": {
+          "n": 15,
+          "median_excess": -0.3451656577319113,
+          "median_ret": -0.1428571617989831,
+          "beat_median": 0.4
+        }
+      },
+      "team_pm": {
+        "Dig deeper": {
+          "n": 4,
+          "median_excess": -0.24503728611274972,
+          "median_ret": -0.06531736119749926,
+          "beat_median": 0.25
+        },
+        "Watch": {
+          "n": 50,
+          "median_excess": -0.13653832832664548,
+          "median_ret": 0.060804975405327255,
+          "beat_median": 0.52
+        },
+        "Pass": {
+          "n": 13,
+          "median_excess": -0.2716972492599732,
+          "median_ret": -0.06938875332704497,
+          "beat_median": 0.46153846153846156
+        }
+      }
+    },
+    "incremental": {
+      "team_pm": {
+        "n": 67,
+        "scorecard_beta": -1.294769040453351,
+        "scorecard_t": -0.9450411815876238,
+        "model_beta": 0.3680182506845421,
+        "model_t": 1.231270183015789
+      },
+      "single": {
+        "n": 67,
+        "scorecard_beta": -1.2002535999910229,
+        "scorecard_t": -1.090702517097291,
+        "model_beta": -0.029412779723579627,
+        "model_t": -0.07354354003782802
+      }
+    },
+    "disagreements": {
+      "n": 42,
+      "pm_right": 4,
+      "pm_scored": 12,
+      "scorecard_right": 19,
+      "scorecard_scored": 34
+    },
+    "red_flags": {
+      "ic_vs_drawdown": -0.11724798467555272,
+      "flagged_n": 34,
+      "clean_n": 8,
+      "flagged_dd30": 0.5588235294117647,
+      "clean_dd30": 0.5
+    },
+    "cost": {
+      "tokens_in": 3552192,
+      "tokens_out": 315733
+    }
+  }
+}
