@@ -23,7 +23,7 @@ def main(argv: list[str] | None = None) -> int:
     r.add_argument("--budget", type=float, help="stop once this many USD have been spent")
     r.add_argument("--workers", type=int, default=4)
     r.add_argument("--model", default=run.MODEL)
-    a = sub.add_parser("analyze", help="score completed runs against 12-month returns")
+    a = sub.add_parser("analyze", help="score completed runs against business outcomes and returns")
     a.add_argument("--dry-run", action="store_true", help="analyze the dry-run file instead")
     a.add_argument("--split", choices=["dev", "test"], default="test")
     a.add_argument("--refresh-prices", action="store_true", help="re-download prices for the sample first")

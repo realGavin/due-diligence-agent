@@ -24,7 +24,7 @@ Five sample memos, generated September 2026:
 | [Nike](memos/NKE.md) | **Watch** · 46% | Dig deeper | Flat reported revenue is a 2% currency-neutral decline; cash conversion fell below net income |
 | [Beyond Meat](memos/BYND.md) | **Pass** · 0% | Watch | Reported $219M net income came from a $548.7M debt-restructuring gain; operating loss $333.6M, operating cash burn $144.9M |
 
-The scorecard and the PM disagree on every company, and that's useful information. The scorecard is mechanical and backward-looking: it reads the last fiscal year. The PM weighs the story, including turnarounds. The memo shows both, and it shows the scorecard line by line so a reader can see exactly where they disagree.
+The scorecard and the PM disagree on every company. The scorecard is mechanical and backward-looking: it reads the last fiscal year. The PM weighs the story, including turnarounds. The memo shows both, with the scorecard line by line, so a reader can see exactly where they disagree and check the PM's reasoning. The holdout below found the PM's view carries no measurable signal on its own, so a disagreement is a question to look into, not a tiebreaker.
 
 ## Does the scorecard predict anything?
 
@@ -127,6 +127,8 @@ ddagent-grade               # score logged verdicts that have come due
 
 pip install -e ".[backtest]"
 python -m backtest          # ~1.4 GB SEC download on first run, then about 30 minutes
+
+python -m holdout analyze --split test   # rebuild the holdout report from saved runs (SEC and price data only, no model calls)
 ```
 
 Each run writes `memos/<TICKER>.md` and a `trace.json` with the evidence pack, every raw model reply and the grounding report, so any memo can be audited end to end. EDGAR and web pages are cached in `.cache/`. A run makes about 7 model calls and about 15 web searches per company.
@@ -137,7 +139,7 @@ Each run writes `memos/<TICKER>.md` and a `trace.json` with the evidence pack, e
 - The backtest uses prices for companies listed today, so it can't include companies that were later delisted.
 - It uses the 10-K plus web research. It doesn't read earnings-call audio, sell-side models or alternative data.
 - In a preregistered holdout, the agents' scores and forecasts added nothing measurable beyond the scorecard and simple baselines. Read the PM's view as a second opinion to check, not a signal.
-- The gate verifies provenance, not reasoning. A claim can cite correct numbers and still draw a weak conclusion, which is the gap the red team is there to cover.
+- The gate verifies provenance, not reasoning. A claim can cite correct numbers and still draw a weak conclusion. The red team challenges those, but in the holdout its objections did not predict which businesses deteriorated.
 - Filing excerpts are capped per section, so the long tail of risk factors isn't read.
 - XBRL coverage is strongest for US operating companies. Banks and REITs use different line items.
 
