@@ -10,6 +10,7 @@ A claim that fails is dropped, and the reason is recorded in the grounding repor
 """
 from __future__ import annotations
 
+import math
 import re
 from dataclasses import dataclass, field
 
@@ -155,13 +156,102 @@ def bound_label(text: str, num: Number) -> tuple[str, ...] | None:
     return best[1] if best else None
 
 
-def check_claim(text: str, citations: list[str], pack: EvidencePack) -> Verdict:
+# --- Support check -----------------------------------------------------------------------
+# The number checks above can't see a claim with no numbers in it: a qualitative claim cited
+# to the wrong passage used to pass untouched. Two checks close most of that gap, in code:
+#   1. a direct quote must appear in a cited passage, word for word;
+#   2. a qualitative claim citing passages must share enough of its distinctive words with
+#      them. Words are weighted by how rare they are in this company's evidence, so generic
+#      words ("revenue", "customers") count for little and specific ones ("Broadcom") a lot.
+# This checks that the claim and the passage are about the same thing. It does not check
+# that the passage says what the claim says: a claim can reuse a passage's words and still
+# get it wrong. eval/planted_errors.py measures both what it catches and what it wrongly rejects.
+
+SUPPORT_MIN = 0.20  # weighted share of the claim's distinctive words found in the cited passages
+
+_STOP = set("""a an the and or but of to in on for with by as at from that this these those is are was
+were be been being it its their our we they he she his her them not no nor so than then there which who
+whom whose what when where while also into over under about after before more most less such can could
+may might will would should has have had do does did each other any all some only very just both either
+per via within without across between against up down out off same own new one two three""".split())
+_SUFFIXES = ("ations", "ation", "ments", "ment", "ingly", "edly", "ings", "ing", "ied", "ies",
+             "ity", "ed", "es", "ly", "al", "s")
+_QUOTE = re.compile(r"[\"“”]([^\"“”]{12,}?)[\"“”]")
+
+
+def _stem(w: str) -> str:
+    for s in _SUFFIXES:
+        if w.endswith(s) and len(w) - len(s) >= 4:
+            return w[: -len(s)]
+    return w
+
+
+def _terms(text: str) -> set[str]:
+    text = text.lower().replace("’", "'").replace("‘", "'")
+    return {_stem(w) for w in re.findall(r"[a-z][a-z'&-]+", text) if len(w) >= 4 and w not in _STOP}
+
+
+def _norm(text: str) -> str:
+    """Words and digits only, so a quote ending in "." still matches a passage with "," there,
+    and "$9.6 million" matches the filing's "$ 9.6 million". Page-break residue from 10-K
+    text ("17 Table of Contents") is removed so it can't split a quoted sentence."""
+    text = re.sub(r"\b\d{1,3}\s+Table of Contents\b", " ", text, flags=re.I)
+    text = text.lower().replace("’", "").replace("‘", "").replace("'", "")
+    return " " + re.sub(r"[^a-z0-9]+", " ", text).strip() + " "
+
+
+def support_score(text: str, cited: list, pack: EvidencePack) -> float:
+    """Share of the claim's distinctive words (rarity-weighted) that appear in what it cites."""
+    claim = _terms(text)
+    if not claim:
+        return 1.0
+    docs = [_terms(e.text) for e in pack.excerpts]
+    df: dict[str, int] = {}
+    for d in docs:
+        for w in d:
+            df[w] = df.get(w, 0) + 1
+    n = len(docs)
+
+    def weight(w: str) -> float:
+        return math.log((n + 1) / (df.get(w, 0) + 1)) + 1
+
+    source: set[str] = set()
+    for x in cited:
+        source |= _terms(x.text if isinstance(x, Excerpt) else x.label)
+    total = sum(weight(w) for w in claim)
+    return sum(weight(w) for w in claim if w in source) / total
+
+
+def check_support(text: str, cited: list, pack: EvidencePack, judgment: bool = False) -> Verdict:
+    """judgment=True for the PM's thesis and verdict rationale: they summarize findings that
+    already passed the gate, so they're held to the quote check but not the word-overlap check."""
+    passages = [x for x in cited if isinstance(x, Excerpt)]
+    if not passages:
+        return Verdict(True)  # facts are checked by value, above
+    body = " ".join(_norm(p.text) for p in passages)
+    for m in _QUOTE.finditer(text):
+        parts = [_norm(p) for p in re.split(r"\.\.\.|…|\[[^\]]*\]", m.group(1))]
+        if any(p and p not in body for p in parts):
+            return Verdict(False, f"quote “{m.group(1)[:60]}” is not in the cited passage(s)")
+    if not judgment and not numbers_in(text):
+        s = support_score(text, cited, pack)
+        if s < SUPPORT_MIN:
+            return Verdict(False, f"claim isn't supported by the cited passage(s) (word support {s:.0%})")
+    return Verdict(True)
+
+
+def check_claim(text: str, citations: list[str], pack: EvidencePack, support: bool = True,
+                judgment: bool = False) -> Verdict:
     if not citations:
         return Verdict(False, "no citations")
     unknown = [c for c in citations if pack.get(c) is None]
     if unknown:
         return Verdict(False, f"cites unknown id(s) {unknown}")
     cited = [pack.get(c) for c in citations]
+    if support:
+        v = check_support(text, cited, pack, judgment)
+        if not v.ok:
+            return v
     for num in numbers_in(text):
         if any(isinstance(x, Excerpt) and _in_excerpt(num, x) for x in cited):
             continue

@@ -87,3 +87,41 @@ def test_ratio_must_match_the_ratio_it_is_described_as(pack):
     assert check_claim("Revenue grew 20% YoY with a 55% gross margin and 15% operating margin.", [g, gm, om], pack).ok
     assert check_claim("Gross margin of 55%, operating margin 15%.", [gm, om], pack).ok
     assert not check_claim("Gross margin of 15%, operating margin 55%.", [gm, om], pack).ok
+
+
+# --- Support check: claims with no numbers in them ----------------------------------
+
+def test_qualitative_claim_cited_to_the_wrong_passage_fails(pack):
+    # True of the contract-manufacturer passage, but cited to the competition passage.
+    v = check_claim("The company depends on a single contract manufacturer for its finished units.",
+                    [sid(pack, "measurement accuracy")], pack)
+    assert not v.ok and "supported" in v.reason
+
+
+def test_quote_must_appear_in_the_cited_passage(pack):
+    s = sid(pack, "measurement accuracy")
+    assert check_claim('Management says it competes "primarily on measurement accuracy and integration support."',
+                       [s], pack).ok
+    v = check_claim('Management says it competes "primarily on price and speed of delivery."', [s], pack)
+    assert not v.ok and "quote" in v.reason
+
+
+def test_quote_matching_ignores_punctuation_and_page_breaks():
+    from ddagent.evidence import EvidencePack, Excerpt
+    p = EvidencePack("X", "X", "u", [], [Excerpt("W1", "Web", "the mix of sales to large customers who 17 Table of "
+                                                       "Contents generally receive lower pricing, and $ 9.6 million of "
+                                                       "assets “we’re keeping”", "u", "t")])
+    assert check_claim('"the mix of sales to large customers who generally receive lower pricing."', ["W1"], p).ok
+    assert check_claim('"$9.6 million of assets"', ["W1"], p).ok
+    assert check_claim("\"'we're keeping'\"", ["W1"], p).ok
+
+
+def test_judgment_claims_skip_the_overlap_check_but_not_the_quote_check(pack):
+    s = sid(pack, "three largest customers")
+    assert check_claim("Quality growth; concentration needs primary research.", [s], pack, judgment=True).ok
+    assert not check_claim('Management calls it "a fortress business."', [s], pack, judgment=True).ok
+
+
+def test_support_check_can_be_turned_off(pack):
+    s = sid(pack, "measurement accuracy")
+    assert check_claim("The company depends on a single contract manufacturer.", [s], pack, support=False).ok

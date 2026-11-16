@@ -131,11 +131,12 @@ class Team:
                                             "reason": "model reply was not valid JSON after one retry"})
                 return {}
 
-    def _keep(self, stage: str, author: str, items: list[dict], with_severity: bool = False) -> list[Claim]:
+    def _keep(self, stage: str, author: str, items: list[dict], with_severity: bool = False,
+              judgment: bool = False) -> list[Claim]:
         kept = []
         for it in items or []:
             text, cites = str(it.get("text", "")).strip(), [str(c) for c in it.get("citations", [])]
-            v = check_claim(text, cites, self.pack)
+            v = check_claim(text, cites, self.pack, judgment=judgment)
             self.report.add(stage, text, v)
             if v.ok:
                 kept.append(Claim(text, cites, author, it.get("severity") if with_severity else None))
@@ -155,7 +156,7 @@ class Team:
             'Schema: {"thesis": {"text": "...", "citations": ["F1"]}}'
         )
         user = self._findings(claims)
-        kept = self._keep("PM draft", "PM", [self._ask("PM draft", system, user).get("thesis", {})])
+        kept = self._keep("PM draft", "PM", [self._ask("PM draft", system, user).get("thesis", {})], judgment=True)
         return kept[0] if kept else None
 
     def red_team(self, thesis: Claim, claims: list[Claim]) -> list[Claim]:
@@ -188,8 +189,9 @@ class Team:
         user = f"DRAFT THESIS: {thesis.text} {json.dumps(thesis.citations)}\n\n{self._findings(claims)}\n\nRED TEAM OBJECTIONS:\n{obj}"
         out = self._ask("PM final", system, user)
 
-        final_thesis = (self._keep("PM final", "PM", [out.get("thesis", {})]) or [thesis])[0]
-        rationale = (self._keep("PM final", "PM", [out.get("verdict_rationale", {})]) or [final_thesis])[0]
+        final_thesis = (self._keep("PM final", "PM", [out.get("thesis", {})], judgment=True) or [thesis])[0]
+        rationale = (self._keep("PM final", "PM", [out.get("verdict_rationale", {})], judgment=True)
+                     or [final_thesis])[0]
         score, forecast = clean_judgment(out)
         verdict = out.get("verdict", "Dig deeper")
         if verdict not in ("Dig deeper", "Watch", "Pass"):

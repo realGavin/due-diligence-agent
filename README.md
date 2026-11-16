@@ -99,21 +99,30 @@ A claim survives only if every id it cites exists and **every number in it trace
 - **Ratios bind to their labels:** "6.6% YoY" can't be satisfied by a 6.6% CAGR that happens to be cited in the same claim.
 - **Excerpts:** the number must appear in the passage as a whole number. "14" does not pass because "914" appears in the text.
 - **No borrowing:** a number that's true but cited to the wrong evidence still fails.
+- **Quotes:** a direct quote must appear in the cited passage word for word (punctuation and page-break residue aside).
+- **Qualitative claims:** a claim with no numbers must share enough of its distinctive words with the passages it cites. Words are weighted by how rare they are in that company's evidence, so "Broadcom" counts for much more than "revenue". The PM's thesis and verdict rationale summarize findings that already passed, so they get the quote check but not this one.
 
 ## Measuring the gate
 
-`eval/planted_errors.py` takes every claim that passed in the five runs, corrupts it, and re-checks it. It makes no model calls, uses a fixed seed, and runs in CI.
+`eval/planted_errors.py` takes every claim in the five runs, corrupts it, and re-checks it, once with the original numbers-and-ids gate and once with the quote and qualitative checks added. It makes no model calls, uses a fixed seed, and runs in CI.
 
-| Corruption | Caught |
-|---|---|
-| Number nudged −20% / −10% / +15% / +50% | 593 / 607 (98%) |
-| Citation swapped for other evidence (claims with numbers) | 297 / 305 (97%) |
-| Citations removed | 440 / 440 (100%) |
-| Citation to a non-existent id | 440 / 440 (100%) |
-| Citation swapped on a qualitative claim (no numbers) | 0 / 135: **not detectable by design** |
-| Control: unmodified claims still pass | 440 / 440 |
+| Corruption | Numbers-only gate | With support check |
+|---|---|---|
+| Number nudged −20% / −10% / +15% / +50% | 584 / 599 (97%) | 584 / 599 (97%) |
+| Citation swapped for other evidence (claims with numbers) | 299 / 304 (98%) | 300 / 304 (99%) |
+| **Citation swapped on a qualitative claim (no numbers)** | **0 / 123 (0%)** | **111 / 123 (90%)** |
+| Citations removed | 427 / 427 (100%) | 427 / 427 (100%) |
+| Citation to a non-existent id | 427 / 427 (100%) | 427 / 427 (100%) |
 
-The gate checks numbers and ids, not meaning. A qualitative claim cited to the wrong passage gets through, and the table shows that openly because hiding it would defeat the point. Misses are listed in [`eval/RESULTS.md`](eval/RESULTS.md).
+**It also found real errors in the published memos.** The sample memos were generated before this check existed. Run on their claims as published, the new checks reject 13 of 440, and each was read by hand against its cited passage:
+
+- 6 cite a passage that doesn't contain the claim at all (e.g. a claim about Arista's contract manufacturers cited to a passage about its networking features).
+- 3 are misquotes: two quotes appear nowhere in the passage, and one splices two sentences into a single quote with added words.
+- 4 quote text that runs past where the stored passage was cut off, so they can't be verified from the evidence on file.
+
+None were genuine, supported claims. Raising the cutoff above 20% catches a few more swaps but starts rejecting supported claims; the trade-off table is in [`eval/RESULTS.md`](eval/RESULTS.md). The cutoff was chosen on these same five runs, so these numbers describe this data rather than an out-of-sample test.
+
+The check confirms that a claim and its passage are about the same thing, not that the passage says what the claim says. A claim that reuses the passage's words and still gets it wrong passes. Misses are listed in [`eval/RESULTS.md`](eval/RESULTS.md).
 
 ## Run it
 
@@ -139,7 +148,7 @@ Each run writes `memos/<TICKER>.md` and a `trace.json` with the evidence pack, e
 - The backtest uses prices for companies listed today, so it can't include companies that were later delisted.
 - It uses the 10-K plus web research. It doesn't read earnings-call audio, sell-side models or alternative data.
 - In a preregistered holdout, the agents' scores and forecasts added nothing measurable beyond the scorecard and simple baselines. Read the PM's view as a second opinion to check, not a signal.
-- The gate verifies provenance, not reasoning. A claim can cite correct numbers and still draw a weak conclusion. The red team challenges those, but in the holdout its objections did not predict which businesses deteriorated.
+- The gate verifies provenance, not reasoning. A claim can cite correct numbers, or share its passage's words, and still draw a weak or wrong conclusion. The red team challenges those, but in the holdout its objections did not predict which businesses deteriorated.
 - Filing excerpts are capped per section, so the long tail of risk factors isn't read.
 - XBRL coverage is strongest for US operating companies. Banks and REITs use different line items.
 
@@ -149,7 +158,7 @@ Each run writes `memos/<TICKER>.md` and a `trace.json` with the evidence pack, e
 ddagent/edgar.py      SEC client (cache, rate limit, User-Agent)
 ddagent/evidence.py   XBRL facts, derived ratios, valuation, evidence pack
 ddagent/filing.py     10-K section extraction and chunking
-ddagent/verify.py     the grounding gate
+ddagent/verify.py     the grounding gate (numbers, ids, quotes, qualitative support)
 ddagent/agents.py     analysts, red team, PM; the pipeline
 ddagent/research.py   web research agent (valuation + diligence questions)
 ddagent/passages.py   recovers full passages behind truncated web citations
