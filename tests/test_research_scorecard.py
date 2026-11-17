@@ -53,6 +53,30 @@ def test_research_answer_is_gated_like_everything_else(pack):
     assert any("30%" in x for x in reasons) and "no citations" in reasons
 
 
+def test_research_claims_get_the_meaning_check(pack):
+    from .test_verify import FakeJudge
+    segs = [Segment("Management said the top customer contract renews in 2027.",
+                    [Source(IR, "Q4 call", "our largest customer renews its contract in 2027")]),
+            Segment("Management said the top customer will not renew.",
+                    [Source(IR, "Q4 call", "our largest customer renews its contract in 2027")])]
+    judge = FakeJudge(reject=("not renew",))
+    r = Researcher(ScriptedLLM({}, {"renewal": segs}), pack, GroundingReport(), [], judge)
+    ans = r.answer("When do top customer contracts come up for renewal?")
+    assert [c.text for c in ans.claims] == [segs[0].text]
+    assert len(judge.calls) == 2  # both web claims went to the judge
+    assert any("don't support" in d["reason"] for d in r.report.dropped)
+
+
+def test_team_passes_its_judge_to_the_research_agent(pack):
+    from .test_verify import FakeJudge
+    research = {"market capitalization": CAP,
+                "renew": [Segment("The largest contract renews in 2027, covering 18% of revenue.",
+                                  [Source(IR, "Q4 call", "about 18% of revenue, renews its contract in 2027")])]}
+    judge = FakeJudge()
+    Team(ScriptedLLM(_script(pack), research), pack, judge).run()
+    assert "The largest contract renews in 2027, covering 18% of revenue." in judge.calls
+
+
 def test_unanswerable_question_stays_with_a_human(pack):
     ans = _researcher(pack, {}).answer("What does the CEO privately think of pricing?")
     assert not ans.claims and "management" in ans.unanswered

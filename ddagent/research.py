@@ -34,8 +34,11 @@ class ResearchAnswer:
 
 
 class Researcher:
-    def __init__(self, llm: LLM, pack: EvidencePack, report: GroundingReport, trace: list[dict]):
+    def __init__(self, llm: LLM, pack: EvidencePack, report: GroundingReport, trace: list[dict], judge=None):
+        """judge: the same optional SupportJudge the Team uses, so web claims get the meaning
+        check too (it runs inside the lock, after the code checks)."""
         self.llm, self.pack, self.report, self.trace = llm, pack, report, trace
+        self.judge = judge
         self._lock = threading.Lock()  # questions are researched in parallel; ids must stay unique
 
     def _ingest(self, stage: str, segments: list[Segment]) -> list[Claim]:
@@ -67,7 +70,7 @@ class Researcher:
                     self.pack.excerpts.append(existing)
                 if existing.id not in ids:
                     ids.append(existing.id)
-            v = check_claim(text, ids, self.pack)
+            v = check_claim(text, ids, self.pack, judge=self.judge)
             self.report.add(stage, text, v)
             if v.ok:
                 claims.append(Claim(text, ids, "Research"))

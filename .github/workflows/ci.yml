@@ -14,3 +14,4 @@ jobs:
       - run: pip install -e ".[dev]"
       - run: pytest -q
       - run: python eval/planted_errors.py
+      - run: python eval/support_judge.py --offline

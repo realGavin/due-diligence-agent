@@ -224,7 +224,7 @@ class Team:
         from .research import Researcher  # local import: research builds on Claim
         from .scorecard import score
 
-        researcher = Researcher(self.llm, self.pack, self.report, self.trace) if research else None
+        researcher = Researcher(self.llm, self.pack, self.report, self.trace, self.judge) if research else None
         valuation = researcher.market_cap() if researcher else []  # multiples join the evidence pack
 
         with ThreadPoolExecutor(max_workers=len(ANALYSTS)) as ex:

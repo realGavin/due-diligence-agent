@@ -147,7 +147,7 @@ To close that gap, a second model (Claude Haiku) reads each claim with the passa
 
 The real errors it caught include a "down 5 to 10%" figure cited to a passage showing sales up 10%, a filing's "may have higher risk" stated as fact, a lawsuit's allegation stated as fact, and two claims cited to passages about something else. On the five sample memos it found about 33 more unsupported claims and 12 more truncated-passage claims beyond the 13 above.
 
-**Limits.** About 6% of fresh claims were rejected too strictly, mostly red-team objections that argue with the PM's thesis (the judge sees only the cited sources, not the thesis) and claims adding common context ("gasoline is volatile"). It isn't fully consistent either: it accepted a "share count fell because of buybacks" claim that it rejected in two near-identical versions. I wrote both the test cases and the judge's instructions, and did the hand review, so treat these as one careful reviewer's numbers rather than an independent audit. About a quarter of correct rejections trace to passages cut short when the evidence pack was built, which is a fix for the evidence pipeline, not the gate.
+**Limits.** About 6% of fresh claims were rejected too strictly, mostly red-team objections that argue with the PM's thesis (the judge sees only the cited sources, not the thesis) and claims adding common context ("gasoline is volatile"). It isn't fully consistent either: it accepted a "share count fell because of buybacks" claim that it rejected in two near-identical versions. I wrote both the test cases and the judge's instructions, and did the hand review, so treat these as one careful reviewer's numbers rather than an independent audit. On the fresh runs, 12 of the 29 correct rejections trace to passages cut short when the evidence pack was built, which is a fix for the evidence pipeline, not the gate.
 
 ## Run it
 
@@ -157,6 +157,7 @@ cp .env.example .env        # add ANTHROPIC_API_KEY and SEC_USER_AGENT="Your Nam
 ddagent AAPL MSFT           # add --no-research to skip web search
 python scripts/replay.py memos/*.trace.json   # re-grade saved runs, no API calls
 python eval/planted_errors.py
+python eval/support_judge.py --offline   # meaning-check eval from the committed cache, no API key
 ddagent-grade               # score logged verdicts that have come due
 
 pip install -e ".[backtest]"
@@ -165,7 +166,7 @@ python -m backtest          # ~1.4 GB SEC download on first run, then about 30 m
 python -m holdout analyze --split test   # rebuild the holdout report from saved runs (SEC and price data only, no model calls)
 ```
 
-Each run writes `memos/<TICKER>.md` and a `trace.json` with the evidence pack, every raw model reply and the grounding report, so any memo can be audited end to end. EDGAR and web pages are cached in `.cache/`. A run makes about 7 model calls and about 15 web searches per company.
+Each run writes `memos/<TICKER>.md` and a `trace.json` with the evidence pack, every raw model reply and the grounding report, so any memo can be audited end to end. EDGAR and web pages are cached in `.cache/`. A run makes about 7 model calls and about 15 web searches per company, plus one short meaning-check call per claim that cites a passage (about 60 per company).
 
 ## Limitations
 
@@ -173,7 +174,7 @@ Each run writes `memos/<TICKER>.md` and a `trace.json` with the evidence pack, e
 - The backtest uses prices for companies listed today, so it can't include companies that were later delisted.
 - It uses the 10-K plus web research. It doesn't read earnings-call audio, sell-side models or alternative data.
 - In a preregistered holdout, the agents' scores and forecasts added nothing measurable beyond the scorecard and simple baselines. Read the PM's view as a second opinion to check, not a signal.
-- The gate verifies provenance, not reasoning. A claim can cite correct numbers, or share its passage's words, and still draw a weak or wrong conclusion. The red team challenges those, but in the holdout its objections did not predict which businesses deteriorated.
+- The gate verifies provenance, not reasoning. A claim can cite correct numbers and pass the meaning check and still draw a weak or wrong conclusion. The red team challenges those, but in the holdout its objections did not predict which businesses deteriorated. The meaning check is itself a model: it is sometimes too strict and not fully consistent ([review](eval/JUDGE_REVIEW.md)).
 - Filing excerpts are capped per section, so the long tail of risk factors isn't read.
 - XBRL coverage is strongest for US operating companies. Banks and REITs use different line items.
 
@@ -195,7 +196,8 @@ ddagent/prices.py     monthly prices, split-aware
 ddagent/ledger.py     verdict log and grading
 backtest/             point-in-time backtest: data, scoring panel, portfolios, factor regressions
 holdout/              out-of-sample test of the agents: sample, runs, outcomes, preregistration
-eval/                 planted-error eval
+eval/                 planted-error eval, meaning-check eval and its hand review
+memos_fresh/          three runs (CMG, DE, CRWD) used to test the meaning check out of sample
 scripts/replay.py     re-grade saved runs without the model
 tests/                offline tests: synthetic SEC fixtures + scripted model
 ```
