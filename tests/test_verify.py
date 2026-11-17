@@ -125,3 +125,84 @@ def test_judgment_claims_skip_the_overlap_check_but_not_the_quote_check(pack):
 def test_support_check_can_be_turned_off(pack):
     s = sid(pack, "measurement accuracy")
     assert check_claim("The company depends on a single contract manufacturer.", [s], pack, support=False).ok
+
+
+# --- Meaning check (ddagent.judge) -------------------------------------------------
+
+class FakeJudge:
+    """Says 'supported' unless the claim contains a word from `reject`. Records calls."""
+    def __init__(self, reject=()):
+        self.reject, self.calls = reject, []
+
+    def __call__(self, claim, passages, facts=None):
+        self.calls.append(claim)
+        bad = any(w in claim for w in self.reject)
+        return (not bad), ("reverses the passage" if bad else "ok")
+
+
+def test_judge_accepts_a_paraphrase_word_overlap_would_reject(pack):
+    s = sid(pack, "contract manufacturer")
+    claim = "Nearly all output comes from one outside factory partner, so a hiccup there could hold up deliveries."
+    assert not check_claim(claim, [s], pack).ok          # word overlap: too few shared words
+    assert check_claim(claim, [s], pack, judge=FakeJudge()).ok
+
+
+def test_judge_rejects_reversed_meaning_and_says_why(pack):
+    s = sid(pack, "contract manufacturer")
+    v = check_claim("The company does not depend on a single contract manufacturer.", [s], pack,
+                    judge=FakeJudge(reject=("does not",)))
+    assert not v.ok and "don't support" in v.reason and "reverses" in v.reason
+
+
+def test_judge_runs_only_after_code_checks_pass(pack):
+    j = FakeJudge()
+    s = sid(pack, "three largest customers")
+    assert not check_claim("Customers were 55% of revenue.", [s], pack, judge=j).ok  # wrong number
+    assert not check_claim('They call it "a fortress business model".', [s], pack, judge=j).ok       # fake quote
+    assert j.calls == []
+
+
+def test_judge_skips_judgment_claims_and_fact_only_claims(pack):
+    j = FakeJudge(reject=("Quality",))
+    assert check_claim("Quality growth; concentration needs research.", [sid(pack, "three largest customers")],
+                       pack, judgment=True, judge=j).ok
+    assert check_claim("Net debt is only $0.1B.", [fid(pack, "Net debt (LT debt - cash)")], pack, judge=j).ok
+    assert j.calls == []
+
+
+def test_support_judge_caches_and_rejects_unreadable_replies(tmp_path):
+    from ddagent.judge import SupportJudge
+
+    class Stub:
+        model, n = "stub", 0
+        def complete(self, system, user):
+            self.n += 1
+            return "not json" if "garbled" in user else '{"supported": true, "reason": "says so"}'
+
+    llm = Stub()
+    j = SupportJudge(llm, tmp_path / "cache.json")
+    assert j("A claim.", ["A passage."]) == (True, "says so")
+    assert j("A claim.", ["A passage."]) == (True, "says so") and llm.n == 1
+    ok, reason = j("garbled claim", ["p"])
+    assert not ok and "unreadable" in reason
+    j.save()
+    assert SupportJudge(Stub(), tmp_path / "cache.json")("A claim.", ["A passage."]) == (True, "says so")
+
+
+def test_judge_is_shown_the_cited_figures(pack):
+    seen = []
+
+    def judge(claim, passages, facts=None):
+        seen.append(facts)
+        return True, "ok"
+
+    s, f = sid(pack, "contract manufacturer"), fid(pack, "Net debt (LT debt - cash)")
+    assert check_claim("Net debt is only $0.1B and the company relies on one contract manufacturer.", [f, s], pack,
+                       judge=judge).ok
+    assert seen and any("Net debt" in x for x in seen[0])
+
+
+def test_judge_reads_the_verdict_from_a_reply_with_a_broken_reason():
+    from ddagent.judge import _read
+    assert _read('{"supported": true, "reason": "It says "same fact" here"}')["supported"] is True
+    assert _read('```json\n{"supported": false, "reason": "no"}\n```')["supported"] is False

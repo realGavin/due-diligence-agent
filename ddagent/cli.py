@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from dataclasses import asdict
 from datetime import date
@@ -13,6 +14,7 @@ from .edgar import Edgar
 from .evidence import EvidencePack, build_facts
 from .filing import build_excerpts
 from .ledger import Entry, record
+from .judge import SupportJudge
 from .llm import AnthropicLLM
 from .render import render
 from .scorecard import load_peers, metrics, pick_group, score_relative
@@ -65,16 +67,24 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--no-research", action="store_true", help="skip web research (valuation + question answering)")
     ap.add_argument("--no-ledger", action="store_true", help="don't record the verdict in ledger.jsonl")
     ap.add_argument("--model", default=None, help="Anthropic model id (default: $DD_MODEL or claude-sonnet-5)")
+    ap.add_argument("--judge-model", default=None,
+                    help="model for the meaning check (default: $DD_JUDGE_MODEL or claude-haiku-5-5)")
+    ap.add_argument("--no-judge", action="store_true",
+                    help="skip the meaning check; fall back to the word-overlap check")
     args = ap.parse_args(argv)
 
     edgar, llm = Edgar(), AnthropicLLM(args.model)
+    judge = None
+    if not args.no_judge:
+        jm = args.judge_model or os.environ.get("DD_JUDGE_MODEL", "claude-haiku-5-5")
+        judge = SupportJudge(AnthropicLLM(jm, max_tokens=1500))
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
     for t in args.tickers:
         print(f"[{t}] building evidence pack…", file=sys.stderr)
         pack, cik = build_pack(edgar, t)
         print(f"[{t}] {len(pack.facts)} facts, {len(pack.excerpts)} excerpts; running agents…", file=sys.stderr)
-        team = Team(llm, pack)
+        team = Team(llm, pack, judge)
         memo = team.run(research=not args.no_research)
         rel = relative_scorecard(edgar, cik, pack, memo.objections) if memo.scorecard else None
         (out / f"{pack.ticker}.md").write_text(render(memo, pack, team.report, llm.model, rel, calibration()))

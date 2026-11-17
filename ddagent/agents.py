@@ -105,9 +105,12 @@ def clean_judgment(out: dict) -> tuple[int | None, dict]:
 
 
 class Team:
-    def __init__(self, llm: LLM, pack: EvidencePack):
+    def __init__(self, llm: LLM, pack: EvidencePack, judge=None):
+        """judge: optional ddagent.judge.SupportJudge; when given, the gate asks it whether each
+        claim's cited passages support it (see verify.check_support)."""
         self.llm = llm
         self.pack = pack
+        self.judge = judge
         self.report = GroundingReport()
         self.trace: list[dict] = []
 
@@ -136,7 +139,7 @@ class Team:
         kept = []
         for it in items or []:
             text, cites = str(it.get("text", "")).strip(), [str(c) for c in it.get("citations", [])]
-            v = check_claim(text, cites, self.pack, judgment=judgment)
+            v = check_claim(text, cites, self.pack, judgment=judgment, judge=self.judge)
             self.report.add(stage, text, v)
             if v.ok:
                 kept.append(Claim(text, cites, author, it.get("severity") if with_severity else None))

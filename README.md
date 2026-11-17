@@ -122,7 +122,32 @@ A claim survives only if every id it cites exists and **every number in it trace
 
 None were genuine, supported claims. Raising the cutoff above 20% catches a few more swaps but starts rejecting supported claims; the trade-off table is in [`eval/RESULTS.md`](eval/RESULTS.md). The cutoff was chosen on these same five runs, so these numbers describe this data rather than an out-of-sample test.
 
-The check confirms that a claim and its passage are about the same thing, not that the passage says what the claim says. A claim that reuses the passage's words and still gets it wrong passes. Misses are listed in [`eval/RESULTS.md`](eval/RESULTS.md).
+The word check confirms that a claim and its passage are about the same thing, not that the passage says what the claim says. A claim that reuses the passage's words and still gets it wrong passes, and a correct claim that paraphrases its source can be rejected. Misses are listed in [`eval/RESULTS.md`](eval/RESULTS.md).
+
+### Meaning check (`judge.py`)
+
+To close that gap, a second model (Claude Haiku) reads each claim with the passages and figures it cites and answers *supported / not supported*. It runs only after every check in code has passed, so it's never asked anything code can answer. Answers are cached, so `python eval/support_judge.py --offline` reproduces every table below without an API key. Turn it off with `--no-judge`.
+
+**Hand-written tests** (`eval/paraphrase_cases.json`): 30 real claims rewritten in different words with the same meaning, and 30 that reuse the passage's words but say something it doesn't ("renew at higher rates" against a passage that says lower).
+
+| Test | Should be | Word check | Meaning check |
+|---|---|---|---|
+| Paraphrases | accepted | 23 / 30 | **30 / 30** |
+| Reversed meaning | rejected | 0 / 30 | **30 / 30** |
+| Citation swapped for another passage | rejected | 329 / 345 | **341 / 345** |
+
+**Fresh companies.** I changed the judge's instructions once after its first run on the five sample memos (it hadn't been shown the cited figures, and it was rejecting the analyst's own reading of facts). To get a number nothing was tuned on, I then ran ddagent on three new companies (Chipotle, Deere, CrowdStrike) with the meaning check off and read every claim the judge rejected, plus a random 25 it accepted ([review](eval/JUDGE_REVIEW.md)):
+
+| Fresh claims (186) | Count |
+|---|---|
+| Rejected, and right to: the claim says something its sources don't | 17 |
+| Rejected, and right to: the claim runs past where the stored passage was cut off | 12 |
+| Rejected, but too strict | 11 |
+| Accepted, checked by hand: right / wrong | 24 / 1 of 25 sampled |
+
+The real errors it caught include a "down 5 to 10%" figure cited to a passage showing sales up 10%, a filing's "may have higher risk" stated as fact, a lawsuit's allegation stated as fact, and two claims cited to passages about something else. On the five sample memos it found about 33 more unsupported claims and 12 more truncated-passage claims beyond the 13 above.
+
+**Limits.** About 6% of fresh claims were rejected too strictly, mostly red-team objections that argue with the PM's thesis (the judge sees only the cited sources, not the thesis) and claims adding common context ("gasoline is volatile"). It isn't fully consistent either: it accepted a "share count fell because of buybacks" claim that it rejected in two near-identical versions. I wrote both the test cases and the judge's instructions, and did the hand review, so treat these as one careful reviewer's numbers rather than an independent audit. About a quarter of correct rejections trace to passages cut short when the evidence pack was built, which is a fix for the evidence pipeline, not the gate.
 
 ## Run it
 
@@ -159,6 +184,7 @@ ddagent/edgar.py      SEC client (cache, rate limit, User-Agent)
 ddagent/evidence.py   XBRL facts, derived ratios, valuation, evidence pack
 ddagent/filing.py     10-K section extraction and chunking
 ddagent/verify.py     the grounding gate (numbers, ids, quotes, qualitative support)
+ddagent/judge.py      meaning check: does the cited source support the claim (model call, cached)
 ddagent/agents.py     analysts, red team, PM; the pipeline
 ddagent/research.py   web research agent (valuation + diligence questions)
 ddagent/passages.py   recovers full passages behind truncated web citations

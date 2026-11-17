@@ -222,9 +222,14 @@ def support_score(text: str, cited: list, pack: EvidencePack) -> float:
     return sum(weight(w) for w in claim if w in source) / total
 
 
-def check_support(text: str, cited: list, pack: EvidencePack, judgment: bool = False) -> Verdict:
+def check_support(text: str, cited: list, pack: EvidencePack, judgment: bool = False, judge=None) -> Verdict:
     """judgment=True for the PM's thesis and verdict rationale: they summarize findings that
-    already passed the gate, so they're held to the quote check but not the word-overlap check."""
+    already passed the gate, so they're held to the quote check but not the support check.
+
+    judge: an optional ddagent.judge.SupportJudge. When given, a model reads the claim and its
+    cited passages and decides support (it handles paraphrase and reversed meaning, which word
+    overlap can't), and it runs on every claim citing a passage, numbers or not. Without one,
+    the word-overlap check above decides for claims with no numbers."""
     passages = [x for x in cited if isinstance(x, Excerpt)]
     if not passages:
         return Verdict(True)  # facts are checked by value, above
@@ -233,7 +238,13 @@ def check_support(text: str, cited: list, pack: EvidencePack, judgment: bool = F
         parts = [_norm(p) for p in re.split(r"\.\.\.|…|\[[^\]]*\]", m.group(1))]
         if any(p and p not in body for p in parts):
             return Verdict(False, f"quote “{m.group(1)[:60]}” is not in the cited passage(s)")
-    if not judgment and not numbers_in(text):
+    if judgment:
+        return Verdict(True)
+    if judge is not None:
+        facts = [f"{x.label} | FY ending {x.period} | {x.display()}" for x in cited if isinstance(x, Fact)]
+        ok, reason = judge(text, [p.text for p in passages], facts)
+        return Verdict(True) if ok else Verdict(False, f"cited passage(s) don't support the claim: {reason}")
+    if not numbers_in(text):
         s = support_score(text, cited, pack)
         if s < SUPPORT_MIN:
             return Verdict(False, f"claim isn't supported by the cited passage(s) (word support {s:.0%})")
@@ -241,7 +252,7 @@ def check_support(text: str, cited: list, pack: EvidencePack, judgment: bool = F
 
 
 def check_claim(text: str, citations: list[str], pack: EvidencePack, support: bool = True,
-                judgment: bool = False) -> Verdict:
+                judgment: bool = False, judge=None) -> Verdict:
     if not citations:
         return Verdict(False, "no citations")
     unknown = [c for c in citations if pack.get(c) is None]
@@ -249,15 +260,22 @@ def check_claim(text: str, citations: list[str], pack: EvidencePack, support: bo
         return Verdict(False, f"cites unknown id(s) {unknown}")
     cited = [pack.get(c) for c in citations]
     if support:
-        v = check_support(text, cited, pack, judgment)
+        # Numbers first (free, exact), then quotes and support; the judge only sees claims
+        # whose numbers already check out.
+        v = _check_numbers(text, cited)
         if not v.ok:
             return v
+        return check_support(text, cited, pack, judgment, judge)
+    return _check_numbers(text, cited)
+
+
+def _check_numbers(text: str, cited: list) -> Verdict:
     for num in numbers_in(text):
         if any(isinstance(x, Excerpt) and _in_excerpt(num, x) for x in cited):
             continue
         facts = [x for x in cited if isinstance(x, Fact) and _matches_fact(num, x)]
         if not facts:
-            return Verdict(False, f"number '{num.raw}' not supported by cited evidence {citations}")
+            return Verdict(False, f"number '{num.raw}' not supported by cited evidence {[x.id for x in cited]}")
         labels = bound_label(text, num)
         if labels and not any(f.label in labels for f in facts):
             return Verdict(False, f"number '{num.raw}' is described as {' / '.join(labels)} but matches "

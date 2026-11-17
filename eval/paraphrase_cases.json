@@ -1,0 +1,307 @@
+{
+ "_about": "Hand-written cases for eval/support_judge.py. Each one rewrites a real claim from memos/*.trace.json against the same cited passage. 'paraphrase' keeps the meaning in different words, so a good check accepts it. 'reversal' reuses the passage's own words but says something the passage doesn't, so a good check rejects it. Written once before any judge was run, and not edited after seeing results.",
+ "paraphrase": [
+  [
+   "COST",
+   "W61",
+   "Costco blamed the dip on more members joining online, partly through a big Groupon promotion, and noted that younger or online-acquired members re-up a bit less often."
+  ],
+  [
+   "NVDA",
+   "W38",
+   "Production of Rubin should start scaling up in July, but at smaller quantities than first planned."
+  ],
+  [
+   "ANET",
+   "W11",
+   "Arista has relied on off-the-shelf chips from the start and still partners with Broadcom and others on next-generation hardware."
+  ],
+  [
+   "ANET",
+   "W39",
+   "The company has locked in its memory chips for the coming year and can see well into the year after."
+  ],
+  [
+   "BYND",
+   "W13",
+   "Management thinks the cash on hand, plus what operations bring in, will cover what the business needs over the coming year."
+  ],
+  [
+   "NVDA",
+   "W25",
+   "Nvidia announced Rubin last fiscal year and plans to start shipping it in volume in the latter half of the next one."
+  ],
+  [
+   "BYND",
+   "W7",
+   "Beyond Meat is adding flavors to its protein drinks, betting that beverages are a more profitable market."
+  ],
+  [
+   "ANET",
+   "W35",
+   "Sales are now growing faster than billings, a first in a year and a half, which may point to softening demand."
+  ],
+  [
+   "ANET",
+   "W28",
+   "A small group of big buyers place orders one at a time instead of signing long-term agreements."
+  ],
+  [
+   "NVDA",
+   "W17",
+   "Nvidia's revenue guidance assumes no data-center sales in China at all."
+  ],
+  [
+   "ANET",
+   "W22",
+   "Arista sometimes takes products back to keep customers happy even without a contractual obligation, and sets aside a returns estimate based on past experience."
+  ],
+  [
+   "COST",
+   "W16",
+   "Underlying margins dipped as Costco cut prices on everyday groceries such as eggs and beef, and sales shifted toward lower-margin fuel, online orders and pharmacy."
+  ],
+  [
+   "NKE",
+   "W40",
+   "Taxes owed fell mainly because the company paid its U.S. federal taxes."
+  ],
+  [
+   "ANET",
+   "W45",
+   "Close to half of Arista's sales depend on how much two buyers decide to spend."
+  ],
+  [
+   "ANET",
+   "W15",
+   "Rising supply costs and scarce memory and chips remain a drag that could squeeze margins further if those costs can't be passed through."
+  ],
+  [
+   "COST",
+   "W23",
+   "The finance chief said renewals fell mostly because more people who joined online reached their renewal date."
+  ],
+  [
+   "COST",
+   "W51",
+   "Costco has tended to lift its membership price by five dollars roughly every five and a half years since around the start of the century."
+  ],
+  [
+   "NKE",
+   "W24",
+   "Nike is still looking for further cuts that could bring more charges in coming quarters."
+  ],
+  [
+   "COST",
+   "W63",
+   "Executives attributed a third of the quarter's membership-fee growth to the most recent price increase."
+  ],
+  [
+   "COST",
+   "W54",
+   "Costco's leaders judged it a bad moment to raise fees, with inflation even worse back then than now."
+  ],
+  [
+   "NKE",
+   "S2",
+   "Some of Nike's suppliers make only one kind of product and could shut down if demand dries up, and Nike might not find a substitute quickly, if ever."
+  ],
+  [
+   "NKE",
+   "W10",
+   "Executives forecast a double-digit drop in visits to Nike's online channels this fiscal year."
+  ],
+  [
+   "BYND",
+   "W47",
+   "The changes would strip out nearly all of the restrictive terms and some default triggers in the old notes' indenture."
+  ],
+  [
+   "NVDA",
+   "W34",
+   "The chipmaker is dealing with late deliveries from suppliers such as SK Hynix."
+  ],
+  [
+   "BYND",
+   "W58",
+   "Once the reverse split took effect, the terms of the convertible notes, warrants and equity awards were scaled to match."
+  ],
+  [
+   "ANET",
+   "W44",
+   "Arista expects its AI sales to roughly double each year as large deployments ramp up."
+  ],
+  [
+   "COST",
+   "W4",
+   "The union's Costco members are spread across six states, including California and New York."
+  ],
+  [
+   "COST",
+   "W65",
+   "An analyst said Costco's leadership signaled that renewal rates might slip in the coming year."
+  ],
+  [
+   "NVDA",
+   "W51",
+   "Huang said every leading AI model runs on Nvidia, pointing to Anthropic, OpenAI, Meta and Google."
+  ],
+  [
+   "NKE",
+   "W8",
+   "Nike said a tougher economy is hurting store visits and consumer spending in all its regions."
+  ]
+ ],
+ "reversal": [
+  [
+   "COST",
+   "W61",
+   "Younger and digitally acquired members renew at higher rates than other members."
+  ],
+  [
+   "NVDA",
+   "W38",
+   "Rubin is expected to begin ramping in July, with initial volume higher than originally projected."
+  ],
+  [
+   "ANET",
+   "W11",
+   "Arista has stopped using merchant silicon and no longer works with Broadcom on advanced platforms."
+  ],
+  [
+   "ANET",
+   "W39",
+   "Memory supply has not been secured, and the company has little visibility into next year."
+  ],
+  [
+   "BYND",
+   "W13",
+   "Management does not believe existing cash balances will be sufficient to fund operations through the next twelve months."
+  ],
+  [
+   "NVDA",
+   "W25",
+   "The Rubin platform is already in full production shipments."
+  ],
+  [
+   "BYND",
+   "W7",
+   "Beyond Meat is discontinuing its protein beverage line to refocus on plant-based meat."
+  ],
+  [
+   "ANET",
+   "W35",
+   "Billings growth is outpacing revenue growth, signaling strengthening underlying demand."
+  ],
+  [
+   "ANET",
+   "W28",
+   "Large end customers typically buy under long-term contracts rather than on a purchase-order basis."
+  ],
+  [
+   "NVDA",
+   "W17",
+   "The company's revenue forecast assumes a meaningful contribution from Chinese datacenter revenues."
+  ],
+  [
+   "ANET",
+   "W22",
+   "Arista never accepts returns unless a contractual provision requires it."
+  ],
+  [
+   "COST",
+   "W16",
+   "Core-on-core margins expanded as Costco raised prices on staples like eggs and beef."
+  ],
+  [
+   "NKE",
+   "W40",
+   "Income taxes payable increased, primarily due to deferred U.S. federal income tax payments."
+  ],
+  [
+   "ANET",
+   "W45",
+   "Arista's revenue base is broadly diversified, with little dependence on any two customers' spending plans."
+  ],
+  [
+   "ANET",
+   "W15",
+   "Management said supply-chain inflation has eased and memory and silicon markets have loosened, removing pressure on margins."
+  ],
+  [
+   "COST",
+   "W23",
+   "The CFO said online sign-ups renew at higher rates, which lifted the renewal rate."
+  ],
+  [
+   "COST",
+   "W51",
+   "Costco has raised its membership fee every year since the turn of the millennium."
+  ],
+  [
+   "NKE",
+   "W24",
+   "The Company has finished evaluating opportunities and does not expect additional charges in future quarters."
+  ],
+  [
+   "COST",
+   "W63",
+   "Management said the price increase contributed little to membership fee growth in the quarter."
+  ],
+  [
+   "COST",
+   "W54",
+   "Costco's management team raised fees because inflation made it an opportune time."
+  ],
+  [
+   "NKE",
+   "S2",
+   "Nike's contract manufacturers are general-purpose, so replacement facilities can be located quickly if one goes out of business."
+  ],
+  [
+   "NKE",
+   "W10",
+   "Management expects digital traffic to grow double-digits as paid media expands."
+  ],
+  [
+   "BYND",
+   "W47",
+   "The Proposed Amendments would add new restrictive covenants and events of default to the Existing Convertible Notes Indenture."
+  ],
+  [
+   "NVDA",
+   "W34",
+   "Suppliers like SK Hynix are delivering to Nvidia ahead of schedule."
+  ],
+  [
+   "BYND",
+   "W58",
+   "Upon the effectiveness of the Reverse Stock Split, the conversion rates of the convertible notes were left unchanged."
+  ],
+  [
+   "ANET",
+   "W44",
+   "AI-related sales are expected to decline as production-scale deployments slow."
+  ],
+  [
+   "COST",
+   "W4",
+   "The Teamsters represent Costco workers in a single state."
+  ],
+  [
+   "COST",
+   "W65",
+   "Senior management indicated membership renewal rates should rise into next year."
+  ],
+  [
+   "NVDA",
+   "W51",
+   "Huang said several frontier AI models, including Anthropic's and OpenAI's, do not run on Nvidia."
+  ],
+  [
+   "NKE",
+   "W8",
+   "Nike said the macro environment is easing, with traffic and discretionary spending improving across its geographies."
+  ]
+ ]
+}
